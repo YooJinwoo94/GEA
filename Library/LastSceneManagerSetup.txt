@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/Yoo_Jin_Woo_Folder/Scene/TutorialScene.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
