@@ -1,129 +1,123 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.17f1 (a4537701e4ab) revision 10769271'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19043.1288; Version 2009; 64bit' Language: 'ko' Physical Memory: 32699 MB
+OS: 'Windows 10 Home; OS build 19043.1288; Version 2009; 64bit' Language: 'ko' Physical Memory: 16317 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity19_4\2020.3.17f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.3.17f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/ChoiYJ/Documents/GitHub/GEA_Team4
+E:/2021-2/GEAMococo
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52719
-Successfully changed project path to: C:/Users/ChoiYJ/Documents/GitHub/GEA_Team4
-C:/Users/ChoiYJ/Documents/GitHub/GEA_Team4
+60407
+Successfully changed project path to: E:/2021-2/GEAMococo
+E:/2021-2/GEAMococo
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 53.53 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 49.85 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.17f1 (a4537701e4ab)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity19_4/2020.3.17f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/ChoiYJ/Documents/GitHub/GEA_Team4/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/2021-2/GEAMococo/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f08)
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
     Vendor:   
-    VRAM:     5980 MB
-    Driver:   27.21.14.6172
+    VRAM:     8088 MB
+    Driver:   27.21.14.6089
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity19_4/2020.3.17f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity19_4/2020.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity19_4/2020.3.17f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56548
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity19_4/2020.3.17f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity19_4/2020.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity19_4/2020.3.17f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.005517 seconds.
-Native extension for LinuxStandalone target not found
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001696 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 54.83 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 50.07 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.520 seconds
+- Completed reload, in  0.929 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1520ms)
-		BeginReloadAssembly (67ms)
+	ReloadAssembly (929ms)
+		BeginReloadAssembly (46ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (570ms)
-			LoadAssemblies (64ms)
+		EndReloadAssembly (362ms)
+			LoadAssemblies (44ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (168ms)
+			SetupTypeCache (125ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (182ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (153ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (55ms)
-				BeforeProcessingInitializeOnLoad (15ms)
-				ProcessInitializeOnLoadAttributes (76ms)
-				ProcessInitializeOnLoadMethodAttributes (29ms)
+				RefreshPlugins (50ms)
+				BeforeProcessingInitializeOnLoad (13ms)
+				ProcessInitializeOnLoadAttributes (63ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006985 seconds.
+Registered in 0.002534 seconds.
 Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
 Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.179 seconds
+- Completed reload, in  0.906 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1180ms)
-		BeginReloadAssembly (162ms)
+	ReloadAssembly (906ms)
+		BeginReloadAssembly (121ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (948ms)
-			LoadAssemblies (106ms)
+			CreateAndSetChildDomain (15ms)
+		EndReloadAssembly (736ms)
+			LoadAssemblies (70ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (309ms)
+			SetupTypeCache (221ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (39ms)
-			SetupLoadedEditorAssemblies (401ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (335ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (88ms)
-				ProcessInitializeOnLoadAttributes (289ms)
-				ProcessInitializeOnLoadMethodAttributes (3ms)
-				AfterProcessingInitializeOnLoad (11ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (259ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
-Refreshing native plugins compatible for Editor in 0.73 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1414 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.5 MB.
-System memory in use after: 71.6 MB.
+System memory in use before: 86.1 MB.
+System memory in use after: 86.2 MB.
 
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1848.
-Total: 2.855100 ms (FindLiveObjects: 0.168000 ms CreateObjectMapping: 0.049700 ms MarkObjects: 2.551800 ms  DeleteObjects: 0.084200 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1865.
+Total: 2.380800 ms (FindLiveObjects: 0.112800 ms CreateObjectMapping: 0.034900 ms MarkObjects: 2.177400 ms  DeleteObjects: 0.055100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -137,41 +131,145 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/New Terrain.asset
-  artifactKey: Guid(8bb79dc39dd38234fa797065e71cb583) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain.asset using Guid(8bb79dc39dd38234fa797065e71cb583) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '607165ad8281d60643be908bea6285ec') in 0.068443 seconds 
-  Import took 0.071312 seconds .
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Rock_Golem.prefab
+  artifactKey: Guid(10f9cee6cfdd7df43a5d805acd44763f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Rock_Golem.prefab using Guid(10f9cee6cfdd7df43a5d805acd44763f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acdd83056dc4f52bf4ad84b8a9869f38') in 0.376263 seconds 
+  Import took 0.439533 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.662908 seconds.
-  path: Assets/Scenes/Stage2Scene.unity
-  artifactKey: Guid(8c22472735acc764dbd8284ab9817f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stage2Scene.unity using Guid(8c22472735acc764dbd8284ab9817f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2ca1964570b224dbd46543e42a44e18') in 0.007922 seconds 
-  Import took 0.010798 seconds .
+  Time since last request: 0.000276 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Skeleton_Knight.prefab
+  artifactKey: Guid(616cc160fcb3b124b8e0fc587258594b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Skeleton_Knight.prefab using Guid(616cc160fcb3b124b8e0fc587258594b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c7c4405e6863cb29bd6c761c399855a') in 0.055842 seconds 
+  Import took 0.059159 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.009118 seconds.
-  path: Assets/Scenes/Stage2Scene.unity
-  artifactKey: Guid(8c22472735acc764dbd8284ab9817f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Stage2Scene.unity using Guid(8c22472735acc764dbd8284ab9817f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2ca1964570b224dbd46543e42a44e18') in 0.003292 seconds 
-  Import took 0.005857 seconds .
+  Time since last request: 0.000144 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Hero_Knight_Male.prefab
+  artifactKey: Guid(880858dfd9b1e784e89d45242bf78d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Hero_Knight_Male.prefab using Guid(880858dfd9b1e784e89d45242bf78d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c53e71e22b88ca911246126f6959061') in 0.018780 seconds 
+  Import took 0.021755 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.753294 seconds.
-  path: Assets/Scenes/Demo.unity
-  artifactKey: Guid(7dd3b3b67a8b56d4e8640fa6891eaf3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Demo.unity using Guid(7dd3b3b67a8b56d4e8640fa6891eaf3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5382f1e53c86ac76f1306e6699222f07') in 0.006428 seconds 
-  Import took 0.008798 seconds .
+  Time since last request: 0.000151 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_Male.prefab
+  artifactKey: Guid(2ef59bc5d753ebe4490b708befe65999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_Male.prefab using Guid(2ef59bc5d753ebe4490b708befe65999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ba77d5635643de965cbaa7eda5900d8') in 0.016641 seconds 
+  Import took 0.019563 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.334481 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcc088d1731b590f9572c6f2bab98c6a') in 0.006901 seconds 
-  Import took 0.009276 seconds .
+  Time since last request: 0.000179 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_Female.prefab
+  artifactKey: Guid(d48e97c38730e6d4a8a87d44d568bc50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_Female.prefab using Guid(d48e97c38730e6d4a8a87d44d568bc50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b7e252da9bd32ab7806b7bea3d40b95') in 0.017361 seconds 
+  Import took 0.020327 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Hero_Knight_Female.prefab
+  artifactKey: Guid(11ffba29df14c054aa5a2695b18e9f59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Hero_Knight_Female.prefab using Guid(11ffba29df14c054aa5a2695b18e9f59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71d78900473c9edb3c359f66bddbb2db') in 0.017203 seconds 
+  Import took 0.020221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000157 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_Warrior_Male.prefab
+  artifactKey: Guid(8cd752dc36d412b4bba2efd06775153a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_Warrior_Male.prefab using Guid(8cd752dc36d412b4bba2efd06775153a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdfa3c2197b61d136dd9bb6c84d5aaf1') in 0.017892 seconds 
+  Import took 0.020894 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_Shaman.prefab
+  artifactKey: Guid(70ad07d06832dba42a3bb244ab822fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_Shaman.prefab using Guid(70ad07d06832dba42a3bb244ab822fd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b940845caffbba8bc1f5afeb3c4830c') in 0.017939 seconds 
+  Import took 0.021062 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Ghost_01.prefab
+  artifactKey: Guid(99cdb7462838a6342bd2288456e75888) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Ghost_01.prefab using Guid(99cdb7462838a6342bd2288456e75888) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dc9efcd12f2b76374567c38232d1aff') in 0.276162 seconds 
+  Import took 0.278758 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_Warrior_Female.prefab
+  artifactKey: Guid(9a6b87430c6b2684aa9c1d4616d38a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_Warrior_Female.prefab using Guid(9a6b87430c6b2684aa9c1d4616d38a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f9ec90a76913595309088aa5a67eee0') in 0.018750 seconds 
+  Import took 0.021360 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Tormented_Soul.prefab
+  artifactKey: Guid(b0297681c8568974da8dc86f4cdc853c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Tormented_Soul.prefab using Guid(b0297681c8568974da8dc86f4cdc853c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f24645c6257968f51169849f651ca83a') in 0.018358 seconds 
+  Import took 0.021736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Skeleton_Soldier_01.prefab
+  artifactKey: Guid(2ea27af6ead886c4d93bb53d28c6c25b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Skeleton_Soldier_01.prefab using Guid(2ea27af6ead886c4d93bb53d28c6c25b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e857d8f7a7d2205fff952dafb47269c') in 0.017028 seconds 
+  Import took 0.019894 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Skeleton_Slave_01.prefab
+  artifactKey: Guid(659981ab97d9bb64990767ef5f931f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Skeleton_Slave_01.prefab using Guid(659981ab97d9bb64990767ef5f931f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8361a0a14b45109fd846ebe82c006ea') in 0.017424 seconds 
+  Import took 0.020193 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_WarChief.prefab
+  artifactKey: Guid(388fa61abd880a549864058f895c8045) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Goblin_WarChief.prefab using Guid(388fa61abd880a549864058f895c8045) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '169c02d5d081ba792ae47da372970bf4') in 0.017283 seconds 
+  Import took 0.020282 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Skeleton_Soldier_02.prefab
+  artifactKey: Guid(c26833473ce06df4ba5631fd7a4b98bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Skeleton_Soldier_02.prefab using Guid(c26833473ce06df4ba5631fd7a4b98bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7074579b94fdb6fe650bc41c1b9b614') in 0.017807 seconds 
+  Import took 0.020622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/PolygonDungeon/Prefabs/Characters/Character_Ghost_02.prefab
+  artifactKey: Guid(5eb5272116a5d0548840121eb9bb813d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolygonDungeon/Prefabs/Characters/Character_Ghost_02.prefab using Guid(5eb5272116a5d0548840121eb9bb813d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '456558503732b4ade7dc349a086e36a5') in 0.018330 seconds 
+  Import took 0.021154 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 647.436403 seconds.
+  path: Assets/Training_dummy/Prefab
+  artifactKey: Guid(d85268b8eb4b56a409b7fc812ac78fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Training_dummy/Prefab using Guid(d85268b8eb4b56a409b7fc812ac78fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78c3f6f4304468a6382bbcfb570f2b56') in 0.005459 seconds 
+  Import took 0.008468 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.064246 seconds.
+  path: Assets/Training_dummy/Prefab/training_dummy.prefab
+  artifactKey: Guid(0331b169005eb1d469455efaa6b9024a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Training_dummy/Prefab/training_dummy.prefab using Guid(0331b169005eb1d469455efaa6b9024a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91d6f99b492ce1e382e678288a10e794') in 0.014496 seconds 
+  Import took 0.017560 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
