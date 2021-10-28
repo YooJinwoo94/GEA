@@ -67,6 +67,26 @@
     <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\PlayerSkillCon.cs" />
     <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\PlayerHpCon.cs" />
     <Compile Include="Assets\KriptoFX\BloodFX\Others\UVTextureAnimator.cs" />
+    <Compile Include="Assets\Scripts\Unidra\PlayerCtrl.cs" />
+    <Compile Include="Assets\Scripts\Unidra\GameRuleCtrl.cs" />
+    <Compile Include="Assets\Scripts\Unidra\EnemyCtrl.cs" />
+    <Compile Include="Assets\Scripts\Unidra\DropItem.cs" />
+    <Compile Include="Assets\Scripts\Unidra\AttackArea.cs" />
+    <Compile Include="Assets\Scripts\Unidra\AttackAreaActivator.cs" />
+    <Compile Include="Assets\Scripts\Unidra\CharacterStatus.cs" />
+    <Compile Include="Assets\Scripts\Unidra\TargetCursor.cs" />
+    <Compile Include="Assets\Scripts\Unidra\TitleSceneCtrl.cs" />
+    <Compile Include="Assets\Scripts\Unidra\CharacterStatusGui.cs" />
+    <Compile Include="Assets\Scripts\Unidra\GameTimerGui.cs" />
+    <Compile Include="Assets\Scripts\Unidra\EnemyGeneratorCtrl.cs" />
+    <Compile Include="Assets\Scripts\Unidra\SearchArea.cs" />
+    <Compile Include="Assets\Scripts\Unidra\HitArea.cs" />
+    <Compile Include="Assets\Scripts\Unidra\FollowCamera.cs" />
+    <Compile Include="Assets\Scripts\Unidra\GameResultGui.cs" />
+    <Compile Include="Assets\Scripts\Unidra\CharacterMove.cs" />
+    <Compile Include="Assets\Scripts\Unidra\CharaAnimation.cs" />
+    <Compile Include="Assets\Scripts\Unidra\GUITest.cs" />
+    <Compile Include="Assets\Scripts\Unidra\InputManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Yoo_Jin_Woo_Folder\F1\TextMesh Pro\Shaders\TMPro.cginc" />
