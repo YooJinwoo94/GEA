@@ -6,62 +6,109 @@ using UnityEngine.UI;
 
 public class PlayerSkillCon : MonoBehaviour
 {
-    [SerializeField]
-    Image[] skillImg;
+    const int playerSkill = 3;
 
-    List<float> _timeCurrent = new List<float>();
-    List<float> _timer = new List<float>();
-    List<int> _waitTime = new List<int>();
     [SerializeField]
-    bool []skillOn = new bool [3] ;
+    UIAniCon _uiAniConScript;
+    [SerializeField]
+     Image []fill;
+    [SerializeField]
+    Text []_skillCoolTimeText;
+
+    List<bool> isSkillOn = new List<bool> ();
+    List<float> maxCooldown = new List<float>();
+    List<float> currentCooldown = new List<float>();
 
 
 
 
     private void Start()
-    {       
-        for (int i = 0; i<3; i++)
+    {
+        for (int i = 0; i< playerSkill; i++)
         {
-            _timer.Add(0);
-            _waitTime.Add(3);
+            isSkillOn.Add(false);
+            maxCooldown.Add(5);
+            currentCooldown.Add(5);
 
-            skillImg[i].fillAmount = 0;
+            fill[i].fillAmount = 0;
+            _skillCoolTimeText[i].text = "";
         }
     }
 
 
 
+    // Test
     private void Update()
     {
-      for (int i = 0; i <3;i++)
+        if(Input.GetKeyDown(KeyCode.Q))
         {
-            if (skillOn[i] == false) continue;
-            _timer[i] += Time.deltaTime;
-            skillImg[i].fillAmount = _timer[i];
+            if (isSkillOn[0] == true) return;
+            if (Time.timeScale == 0) return;
 
-            if (_timer[i] > _waitTime[0])
+            isSkillOn[0] = true;
+            currentCooldown[0] = maxCooldown[0];
+            fill[0].fillAmount = 1;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            if (isSkillOn[1] == true) return;
+            if (Time.timeScale == 0) return;
+
+            isSkillOn[1] = true;
+            currentCooldown[1] = maxCooldown[1];
+            fill[1].fillAmount = 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (isSkillOn[2] == true) return;
+            if (Time.timeScale == 0) return;
+
+            isSkillOn[2] = true;
+            currentCooldown[2] = maxCooldown[2];
+            fill[2].fillAmount = 1;
+        }
+
+
+
+
+        for (int i = 0; i<playerSkill; i++)
+        {
+            if (isSkillOn[i] == false) continue;
+            if (fill[i].fillAmount <=0)
             {
-                //Action
-                _timer[i] = 0;
-                skillOn[i] = false;
+                isSkillOn[i] = false;
+                currentCooldown[i] = maxCooldown[i];
+                fill[i].fillAmount = 0;
+                _skillCoolTimeText[i].text = "";
+                continue;
+            }
+
+            currentCooldown[i] = currentCooldown[i] - Time.deltaTime;
+            fill[i].fillAmount = currentCooldown[i] / maxCooldown[i];
+
+            if (currentCooldown[i] <= 1.0)
+            {
+                _skillCoolTimeText[i].text = System.Math.Round(currentCooldown[i], 1).ToString();
+            }
+           else
+            {
+                _skillCoolTimeText[i].text = System.Math.Round(currentCooldown[i]).ToString();
             }
         }
     }
 
 
 
-    public void playerSkillUse(string skillName)
+    public void playerSkillUse (int skillNum)
     {
-        switch (skillName)
-        {
-            case "skill01":
-                break;
+        if (isSkillOn[skillNum] == true) return;
+        if (Time.timeScale == 0) return;
+       // _uiAniConScript.skillAniOn(skillNum);
 
-            case "skill02":
-                break;
+        isSkillOn[skillNum] = true;
+        currentCooldown[skillNum] = maxCooldown[skillNum];
 
-            case "skill03":
-                break;
-        }
+        fill[skillNum].fillAmount = 1;
     }
 }

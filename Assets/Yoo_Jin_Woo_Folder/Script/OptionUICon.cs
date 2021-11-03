@@ -27,11 +27,13 @@ public class OptionUICon : MonoBehaviour
             {
             // ²¨!
                 case true:
+                Time.timeScale = 1;
                 optionObj.SetActive(false);
                 break;
 
                 // ÄÑ!
                 case false:
+                Time.timeScale = 0;
                 optionObj.SetActive(true);
                     break;
             }

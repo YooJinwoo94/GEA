@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class IngameUICon : MonoBehaviour
 {
@@ -17,9 +17,9 @@ public class IngameUICon : MonoBehaviour
         _playerHpConScript.hpCon(hp,upDown);
     }
 
-    public void skillUsed(string skillName)
+    public void skillUsed(int skillNum)
     {
-        _playerSkillConScript.playerSkillUse(skillName);
+        _playerSkillConScript.playerSkillUse(skillNum);
     }
 
     public void optionBtnClick()
