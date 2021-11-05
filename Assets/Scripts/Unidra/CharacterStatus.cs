@@ -25,26 +25,26 @@ public class CharacterStatus : MonoBehaviour
     public bool died = false;
 
     // 공격력 강화.
-    public bool powerBoost = false;
+    //public bool powerBoost = false;
     // 공격력 강화 시간.
-    float powerBoostTime = 0.0f;
+    //float powerBoostTime = 0.0f;
 
     // 공격력 강화 효과.
-    ParticleSystem powerUpEffect;
+    //ParticleSystem powerUpEffect;
 
     // 아이템 획득.
     public void GetItem(DropItem.ItemKind itemKind)
     {
         switch (itemKind)
         {
-            case DropItem.ItemKind.Attack:
-                powerBoostTime = 5.0f;
-                powerUpEffect.Play();
-                break;
-            case DropItem.ItemKind.Heal:
-                // MaxHP의 절반 회복.
-                HP = Mathf.Min(HP + MaxHP / 2, MaxHP);
-                break;
+            //case DropItem.ItemKind.Attack:
+            //    powerBoostTime = 5.0f;
+            //    powerUpEffect.Play();
+            //    break;
+            //case DropItem.ItemKind.Heal:
+            //    // MaxHP의 절반 회복.
+            //    HP = Mathf.Min(HP + MaxHP / 2, MaxHP);
+            //    break;
         }
     }
 
@@ -52,7 +52,7 @@ public class CharacterStatus : MonoBehaviour
     {
         if (gameObject.tag == "Player")
         {
-            powerUpEffect = transform.Find("PowerUpEffect").GetComponent<ParticleSystem>();
+            //powerUpEffect = transform.Find("PowerUpEffect").GetComponent<ParticleSystem>();
         }
     }
 
@@ -62,16 +62,16 @@ public class CharacterStatus : MonoBehaviour
         {
             return;
         }
-        powerBoost = false;
-        if (powerBoostTime > 0.0f)
-        {
-            powerBoost = true;
-            powerBoostTime = Mathf.Max(powerBoostTime - Time.deltaTime, 0.0f);
-        }
-        else
-        {
-            powerUpEffect.Stop();
-        }
+        //powerBoost = false;
+        //if (powerBoostTime > 0.0f)
+        //{
+        //    powerBoost = true;
+        //    powerBoostTime = Mathf.Max(powerBoostTime - Time.deltaTime, 0.0f);
+        //}
+        //else
+        //{
+        //    powerUpEffect.Stop();
+        //}
     }
 
 }

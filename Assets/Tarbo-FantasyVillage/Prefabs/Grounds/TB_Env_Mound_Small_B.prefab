@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4478458558584326}
   - component: {fileID: 33790010983382438}
   - component: {fileID: 23836156645792464}
-  m_Layer: 0
+  - component: {fileID: 6140071321763318865}
+  m_Layer: 8
   m_Name: TB_Env_Mound_Small_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6140071321763318865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762662336612828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11, y: 5.0368166, z: 11}
+  m_Center: {x: 0.0000042915344, y: 2.5184076, z: -0.006333828}
