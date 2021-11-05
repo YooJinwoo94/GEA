@@ -34,8 +34,8 @@ public class AttackArea : MonoBehaviour
         attackInfo.attackPower = status.Power;
 
         // 공격 강화 중.
-        if (status.powerBoost)
-            attackInfo.attackPower += attackInfo.attackPower;
+        //if (status.powerBoost)
+        //    attackInfo.attackPower += attackInfo.attackPower;
 
         attackInfo.attacker = transform.root;
 

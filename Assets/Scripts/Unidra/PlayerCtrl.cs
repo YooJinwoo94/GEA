@@ -11,7 +11,7 @@ public class PlayerCtrl : MonoBehaviour
     public float attackRange = 1.5f;
     GameRuleCtrl gameRuleCtrl;
     public GameObject hitEffect;
-    TargetCursor targetCursor;
+    //TargetCursor targetCursor;
 
     // 스테이트 종류.
     enum State
@@ -35,8 +35,8 @@ public class PlayerCtrl : MonoBehaviour
         charaAnimation = GetComponent<CharaAnimation>();
         inputManager = FindObjectOfType<InputManager>();
         gameRuleCtrl = FindObjectOfType<GameRuleCtrl>();
-        targetCursor = FindObjectOfType<TargetCursor>();
-        targetCursor.SetPosition(transform.position);
+        //targetCursor = FindObjectOfType<TargetCursor>();
+        //targetCursor.SetPosition(transform.position);
 
         // 오디오 초기화.
         deathSeAudio = gameObject.AddComponent<AudioSource>();
@@ -100,7 +100,7 @@ public class PlayerCtrl : MonoBehaviour
                 if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
                 {
                     SendMessage("SetDestination", hitInfo.point);
-                    targetCursor.SetPosition(hitInfo.point);
+                    //targetCursor.SetPosition(hitInfo.point);
                 }
                 // 적이 클릭되었다.
                 if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("EnemyHit"))
@@ -113,13 +113,13 @@ public class PlayerCtrl : MonoBehaviour
                     {
                         // 공격.
                         attackTarget = hitInfo.collider.transform;
-                        targetCursor.SetPosition(attackTarget.position);
+                        //targetCursor.SetPosition(attackTarget.position);
                         ChangeState(State.Attacking);
                     }
                     else
                     {
                         SendMessage("SetDestination", hitInfo.point);
-                        targetCursor.SetPosition(hitInfo.point);
+                        //targetCursor.SetPosition(hitInfo.point);
                     }
                 }
             }
