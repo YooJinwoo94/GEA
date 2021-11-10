@@ -8,6 +8,7 @@ public class PlayerSkillScripts : MonoBehaviour
     ParticleSystem QSkillEffect;
     ParticleSystem WSkillEffect;
     ParticleSystem ESkillEffect;
+
     bool CooltimeQ,CooltimeW,CooltimeE;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class PlayerSkillScripts : MonoBehaviour
         {
             QSkillEffect = transform.Find("Healing").GetComponent<ParticleSystem>();
             WSkillEffect = transform.Find("Slash").GetComponent<ParticleSystem>();
-            ESkillEffect = transform.Find("Slash").GetComponent<ParticleSystem>();
+            ESkillEffect = transform.Find("Toon expoision").GetComponent<ParticleSystem>();
         }
     }
 
@@ -42,11 +43,15 @@ public class PlayerSkillScripts : MonoBehaviour
         {
             if (CooltimeW) return;
 
+            WSkillEffect.Play();
+
         }
         //ESKILL 플레이어중심범위
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (CooltimeE) return;
+
+            ESkillEffect.Play();
         }
 
     }
