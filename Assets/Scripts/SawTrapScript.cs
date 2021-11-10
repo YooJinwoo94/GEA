@@ -6,9 +6,11 @@ public class SawTrapScript : MonoBehaviour
 {
     public Transform SawTrans;
     public bool Right = false, Left = true;
-    public float length;
+    public bool Forward = false, Back = true;
+    public int type;
     public Transform StartPos, EndPos;
     public Transform SawBody;
+
     void Start()
     {
         
@@ -18,7 +20,15 @@ public class SawTrapScript : MonoBehaviour
     void Update()
     {
         SawRotation();
-        SawMoving();
+        switch (type)
+        {
+            case 0:
+                SawMovingFB();
+                break;
+            case 1:
+                SawMovingRL();
+                break;
+        }
     }
 
     public void SawRotation()
@@ -27,25 +37,48 @@ public class SawTrapScript : MonoBehaviour
         SawBody.Rotate(speed * Time.deltaTime * Vector3.left); 
     }
 
-    public void SawMoving()
+    public void SawMovingFB()
     {
         float speed = 2.0f;
-        if (Left)
+        if (Forward)
         {
             SawTrans.Translate(speed * Time.deltaTime * Vector3.forward);
             if(SawTrans.position.z >= StartPos.position.z)
             {
-                Left = false;
-                Right = true;
+                Forward = false;
+                Back = true;
             }
         }
-        if (Right)
+        if (Back)
         {
             SawTrans.Translate(speed * Time.deltaTime * Vector3.back);
             if (SawTrans.position.z <= EndPos.position.z)
             {
-                Left = true;
+                Forward = true;
+                Back = false;
+            }
+        }
+    }
+
+    public void SawMovingRL()
+    {
+        float speed = 2.0f;
+        if (Right)
+        {
+            SawTrans.Translate(speed * Time.deltaTime * Vector3.forward);
+            if (SawTrans.position.x >= StartPos.position.x)
+            {
                 Right = false;
+                Left = true;
+            }
+        }
+        if (Left)
+        {
+            SawTrans.Translate(speed * Time.deltaTime * Vector3.back);
+            if (SawTrans.position.x <= EndPos.position.x)
+            {
+                Right = true;
+                Left = false;
             }
         }
     }

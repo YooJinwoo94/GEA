@@ -9,6 +9,7 @@ public class FloorSpearTrapScript : MonoBehaviour
     public Transform SpearTrans;
     public bool Up = true, Down = false;
     bool isMoving;
+    [Header("0-Auto, 1-Sencer")]
     public int Type;
     Vector3 StartPos;
     float MaxHeightValue = 3.0f;

@@ -4,39 +4,59 @@ using UnityEngine;
 
 public class RuneTileObject : MonoBehaviour
 {
-    enum TileColor {
-        Red,
-        Green
-    }
-
     [SerializeField] GameObject redTile = null;
     [SerializeField] GameObject greenTile = null;
-    TileColor tileState;
-    MeshRenderer meshRenderer;
+    public BossPuzzleController.RuneColor tileState;
+    public BossPuzzleController bossPuzzleController;
 
     // Start is called before the first frame update
     void Start()
     {
-        tileState = TileColor.Red;
-        meshRenderer = GetComponent<MeshRenderer>();
+        tileState = BossPuzzleController.RuneColor.Red;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void ChangeMaterial() {
-        if (tileState == TileColor.Red) {
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Player")) {
+            ChangeColor();
+        }
+    }
+
+    public void ChangeColor()
+    {
+        if (tileState == BossPuzzleController.RuneColor.Red)
+        {
             redTile.SetActive(false);
             greenTile.SetActive(true);
-            tileState = TileColor.Green;
+            tileState = BossPuzzleController.RuneColor.Green;
         }
-        else if (tileState == TileColor.Green) {
+        else if (tileState == BossPuzzleController.RuneColor.Green)
+        {
             redTile.SetActive(true);
             greenTile.SetActive(false);
-            tileState = TileColor.Red;
+            tileState = BossPuzzleController.RuneColor.Red;
+        }
+    }
+
+    public void ChangeColor(BossPuzzleController.RuneColor tileColor)
+    {
+        if (tileState == tileColor) return;
+        if (tileColor == BossPuzzleController.RuneColor.Red)
+        {
+            redTile.SetActive(true);
+            greenTile.SetActive(false);
+            tileState = BossPuzzleController.RuneColor.Red;
+        }
+        else if (tileColor == BossPuzzleController.RuneColor.Green)
+        {
+            redTile.SetActive(false);
+            greenTile.SetActive(true);
+            tileState = BossPuzzleController.RuneColor.Green;
         }
     }
 }
