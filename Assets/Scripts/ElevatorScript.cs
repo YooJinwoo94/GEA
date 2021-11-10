@@ -11,6 +11,7 @@ public class ElevatorScript : MonoBehaviour
     public bool Up, /*Down,*/ isMoving;
     Vector3 startPos;
     bool once = false;
+    float timecheck = 0;
     void Start()
     {
         ElevatorTrans = gameObject.GetComponent<Transform>();
@@ -27,10 +28,11 @@ public class ElevatorScript : MonoBehaviour
 
     public void ElevatorControl()
     {
+        timecheck += Time.deltaTime;
         float speed = 3.0f;
         //if (Vector3.Distance(PlayerTrans.position, LeverTrans.position) >= 1.0f)
         {
-            if (!isMoving && Input.GetKeyDown(KeyCode.E) && !once)//활성화에 필요한 트리거 이후 변경
+            if (!isMoving && Input.GetKeyDown(KeyCode.F) && !once)//활성화에 필요한 트리거 이후 변경
             {
                 startPos = ElevatorTrans.position;
                 isMoving = true;
@@ -48,14 +50,23 @@ public class ElevatorScript : MonoBehaviour
                         Up = false;
                         isMoving = false;
                         once = true;
+                        timecheck = 0;
                     }
                 }
+               
+            }
 
-                //if (Down)
-                //{
-                //    ElevatorTrans.Translate(Vector3.down * Time.deltaTime * speed);
-                //    Up = true;
-                //}
+            if(!Up && !isMoving && once)
+            {
+                if(timecheck >= 5.0f)
+                {
+                    ElevatorTrans.Translate(Vector3.down * Time.deltaTime * speed);
+                    float y = startPos.y;
+                    if (ElevatorTrans.position.y <= y)
+                    {
+                        once = false;
+                    }
+                }
             }
             
         }
