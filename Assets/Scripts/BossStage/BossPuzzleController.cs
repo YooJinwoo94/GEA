@@ -87,6 +87,7 @@ public class BossPuzzleController : MonoBehaviour
     void ResetColor()
     {
         puzzleCount = 0;
+        runeCorrectionList.Clear();
         SunTile.ChangeColor(RuneColor.Red);
         ConnectTile.ChangeColor(RuneColor.Red);
         FishTile.ChangeColor(RuneColor.Red);
