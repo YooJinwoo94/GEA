@@ -11,7 +11,7 @@ public class DebugButton : MonoBehaviour
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(() => {
-            runeTileObject.ChangeMaterial();
+            runeTileObject.ChangeColor();
         });
     }
 
