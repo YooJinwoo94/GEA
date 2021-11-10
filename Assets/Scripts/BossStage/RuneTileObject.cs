@@ -6,6 +6,7 @@ public class RuneTileObject : MonoBehaviour
 {
     [SerializeField] GameObject redTile = null;
     [SerializeField] GameObject greenTile = null;
+    public BossPuzzleController.RuneType tileRuneType;
     public BossPuzzleController.RuneColor tileState;
     public BossPuzzleController bossPuzzleController;
 
@@ -23,8 +24,10 @@ public class RuneTileObject : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
-            ChangeColor();
-            bossPuzzleController.PushTile();
+            if (tileState == BossPuzzleController.RuneColor.Red) {
+                ChangeColor();
+                bossPuzzleController.PushTile(tileRuneType);
+            }
         }
     }
 
