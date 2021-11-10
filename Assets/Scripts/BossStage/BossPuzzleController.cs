@@ -39,6 +39,8 @@ public class BossPuzzleController : MonoBehaviour
     {
         puzzleCount = 0;
         InitPuzzles();
+        Invoke("ResetColor", 0.5f);
+
         ResetColor();
     }
 
@@ -57,13 +59,13 @@ public class BossPuzzleController : MonoBehaviour
 
         if (puzzleCount >= 4)
         {
-            ResetColor();
-
+            Invoke("ResetColor", 1.5f);
         }
     }
 
     void ResetColor()
     {
+        puzzleCount = 0;
         SunTile.ChangeColor(RuneColor.Red);
         ConnectTile.ChangeColor(RuneColor.Red);
         FishTile.ChangeColor(RuneColor.Red);
