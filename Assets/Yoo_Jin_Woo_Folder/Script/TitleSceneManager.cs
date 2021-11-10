@@ -18,8 +18,8 @@ public class TitleSceneManager : MonoBehaviour
     [SerializeField]
     GameObject[] sceneObj;
 
-
-
+    [SerializeField]
+    OptionUICon optionUIConScript;
 
 
     public void btnClick(string name)
@@ -27,18 +27,20 @@ public class TitleSceneManager : MonoBehaviour
         switch (name)
         {
             case "StartGame":
-                SceneManager.LoadScene("TutorialScene");
+                SceneManager.LoadScene("Tutorial");
                 break;
 
             case "Setting":
-                if (sceneObj[1].activeInHierarchy == true) sceneObj[1].SetActive(false);
-                else sceneObj[1].SetActive(true);
+                // if (sceneObj[1].activeInHierarchy == true) sceneObj[1].SetActive(false);
+                // else sceneObj[1].SetActive(true);
+                optionUIConScript.isOptionOn();
                 break;
 
             case "Thanks":
                 break;
 
             case "EndGame":
+                Application.Quit();
                 break;
         }
     }
