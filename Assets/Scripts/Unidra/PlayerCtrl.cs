@@ -13,6 +13,9 @@ public class PlayerCtrl : MonoBehaviour
     public GameObject hitEffect;
     //TargetCursor targetCursor;
 
+    // 정승훈 추가 TutorialDialog
+    TutorialDialog tutorialDialog;
+
     // 스테이트 종류.
     enum State
     {
@@ -37,6 +40,9 @@ public class PlayerCtrl : MonoBehaviour
         gameRuleCtrl = FindObjectOfType<GameRuleCtrl>();
         //targetCursor = FindObjectOfType<TargetCursor>();
         //targetCursor.SetPosition(transform.position);
+
+        // 정승훈 추가
+        tutorialDialog = FindObjectOfType<TutorialDialog>();
 
         // 오디오 초기화.
         deathSeAudio = gameObject.AddComponent<AudioSource>();
@@ -94,7 +100,7 @@ public class PlayerCtrl : MonoBehaviour
             // RayCast로 대상물을 조사한다.
             Ray ray = Camera.main.ScreenPointToRay(inputManager.GetCursorPosition());
             RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo, RayCastMaxDistance, (1 << LayerMask.NameToLayer("Ground")) | (1 << LayerMask.NameToLayer("EnemyHit"))))
+            if (Physics.Raycast(ray, out hitInfo, RayCastMaxDistance, (1 << LayerMask.NameToLayer("Ground")) | (1 << LayerMask.NameToLayer("EnemyHit")) | (1 << LayerMask.NameToLayer("NPC"))))
             {
                 // 지면이 클릭되었다.
                 if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
@@ -121,6 +127,20 @@ public class PlayerCtrl : MonoBehaviour
                         SendMessage("SetDestination", hitInfo.point);
                         //targetCursor.SetPosition(hitInfo.point);
                     }
+                }
+                // 정승훈 추가
+                // NPC가 클릭되었다.
+                if (hitInfo.collider.gameObject.layer == LayerMask.NameToLayer("NPC"))
+                {
+                    Debug.Log("layer 진입");
+                    if (hitInfo.collider.gameObject.name == "Ghost")
+                    {
+                        Debug.Log("ghoststory start");
+
+                        tutorialDialog.Start("GhostStory");
+                    }
+                    else if (hitInfo.collider.gameObject.name == "Training")
+                        tutorialDialog.Start("TrainingStory");
                 }
             }
         }
