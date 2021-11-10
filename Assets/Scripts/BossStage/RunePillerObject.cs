@@ -10,9 +10,9 @@ public class RunePillerObject : MonoBehaviour
     public BossPuzzleController bossPuzzleController;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        pillerState = BossPuzzleController.RuneColor.Red;
+        pillerState = BossPuzzleController.RuneColor.Green;
     }
 
     // Update is called once per frame

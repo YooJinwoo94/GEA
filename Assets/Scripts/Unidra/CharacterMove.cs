@@ -61,7 +61,7 @@ public class CharacterMove : MonoBehaviour
 			Vector3 currentVelocity = velocity;
 
 			//　목적지에 가까이 왔으면 도착.
-			if (arrived || distance < StoppingDistance)
+			if (distance < StoppingDistance)
 				arrived = true;
 
 
