@@ -10,7 +10,7 @@ public class IngameUICon : MonoBehaviour
     [SerializeField]
     PlayerHpCon _playerHpConScript;
     [SerializeField]
-    PlayerSkillCon _playerSkillConScript;
+    PlayerSkillUIManager _playerSkillConScript;
 
     public void playerHpCon(int hp,string upDown)
     {

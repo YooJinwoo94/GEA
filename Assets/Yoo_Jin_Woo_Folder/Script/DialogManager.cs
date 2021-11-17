@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
-    const string _tutorialStage = "TutorialStage";
-    const string _stage01 = "Stage01";
-    const string _stage02 = "Stage02";
-    const string _stage03 = "Stage03";
-    const string _bossStage = "BossStage";
+    const string _tutorialStage = "Tutorial";
+    const string _stage01 = "Stage1Scene";
+    const string _stage02 = "Stage2Scene";
+    const string _stage03 = "Stage3Scene";
+    const string _bossStage = "BossScene";
 
     [SerializeField]
     QuestManager _questManagerScript;
@@ -95,7 +95,6 @@ public class DialogManager : MonoBehaviour
                 {
                     if (_questManagerScript._tutorialStage[i] == true)
                     {
-                        Debug.Log(i);
                         StartCoroutine(TypeSenetence(_tutorialStageQuestDialog[i]));
                         return;
                     }

@@ -209,7 +209,36 @@ public class EnemyCtrl : MonoBehaviour
             ChangeState(State.Died);
         }
     }
+    
+    //W,E 데미지 처리 메서드 수정 이원표
+    void WDamage(AttackArea.AttackInfo attackInfo)
+    {
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
+        effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+        Destroy(effect, 0.3f);
 
+        status.HP -= attackInfo.WPower;
+        if (status.HP <= 0)
+        {
+            status.HP = 0;
+            // 체력이 0이므로 사망 스테이트로 전환한다.
+            ChangeState(State.Died);
+        }
+    }
+    void EDamage(AttackArea.AttackInfo attackInfo)
+    {
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
+        effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+        Destroy(effect, 0.3f);
+
+        status.HP -= attackInfo.EPower;
+        if (status.HP <= 0)
+        {
+            status.HP = 0;
+            // 체력이 0이므로 사망 스테이트로 전환한다.
+            ChangeState(State.Died);
+        }
+    }
     // 스테이트가 시작되기 전에 스테이터스를 초기화한다.
     void StateStartCommon()
     {

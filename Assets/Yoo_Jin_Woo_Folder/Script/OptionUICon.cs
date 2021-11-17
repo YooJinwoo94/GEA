@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class OptionUICon : MonoBehaviour
 {
     [SerializeField]
+    RectTransform rectTransform;
+    [SerializeField]
     GameObject optionObj;
     [SerializeField]
     Dropdown pixelDropDown;
@@ -48,6 +50,7 @@ public class OptionUICon : MonoBehaviour
 
                 // дя!
                 case false:
+                rectTransform.anchoredPosition = new Vector2(0, 0);
                 Time.timeScale = 0;
                 optionObj.SetActive(true);
                     break;
@@ -69,6 +72,9 @@ public class OptionUICon : MonoBehaviour
                 break;
             case 2:
                 Screen.SetResolution(2560, 1440, Screen.fullScreen);
+                break;
+            case 3:
+                Screen.SetResolution(2560, 1080, Screen.fullScreen);
                 break;
         }
     }

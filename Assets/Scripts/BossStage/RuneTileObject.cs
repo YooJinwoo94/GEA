@@ -6,13 +6,14 @@ public class RuneTileObject : MonoBehaviour
 {
     [SerializeField] GameObject redTile = null;
     [SerializeField] GameObject greenTile = null;
+    public BossPuzzleController.RuneType tileRuneType;
     public BossPuzzleController.RuneColor tileState;
     public BossPuzzleController bossPuzzleController;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        tileState = BossPuzzleController.RuneColor.Red;
+        tileState = BossPuzzleController.RuneColor.Green;
     }
 
     // Update is called once per frame
@@ -23,7 +24,10 @@ public class RuneTileObject : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
-            ChangeColor();
+            if (tileState == BossPuzzleController.RuneColor.Red) {
+                ChangeColor();
+                bossPuzzleController.PushTile(tileRuneType);
+            }
         }
     }
 

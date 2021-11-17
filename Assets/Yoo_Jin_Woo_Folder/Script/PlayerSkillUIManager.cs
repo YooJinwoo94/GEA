@@ -4,18 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PlayerSkillCon : MonoBehaviour
+public class PlayerSkillUIManager : MonoBehaviour
 {
     const int playerSkill = 3;
 
     [SerializeField]
     UIAniCon _uiAniConScript;
     [SerializeField]
-     Image []fill;
+    Image[] colorImg;
     [SerializeField]
-    Text []_skillCoolTimeText;
+    Image[] fill;
+    [SerializeField]
+    Text[] _skillCoolTimeText;
 
-    List<bool> isSkillOn = new List<bool> ();
+    List<bool> isSkillOn = new List<bool>();
     List<float> maxCooldown = new List<float>();
     List<float> currentCooldown = new List<float>();
 
@@ -24,7 +26,7 @@ public class PlayerSkillCon : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i< playerSkill; i++)
+        for (int i = 0; i < playerSkill; i++)
         {
             isSkillOn.Add(false);
             maxCooldown.Add(5);
@@ -40,7 +42,8 @@ public class PlayerSkillCon : MonoBehaviour
     // Test
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        // ÄðÅ¸ÀÓ ½ÃÀÛ
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (isSkillOn[0] == true) return;
             if (Time.timeScale == 0) return;
@@ -48,6 +51,7 @@ public class PlayerSkillCon : MonoBehaviour
             isSkillOn[0] = true;
             currentCooldown[0] = maxCooldown[0];
             fill[0].fillAmount = 1;
+            colorImg[0].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
         }
 
         else if (Input.GetKeyDown(KeyCode.W))
@@ -58,6 +62,7 @@ public class PlayerSkillCon : MonoBehaviour
             isSkillOn[1] = true;
             currentCooldown[1] = maxCooldown[1];
             fill[1].fillAmount = 1;
+            colorImg[1].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
@@ -67,20 +72,24 @@ public class PlayerSkillCon : MonoBehaviour
             isSkillOn[2] = true;
             currentCooldown[2] = maxCooldown[2];
             fill[2].fillAmount = 1;
+            colorImg[2].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
         }
 
 
 
 
-        for (int i = 0; i<playerSkill; i++)
+        for (int i = 0; i < playerSkill; i++)
         {
             if (isSkillOn[i] == false) continue;
-            if (fill[i].fillAmount <=0)
+
+            // ÄðÅ¸ÀÓ ³¡
+            if (fill[i].fillAmount <= 0)
             {
                 isSkillOn[i] = false;
                 currentCooldown[i] = maxCooldown[i];
                 fill[i].fillAmount = 0;
                 _skillCoolTimeText[i].text = "";
+                colorImg[i].color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255);
                 continue;
             }
 
@@ -91,7 +100,7 @@ public class PlayerSkillCon : MonoBehaviour
             {
                 _skillCoolTimeText[i].text = System.Math.Round(currentCooldown[i], 1).ToString();
             }
-           else
+            else
             {
                 _skillCoolTimeText[i].text = System.Math.Round(currentCooldown[i]).ToString();
             }
@@ -100,11 +109,10 @@ public class PlayerSkillCon : MonoBehaviour
 
 
 
-    public void playerSkillUse (int skillNum)
+    public void playerSkillUse(int skillNum)
     {
         if (isSkillOn[skillNum] == true) return;
         if (Time.timeScale == 0) return;
-       // _uiAniConScript.skillAniOn(skillNum);
 
         isSkillOn[skillNum] = true;
         currentCooldown[skillNum] = maxCooldown[skillNum];
@@ -112,3 +120,4 @@ public class PlayerSkillCon : MonoBehaviour
         fill[skillNum].fillAmount = 1;
     }
 }
+

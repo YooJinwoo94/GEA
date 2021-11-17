@@ -23,6 +23,10 @@ public class AttackArea : MonoBehaviour
     {
         public int attackPower; // 이 공격의 공격력.
         public Transform attacker; // 공격자.
+
+        //수정자 이원표
+        public int WPower; //W 공격력
+        public int EPower; //E 공격력
     }
 
 
@@ -32,7 +36,9 @@ public class AttackArea : MonoBehaviour
         AttackInfo attackInfo = new AttackInfo();
         // 공격력 계산.
         attackInfo.attackPower = status.Power;
+        
 
+        
         // 공격 강화 중.
         //if (status.powerBoost)
         //    attackInfo.attackPower += attackInfo.attackPower;

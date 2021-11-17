@@ -9,9 +9,10 @@ public class DoorOpenScript : MonoBehaviour
     Transform DLeftTrans;
     Transform DRightTrans;
     float timecheck = 0;
-    public int Type;
+    public int DirType;
 
     public bool OpenDoor = false;
+
     void Start()
     {
         DLeftTrans = DoorLeft.GetComponent<Transform>();
@@ -32,7 +33,7 @@ public class DoorOpenScript : MonoBehaviour
         if (!OpenDoor)
             return;
 
-        switch (Type)
+        switch (DirType)
         {
             case 0:
                 VDoorOpenAnimation();
@@ -51,7 +52,7 @@ public class DoorOpenScript : MonoBehaviour
         float speed = 30.0f;
         if(DLeftTrans.eulerAngles.y <= 180.0f)
             DLeftTrans.Rotate(Vector3.up * Time.deltaTime * speed);
-        if(DRightTrans.eulerAngles.y >= 0.1f)
+        if(DRightTrans.eulerAngles.y >= 1.0f)
             DRightTrans.Rotate(Vector3.down * Time.deltaTime * speed);
     }
 

@@ -8,7 +8,7 @@ public class ElevatorScript : MonoBehaviour
     public Transform PlayerTrans;
     public Transform LeverTrans;
     Transform ElevatorTrans;
-    public bool Up, /*Down,*/ isMoving;
+    public bool Up, isMoving;
     Vector3 startPos;
     bool once = false;
     float timecheck = 0;
@@ -16,7 +16,6 @@ public class ElevatorScript : MonoBehaviour
     {
         ElevatorTrans = gameObject.GetComponent<Transform>();
         Up = false;
-        //Down = false;
         isMoving = false;
         startPos = new Vector3();
     }
@@ -30,7 +29,7 @@ public class ElevatorScript : MonoBehaviour
     {
         timecheck += Time.deltaTime;
         float speed = 3.0f;
-        //if (Vector3.Distance(PlayerTrans.position, LeverTrans.position) >= 1.0f)
+        if (Vector3.Distance(PlayerTrans.position, LeverTrans.position) >= 1.5f)
         {
             if (!isMoving && Input.GetKeyDown(KeyCode.F) && !once)//활성화에 필요한 트리거 이후 변경
             {
@@ -43,7 +42,6 @@ public class ElevatorScript : MonoBehaviour
                 if (Up)
                 {
                     ElevatorTrans.Translate(Vector3.up * Time.deltaTime * speed);
-                    //Down = false;
                     float y = startPos.y + height;
                     if(ElevatorTrans.position.y >= y)
                     {
@@ -53,22 +51,20 @@ public class ElevatorScript : MonoBehaviour
                         timecheck = 0;
                     }
                 }
-               
-            }
+            }         
+        }
 
-            if(!Up && !isMoving && once)
+        if(!Up && !isMoving && once)
+        {              
+            if(timecheck >= 5.0f)
             {
-                if(timecheck >= 5.0f)
+                ElevatorTrans.Translate(Vector3.down * Time.deltaTime * speed);
+                float y = startPos.y;
+                if (ElevatorTrans.position.y <= y)
                 {
-                    ElevatorTrans.Translate(Vector3.down * Time.deltaTime * speed);
-                    float y = startPos.y;
-                    if (ElevatorTrans.position.y <= y)
-                    {
-                        once = false;
-                    }
+                    once = false;
                 }
             }
-            
         }
     }
 }
