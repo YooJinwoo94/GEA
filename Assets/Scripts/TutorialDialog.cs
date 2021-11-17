@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class TutorialDialog : MonoBehaviour
 {
-    GameObject panel;
-    Text text;
+    GameObject notificationPanel;
+    GameObject talkPanel;
+    Text notificationText;
+    Text talkText;
     string[][] lines;
     int currentLine;
 
+    CameraManager cameraManager;
+
     DialogChannel channel;
+    DialogType type;
     Dictionary<DialogChannel, int> channelDict;
     int currentStory;
     enum DialogChannel
@@ -20,11 +25,25 @@ public class TutorialDialog : MonoBehaviour
         Training
     }
 
+    enum DialogType
+    {
+        Notification,
+        Talk
+    }
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        panel = GameObject.Find("ClickPanel");
-        text = panel.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        notificationPanel = GameObject.Find("ClickPanel_Notification");
+        notificationText = notificationPanel.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+
+        talkPanel = GameObject.Find("ClickPanel_Talk");
+        talkText = talkPanel.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+
+        cameraManager = FindObjectOfType<CameraManager>();
+
         lines = new string[][]
         {
             new string[]
@@ -62,7 +81,6 @@ public class TutorialDialog : MonoBehaviour
 
         };
         currentLine = 0;
-        printDialog();
 
         channelDict = new Dictionary<DialogChannel, int>
         {
@@ -71,6 +89,7 @@ public class TutorialDialog : MonoBehaviour
             { DialogChannel.Training, 2 }
         };
 
+        Down();
         Start("First");
     }
 
@@ -80,10 +99,16 @@ public class TutorialDialog : MonoBehaviour
         
     }
 
-    // 대화창 표시
-    void printDialog()
+    // 알림창 표시
+    void printNotification()
     {
-        text.text = lines[currentStory][currentLine];
+        notificationText.text = lines[currentStory][currentLine];
+    }
+
+    // 알림창 표시
+    void printTalk()
+    {
+        talkText.text = lines[currentStory][currentLine];
     }
 
     // 다음 대사를 출력
@@ -95,33 +120,64 @@ public class TutorialDialog : MonoBehaviour
             return;
         }
         currentLine++;
-        printDialog();
+
+        if (type == DialogType.Notification)
+            printNotification();
+        else if (type == DialogType.Talk)
+            printTalk();
     }
 
     // 대화창 닫기
     void Down()
     {
-        panel.SetActive(false);
+        notificationPanel.SetActive(false);
+        talkPanel.SetActive(false);
+
+        if (type == DialogType.Talk)
+            cameraManager.ChangeCamera();
+
         currentLine = 0;
     }
 
     // 대화창 열기
     void Up()
     {
-        panel.SetActive(true);
         currentLine = 0;
-        printDialog();
+
+        if (type == DialogType.Notification)
+        {
+            notificationPanel.SetActive(true);
+
+            printNotification();
+        }
+        else if (type == DialogType.Talk)
+        {
+            cameraManager.ChangeCamera();
+            talkPanel.SetActive(true);
+
+            printTalk();
+        }
     }
 
     // 원하는 대화를 시작하는 함수
     public void Start(string s)
     {
-        if(s == "First")
+        if (s == "First")
+        {
             channel = DialogChannel.First;
-        else if(s =="GhostStory")
+            type = DialogType.Notification;
+        }
+        else if (s == "GhostStory")
+        {
             channel = DialogChannel.Ghost;
+            type = DialogType.Talk;
+            GameObject.FindGameObjectWithTag("Player").SendMessage("SetDestination", GameObject.Find("Ghost/Pos").transform.position);
+        }
         else if (s == "TrainingStory")
+        {
             channel = DialogChannel.Training;
+            type = DialogType.Notification;
+        }
 
         channelDict.TryGetValue(channel, out currentStory);
 
