@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Yoo_Jin_Woo_Folder/Scene/TitleScene.unity
+    guid: 726301d857bfef34089d881bce513543
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 1cb853ed0aa458e4ba8e0cbdc7611409
+  - enabled: 1
+    path: Assets/Scenes/Stage1Scene.unity
+    guid: b25d11093c3757c44897e71d3dd7edbe
+  - enabled: 1
+    path: Assets/Scenes/Stage2Scene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Stage3Scene.unity
+    guid: 58b2f17b665b01047b1f34b6b9267b81
+  - enabled: 1
+    path: Assets/Scenes/BossScene.unity
+    guid: 876939594b2283842aad6c447f89fa93
   m_configObjects: {}
