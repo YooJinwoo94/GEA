@@ -10,16 +10,17 @@ public class FloorSpearTrapScript : MonoBehaviour
     public bool Up = true, Down = false;
     bool isMoving;
     [Header("0-Auto, 1-Sencer")]
-    public int Type;
+    public int Type = 0;
     Vector3 StartPos;
-    float MaxHeightValue = 3.0f;
+    public float MaxHeightValue = 3.0f;
     public float Upspeed = 16f;
     public float Downspeed = 1.5f;
+    public bool Shoot = false;
+    float timecheck = 0f;
 
     void Start()
     {
         StartPos = SpearTrans.position;
-        Type = 0;
         isMoving = false;
     }
 
@@ -46,15 +47,28 @@ public class FloorSpearTrapScript : MonoBehaviour
 
     public void SencerTrap()
     {
-        if (Vector3.Distance(PlayerTrans.position, SencerTrans.position) < 2.0f || isMoving)
+        if (Shoot)
         {
             AutoTrap();
+
+            if(timecheck >= 3.0f)
+            {
+                SpearTrans.position = StartPos;
+                timecheck = 0;
+            }
+        }
+
+        if (!Shoot)
+        {
+            SpearTrans.position = StartPos;
+            timecheck = 0;
         }
     }
     public void AutoTrap()
     {
         if (Up)
         {
+            timecheck += Time.deltaTime;
             isMoving = true;
             SpearTrans.Translate(Upspeed * Time.deltaTime * Vector3.up);
             if(SpearTrans.position.y > (StartPos.y+MaxHeightValue))
@@ -74,5 +88,14 @@ public class FloorSpearTrapScript : MonoBehaviour
                 isMoving = false;
             }
         }
+    }
+
+    public void Shooting()
+    {
+        Shoot = true;
+    }
+    public void StopShooting()
+    {
+        Shoot = false;
     }
 }

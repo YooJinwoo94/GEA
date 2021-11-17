@@ -13,14 +13,14 @@ public class BridgeScript : MonoBehaviour
 
     void Start()
     {
-        //playerTrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        playerTrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
 
     void Update()
     {
         BridgeDown();
-        //ForthFLeverControl();
-        //FifthFLeverControl();
+        ForthFLeverControl();
+        FifthFLeverControl();
     }
 
     public void BridgeDown()
@@ -44,6 +44,12 @@ public class BridgeScript : MonoBehaviour
         {
             FirstOn = true;
         }
+
+        if (FirstOn && LeverTrans.eulerAngles.z <= 50.0f)
+        {
+            float speed = 30.0f;
+            LeverTrans.Rotate(speed * Time.deltaTime * Vector3.forward);
+        }
     }
 
     public void FifthFLeverControl()
@@ -52,7 +58,13 @@ public class BridgeScript : MonoBehaviour
 
         if (Vector3.Distance(playerTrans.position, LeverTrans.position) <= 3.0f)
         {
-            FirstOn = true;
+            SecondOn = true;
+        }
+
+        if (SecondOn && LeverTrans.eulerAngles.z <= 50.0f)
+        {
+            float speed = 30.0f;
+            LeverTrans.Rotate(speed * Time.deltaTime * Vector3.forward);
         }
     }
 }
