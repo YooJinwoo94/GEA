@@ -9,6 +9,10 @@ public class PlayerSkillScripts : MonoBehaviour
     ParticleSystem WSkillEffect;
     ParticleSystem ESkillEffect;
 
+    public int EskillDamege;
+
+
+
     bool CooltimeQ,CooltimeW,CooltimeE;
     // Start is called before the first frame update
     void Start()
@@ -42,16 +46,16 @@ public class PlayerSkillScripts : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.W))
         {
             if (CooltimeW) return;
+            WSkill();
 
-            WSkillEffect.Play();
 
         }
         //ESKILL 플레이어중심범위
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (CooltimeE) return;
-
-            ESkillEffect.Play();
+            ESkill();
+            
         }
 
     }
@@ -59,14 +63,23 @@ public class PlayerSkillScripts : MonoBehaviour
     //발사체 형태로 구현 예정 파티클효과만 확인용
     void WSkill()
     {
-        
 
-         
+        WSkillEffect.Play();
+
     }
 
     void ESkill()
     {
+        ESkillEffect.Play();
 
+        RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 3, Vector3.up, 0f, LayerMask.GetMask("EnemyHit"));
+
+        //foreach (RaycastHit hitObj in rayHits)
+        {
+           // hitObj.transform.GetComponent<CharacterStatus>().HP -= EskillDamege;
+        }
     }
+
+  
 }
 
