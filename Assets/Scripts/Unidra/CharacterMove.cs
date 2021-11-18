@@ -61,7 +61,7 @@ public class CharacterMove : MonoBehaviour
 			Vector3 currentVelocity = velocity;
 
 			//　목적지에 가까이 왔으면 도착.
-			if (distance < StoppingDistance)
+			if (arrived || distance < StoppingDistance)
 				arrived = true;
 
 
@@ -73,7 +73,7 @@ public class CharacterMove : MonoBehaviour
 
 
 			// 부드럽게 보간 처리.
-			velocity = Vector3.Lerp(currentVelocity, velocity, Mathf.Min(Time.deltaTime * 5.0f, 1.0f));
+			//velocity = Vector3.Lerp(currentVelocity, velocity, Mathf.Min(Time.deltaTime * 5.0f, 1.0f));
 			velocity.y = 0;
 
 
@@ -145,5 +145,8 @@ public class CharacterMove : MonoBehaviour
         return arrived;
     }
 
-
+    public Vector3 GetDestination()
+    {
+        return this.destination;
+    }
 }
