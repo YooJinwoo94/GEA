@@ -28,9 +28,7 @@ public class ESkillCtrl : MonoBehaviour
         public int attackPower; // 이 공격의 공격력.
         public Transform attacker; // 공격자.
 
-        //수정자 이원표
-        public int WPower; //W 공격력
-        public int EPower; //E 공격력
+ 
     }
 
 
@@ -39,7 +37,7 @@ public class ESkillCtrl : MonoBehaviour
     {
         EAttackInfo attackInfo = new EAttackInfo();
         // 공격력 계산.
-        attackInfo.attackPower = status.Power;
+        attackInfo.attackPower = status.EPower;
         attackInfo.attacker = transform.root;
 
         return attackInfo;

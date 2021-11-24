@@ -40,7 +40,7 @@ public class WSkillCtrl : MonoBehaviour
     {
         WAttackInfo attackInfo = new WAttackInfo();
         // 공격력 계산.
-        attackInfo.attackPower = status.Power;
+        attackInfo.attackPower = status.WPower;
         attackInfo.attacker = transform.root;
 
         return attackInfo;
