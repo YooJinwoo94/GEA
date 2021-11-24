@@ -17,11 +17,9 @@ public class PlayerSkillScripts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ESkillCtrl[] EattackAreas = GetComponentsInChildren<ESkillCtrl>();
-        WSkillCtrl[] WattackAreas = GetComponentsInChildren<WSkillCtrl>();
-        WskillAreaColliders = new Collider[WattackAreas.Length];
-        EskillAreaColliders = new Collider[EattackAreas.Length];
 
+        WSkillCtrl[] WattackAreas = transform.GetComponentsInChildren<WSkillCtrl>();
+        WskillAreaColliders = new Collider[WattackAreas.Length];
         for(int WattackAreasCnt = 0; WattackAreasCnt< WattackAreas.Length; WattackAreasCnt++)
         {
             // AttackArea
@@ -29,11 +27,13 @@ public class PlayerSkillScripts : MonoBehaviour
             WskillAreaColliders[WattackAreasCnt].enabled = false;  
         }
 
+        ESkillCtrl[] EattackAreas = transform.GetComponentsInChildren<ESkillCtrl>();
+        EskillAreaColliders = new Collider[EattackAreas.Length];
         for (int EattackAreasCnt = 0; EattackAreasCnt < EattackAreas.Length; EattackAreasCnt++)
         {
             // AttackArea 
             EskillAreaColliders[EattackAreasCnt] = EattackAreas[EattackAreasCnt].GetComponent<Collider>();
-            EskillAreaColliders[EattackAreasCnt].enabled = false;  
+            EskillAreaColliders[EattackAreasCnt].enabled = false;
         }
 
         status = transform.root.GetComponent<CharacterStatus>();
@@ -86,31 +86,41 @@ public class PlayerSkillScripts : MonoBehaviour
     void WSkill()
     {
 
+     
+        foreach (Collider attackAreaCollider in WskillAreaColliders)
+        {
+            attackAreaCollider.enabled = true;
+        }
         WSkillEffect.Play();
 
-        foreach (Collider attackAreaCollider in WskillAreaColliders)
-            attackAreaCollider.enabled = true;
-
         StartCoroutine(WWait());
+
+
         //RaycastHit[] rayHits = Physics.RaycastAll(transform.position, transform.forward, 14f, LayerMask.GetMask("EnemyHit"));
-        //foreach (Collider hitObj in rayHits)
+        //foreach (RaycastHit hitObj in rayHits)
         //{
-        //    hitObj.transform.GetComponent<EnemyCtrl>().EDamage();
+        //    Debug.Log("rayhit");
+        //    hitObj.transform.GetComponent<EnemyCtrl>().WDamage();
         //}
 
     }
 
     void ESkill()
     {
-        ESkillEffect.Play();
+        
 
         foreach (Collider attackAreaCollider in EskillAreaColliders)
+        {
             attackAreaCollider.enabled = true;
+        }
+        ESkillEffect.Play();
 
         StartCoroutine(EWait());
+
         //RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 3, Vector3.up, 0f, LayerMask.GetMask("EnemyHit"));
         //foreach (RaycastHit hitObj in rayHits)
         //{
+        //    Debug.Log("rayhit");
         //    hitObj.transform.GetComponent<EnemyCtrl>().EDamage();
         //}
 
@@ -119,19 +129,19 @@ public class PlayerSkillScripts : MonoBehaviour
 
     IEnumerator WWait()
     {
-
+        yield return new WaitForSeconds(0.5f);
         foreach (Collider attackAreaCollider in WskillAreaColliders)
             attackAreaCollider.enabled = false;
 
-        yield return new WaitForSeconds(1f);
+        
     }
     IEnumerator EWait()
     {
-
+        yield return new WaitForSeconds(0.3f);
         foreach (Collider attackAreaCollider in EskillAreaColliders)
             attackAreaCollider.enabled = false;
 
-        yield return new WaitForSeconds(1f);
+        
     }
 
 

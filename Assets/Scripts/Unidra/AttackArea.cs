@@ -24,9 +24,6 @@ public class AttackArea : MonoBehaviour
         public int attackPower; // 이 공격의 공격력.
         public Transform attacker; // 공격자.
 
-        //수정자 이원표
-        public int WPower; //W 공격력
-        public int EPower; //E 공격력
     }
 
 

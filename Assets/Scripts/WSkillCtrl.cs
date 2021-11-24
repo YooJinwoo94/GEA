@@ -29,36 +29,36 @@ public class WSkillCtrl : MonoBehaviour
         public int attackPower; // 이 공격의 공격력.
         public Transform attacker; // 공격자.
 
-        //수정자 이원표
-        public int WPower; //W 공격력
-        public int EPower; //E 공격력
     }
 
 
     // 공격 정보를 가져온다.
     WAttackInfo GetAttackInfo()
     {
-        WAttackInfo attackInfo = new WAttackInfo();
+        WAttackInfo wattackInfo = new WAttackInfo();
         // 공격력 계산.
-        attackInfo.attackPower = status.WPower;
-        attackInfo.attacker = transform.root;
+        wattackInfo.attackPower = status.WPower;
 
-        return attackInfo;
+        wattackInfo.attacker = transform.root;
+
+        return wattackInfo;
     }
 
     // 맞았다.
     void OnTriggerEnter(Collider other)
     {
-        // 공격 당한 상대의 Damage 메시지를 보낸다.
-        other.SendMessage("WDamage", GetAttackInfo());
+        if (transform.GetComponent<Collider>().enabled)
+        {
+            // 공격 당한 상대의 Damage 메시지를 보낸다.
+            //other.SendMessage("WDamage", GetAttackInfo());
+            other.GetComponent<HitArea>().transform.root.GetComponent<EnemyCtrl>().WDamage(GetAttackInfo());
 
-        // 떄린거 저장 임의수정 정승훈
-        status.lastAttackTarget = other.transform.root.gameObject;
-
-
-        // 오디오 재생.
-        WskillSeAudio.Play();
-
+            // 떄린거 저장 임의수정 정승훈
+            status.lastAttackTarget = other.transform.root.gameObject;
+            // 오디오 재생.
+            WskillSeAudio.Play();
+        }
+        else return;
 
     }
 

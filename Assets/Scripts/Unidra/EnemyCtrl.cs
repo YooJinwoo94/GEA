@@ -211,13 +211,13 @@ public class EnemyCtrl : MonoBehaviour
     }
 
     //W,E 데미지 처리 메서드 수정 이원표
-    public void WDamage(WSkillCtrl.WAttackInfo WattackInfo)
+    public void WDamage(WSkillCtrl.WAttackInfo wattackinfo)
     {
         //   GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
         //   effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
         //   Destroy(effect, 0.3f);
         Debug.Log("WSkill Hit");
-        status.HP -= WattackInfo.attackPower;
+        status.HP -= wattackinfo.attackPower;
         if (status.HP <= 0)
         {
             status.HP = 0;
@@ -225,14 +225,14 @@ public class EnemyCtrl : MonoBehaviour
             ChangeState(State.Died);
         }
     }
-    public void EDamage(ESkillCtrl.EAttackInfo EattackInfo)
+    public void EDamage(ESkillCtrl.EAttackInfo eattackinfo)
     {
         //   GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
         //   effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
         //   Destroy(effect, 0.3f);
 
         Debug.Log("ESkill Hit");
-        status.HP -= EattackInfo.attackPower;
+        status.HP -= eattackinfo.attackPower;
         if (status.HP <= 0)
         {
             status.HP = 0;
@@ -240,6 +240,7 @@ public class EnemyCtrl : MonoBehaviour
             ChangeState(State.Died);
         }
     }
+
     // 스테이트가 시작되기 전에 스테이터스를 초기화한다.
     void StateStartCommon()
     {
