@@ -88,6 +88,7 @@ public class PlayerSkillScripts : MonoBehaviour
 
         WSkillEffect.Play();
 
+       // if(Col)
         foreach (Collider attackAreaCollider in WskillAreaColliders)
             attackAreaCollider.enabled = true;
 
