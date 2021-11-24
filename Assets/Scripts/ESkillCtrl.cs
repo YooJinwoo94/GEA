@@ -65,6 +65,7 @@ public class ESkillCtrl : MonoBehaviour
     // 공격 판정을 유효로 한다.
     void OnAttack()
     {
+        Debug.Log("ESkill");
         GetComponent<Collider>().enabled = true;
     }
 
