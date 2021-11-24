@@ -7,6 +7,7 @@ public class CharaAnimation : MonoBehaviour
 	Vector3 prePosition;
 	bool isDown = false;
 	bool attacked = false;
+    public CharacterMove CM;
 	
 	public bool IsAttacked()
 	{
@@ -35,13 +36,21 @@ public class CharaAnimation : MonoBehaviour
 		
 		prePosition = transform.position;
 	}
-	
 	void Update ()
 	{
-		Vector3 delta_position = transform.position - prePosition;
-		animator.SetFloat("Speed", delta_position.magnitude / Time.deltaTime);
-		
-		if(attacked && !status.attacking)
+        Vector3 des = CM.GetDestination();
+
+        float dis = Vector3.Distance(new Vector3(prePosition.x, des.y , prePosition.z), des);       
+
+        if(!CM.Arrived())
+            animator.SetFloat("Speed", dis);
+        else if (CM.Arrived() || dis <= 0.6f)
+            animator.SetFloat("Speed", 0);
+
+        //Vector3 delta_position = transform.position - prePosition;
+        //animator.SetFloat("Speed", delta_position.magnitude / Time.deltaTime);
+
+        if (attacked && !status.attacking)
 		{
 			attacked = false;
 		}

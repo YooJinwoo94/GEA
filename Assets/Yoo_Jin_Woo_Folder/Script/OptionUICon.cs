@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class OptionUICon : MonoBehaviour
 {
     [SerializeField]
+    GameObject thanksUIObj;
+    [SerializeField]
     RectTransform rectTransform;
     [SerializeField]
     GameObject optionObj;
@@ -20,7 +22,12 @@ public class OptionUICon : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GameObject.Find("Sound_AudioSource").GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = GameObject.Find("Sound_AudioSource").GetComponent<AudioSource>();
+        }
+
+
 
         int i_width = Screen.width;
         int i_height = Screen.height;
@@ -31,8 +38,14 @@ public class OptionUICon : MonoBehaviour
         }
 
 
-        if (optionObj.activeInHierarchy != true) return;
-        optionObj.SetActive(false);
+        if (thanksUIObj.activeInHierarchy == true)
+        {
+            thanksUIObj.SetActive(false);
+        }
+        if (optionObj.activeInHierarchy == true)
+        {
+            optionObj.SetActive(false);
+        }
     }
 
 
@@ -107,5 +120,22 @@ public class OptionUICon : MonoBehaviour
     public void audioVolumeCon()
     {
         audioSource.volume = audioSlider.value;
+    }
+
+
+    public void thanksUICon()
+    {
+        switch(thanksUIObj.activeInHierarchy)
+        {
+            // ²¨
+            case true:
+                thanksUIObj.SetActive(false);
+                break;
+
+            // ÄÑ
+            case false:
+                thanksUIObj.SetActive(true);
+                break;
+        }
     }
 }

@@ -16,6 +16,9 @@ public class TitleSceneManager : MonoBehaviour
 
 
     [SerializeField]
+    GameObject thanksUIObj;
+
+    [SerializeField]
     GameObject[] sceneObj;
 
     [SerializeField]
@@ -37,6 +40,8 @@ public class TitleSceneManager : MonoBehaviour
                 break;
 
             case "Thanks":
+                if (thanksUIObj.activeInHierarchy == true) thanksUIObj.SetActive(false);
+                else thanksUIObj.SetActive(true);
                 break;
 
             case "EndGame":
