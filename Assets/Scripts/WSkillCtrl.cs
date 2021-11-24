@@ -1,43 +1,46 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ESkillCtrl : MonoBehaviour
+public class WSkillCtrl : MonoBehaviour
 {
     CharacterStatus status;
 
-    public AudioClip EskillSeClip;
-    AudioSource EskillSeAudio;
+    public AudioClip WskillSeClip;
+    AudioSource WskillSeAudio;
 
-    public ParticleSystem ESkillEffect;
+    public ParticleSystem WSkillEffect;
 
     void Start()
     {
         status = transform.root.GetComponent<CharacterStatus>();
 
         // 오디오 초기화.
-        EskillSeAudio = gameObject.AddComponent<AudioSource>();
-        EskillSeAudio.clip = EskillSeClip;
-        EskillSeAudio.loop = false;
+        WskillSeAudio = gameObject.AddComponent<AudioSource>();
+        WskillSeAudio.clip = WskillSeClip;
+        WskillSeAudio.loop = false;
 
-        ESkillEffect = transform.Find("Toon expoision").GetComponent<ParticleSystem>();
+        WSkillEffect = transform.Find("Slash").GetComponent<ParticleSystem>();
     }
 
 
-    public class EAttackInfo
+    public class WAttackInfo
     {
         public int attackPower; // 이 공격의 공격력.
         public Transform attacker; // 공격자.
 
- 
+        //수정자 이원표
+        public int WPower; //W 공격력
+        public int EPower; //E 공격력
     }
 
 
     // 공격 정보를 가져온다.
-    EAttackInfo GetAttackInfo()
+    WAttackInfo GetAttackInfo()
     {
-        EAttackInfo attackInfo = new EAttackInfo();
+        WAttackInfo attackInfo = new WAttackInfo();
         // 공격력 계산.
-        attackInfo.attackPower = status.EPower;
+        attackInfo.attackPower = status.WPower;
         attackInfo.attacker = transform.root;
 
         return attackInfo;
@@ -47,14 +50,14 @@ public class ESkillCtrl : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // 공격 당한 상대의 Damage 메시지를 보낸다.
-        other.SendMessage("EDamage", GetAttackInfo());
+        other.SendMessage("WDamage", GetAttackInfo());
 
         // 떄린거 저장 임의수정 정승훈
         status.lastAttackTarget = other.transform.root.gameObject;
 
 
         // 오디오 재생.
-        EskillSeAudio.Play();
+        WskillSeAudio.Play();
 
 
     }
@@ -63,7 +66,7 @@ public class ESkillCtrl : MonoBehaviour
     // 공격 판정을 유효로 한다.
     void OnAttack()
     {
-        Debug.Log("ESkill");
+        Debug.Log("WSkill");
         GetComponent<Collider>().enabled = true;
     }
 
