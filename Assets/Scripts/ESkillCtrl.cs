@@ -1,52 +1,76 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-//Eskill 폭발범위체크
-public class ESkillCrl : MonoBehaviour
+public class ESkillCtrl : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    public GameObject E_Effect;
     CharacterStatus status;
-    public float radius = 3.0f;
-    
-  
 
-    private new MeshRenderer renderer;
+    public AudioClip EskillSeClip;
+    AudioSource EskillSeAudio;
 
-
-    private Transform tr;
-    private Rigidbody rb;
+    public ParticleSystem ESkillEffect;
 
     void Start()
     {
-        tr = GetComponent<Transform>();
-        rb = GetComponent<Rigidbody>();
-        status = GetComponent<CharacterStatus>();
+        status = transform.root.GetComponent<CharacterStatus>();
+
+        // 오디오 초기화.
+        EskillSeAudio = gameObject.AddComponent<AudioSource>();
+        EskillSeAudio.clip = EskillSeClip;
+        EskillSeAudio.loop = false;
+
+        ESkillEffect = transform.Find("Toon expoision").GetComponent<ParticleSystem>();
+    }
+
+
+    public class EAttackInfo
+    {
+        public int attackPower; // 이 공격의 공격력.
+        public Transform attacker; // 공격자.
+
+ 
+    }
+
+
+    // 공격 정보를 가져온다.
+    EAttackInfo GetAttackInfo()
+    {
+        EAttackInfo attackInfo = new EAttackInfo();
+        // 공격력 계산.
+        attackInfo.attackPower = status.EPower;
+        attackInfo.attacker = transform.root;
+
+        return attackInfo;
+    }
+
+    // 맞았다.
+    void OnTriggerEnter(Collider other)
+    {
+        // 공격 당한 상대의 Damage 메시지를 보낸다.
+        other.SendMessage("EDamage", GetAttackInfo());
+
+        // 떄린거 저장 임의수정 정승훈
+        status.lastAttackTarget = other.transform.root.gameObject;
+
+
+        // 오디오 재생.
+        EskillSeAudio.Play();
+
 
     }
 
-    // Update is called once per frame
-    void Update()
+
+    // 공격 판정을 유효로 한다.
+    void OnAttack()
     {
-        
+        Debug.Log("ESkill");
+        GetComponent<Collider>().enabled = true;
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    // 공격 판정을 무효로 한다.
+    void OnAttackTermination()
     {
-        GameObject ESkill = Instantiate(E_Effect, tr.position, Quaternion.identity);
-
-        Destroy(E_Effect, 3.0f);
-
-        ESkillHit(tr.position);
-    }
-
-    void ESkillHit(Vector3 pos)
-    {
-       
-
+        GetComponent<Collider>().enabled = false;
     }
 }

@@ -12,6 +12,11 @@ public class CharacterStatus : MonoBehaviour
     // 공격력.
     public int Power = 10;
 
+    //수정자 이원표 스킬데미지
+    public int WPower = 100;
+    public int EPower = 100;
+    
+
     // 마지막에 공격한 대상.
     public GameObject lastAttackTarget = null;
 

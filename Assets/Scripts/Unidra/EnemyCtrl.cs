@@ -192,14 +192,14 @@ public class EnemyCtrl : MonoBehaviour
         }
 
         // 오디오 재생.
-        AudioSource.PlayClipAtPoint(deathSeClip, transform.position);
+        //AudioSource.PlayClipAtPoint(deathSeClip, transform.position);
     }
 
     void Damage(AttackArea.AttackInfo attackInfo)
     {
-        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
-        effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
-        Destroy(effect, 0.3f);
+    //    GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
+    //    effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+    //    Destroy(effect, 0.3f);
 
         status.HP -= attackInfo.attackPower;
         if (status.HP <= 0)
@@ -209,15 +209,15 @@ public class EnemyCtrl : MonoBehaviour
             ChangeState(State.Died);
         }
     }
-    
-    //W,E 데미지 처리 메서드 수정 이원표
-    void WDamage(AttackArea.AttackInfo attackInfo)
-    {
-        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
-        effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
-        Destroy(effect, 0.3f);
 
-        status.HP -= attackInfo.WPower;
+    //W,E 데미지 처리 메서드 수정 이원표
+    public void WDamage(WSkillCtrl.WAttackInfo WattackInfo)
+    {
+        //   GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
+        //   effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+        //   Destroy(effect, 0.3f);
+        Debug.Log("WSkill Hit");
+        status.HP -= WattackInfo.attackPower;
         if (status.HP <= 0)
         {
             status.HP = 0;
@@ -225,13 +225,14 @@ public class EnemyCtrl : MonoBehaviour
             ChangeState(State.Died);
         }
     }
-    void EDamage(AttackArea.AttackInfo attackInfo)
+    public void EDamage(ESkillCtrl.EAttackInfo EattackInfo)
     {
-        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
-        effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
-        Destroy(effect, 0.3f);
+        //   GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
+        //   effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+        //   Destroy(effect, 0.3f);
 
-        status.HP -= attackInfo.EPower;
+        Debug.Log("ESkill Hit");
+        status.HP -= EattackInfo.attackPower;
         if (status.HP <= 0)
         {
             status.HP = 0;
