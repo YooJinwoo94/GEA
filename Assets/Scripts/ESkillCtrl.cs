@@ -27,8 +27,6 @@ public class ESkillCtrl : MonoBehaviour
     {
         public int attackPower; // 이 공격의 공격력.
         public Transform attacker; // 공격자.
-
- 
     }
 
 
@@ -46,16 +44,20 @@ public class ESkillCtrl : MonoBehaviour
     // 맞았다.
     void OnTriggerEnter(Collider other)
     {
-        // 공격 당한 상대의 Damage 메시지를 보낸다.
-        other.SendMessage("EDamage", GetAttackInfo());
-
-        // 떄린거 저장 임의수정 정승훈
-        status.lastAttackTarget = other.transform.root.gameObject;
 
 
-        // 오디오 재생.
-        EskillSeAudio.Play();
+        if (transform.GetComponent<Collider>().enabled)
+        {
+            // 공격 당한 상대의 Damage 메시지를 보낸다.
+            //other.SendMessage("EDamage", GetAttackInfo());
+            other.GetComponent<HitArea>().transform.root.GetComponent<EnemyCtrl>().EDamage(GetAttackInfo());
 
+            // 떄린거 저장 임의수정 정승훈
+            status.lastAttackTarget = other.transform.root.gameObject;
+            // 오디오 재생.
+            EskillSeAudio.Play();
+        }
+        else return;
 
     }
 

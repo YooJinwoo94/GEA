@@ -20,7 +20,7 @@ TagManager:
   - EnemyAttack
   - PlayerHit
   - EnemyHit
-  - 
+  - SkillAttack
   - NPC
   - 
   - 
