@@ -66,6 +66,7 @@ public class WSkillCtrl : MonoBehaviour
     // 공격 판정을 유효로 한다.
     void OnAttack()
     {
+        Debug.Log("WSkill");
         GetComponent<Collider>().enabled = true;
     }
 
