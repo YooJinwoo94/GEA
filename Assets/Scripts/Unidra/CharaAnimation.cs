@@ -33,7 +33,8 @@ public class CharaAnimation : MonoBehaviour
 	{
 		animator = GetComponent<Animator>();
 		status = GetComponent<CharacterStatus>();
-		
+		CM = GetComponent<CharacterMove>();
+
 		prePosition = transform.position;
 	}
 	void Update ()

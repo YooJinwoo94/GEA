@@ -12,6 +12,7 @@ public class PlayerCtrl : MonoBehaviour
     GameRuleCtrl gameRuleCtrl;
     public GameObject hitEffect;
     //TargetCursor targetCursor;
+    public float distance;
 
     // 정승훈 추가 TutorialDialog
     TutorialDialog tutorialDialog;
@@ -114,13 +115,15 @@ public class PlayerCtrl : MonoBehaviour
                     // 수평 거리를 체크해서 공격할지 결정한다.
                     Vector3 hitPoint = hitInfo.point;
                     hitPoint.y = transform.position.y;
-                    float distance = Vector3.Distance(hitPoint, transform.position);
+                    distance = Vector3.Distance(hitPoint, transform.position);
+                    Debug.Log("attack check");
                     if (distance < attackRange)
                     {
                         // 공격.
                         attackTarget = hitInfo.collider.transform;
                         //targetCursor.SetPosition(attackTarget.position);
                         ChangeState(State.Attacking);
+                        Debug.Log("attack");
                     }
                     else
                     {
