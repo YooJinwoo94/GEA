@@ -6,7 +6,18 @@ public class HitAreaTriggerController : MonoBehaviour
 {
     [SerializeField] GameObject atkArea;
 
-    void OnTriggerEnter(Collider other)
+	private void Start()
+	{
+        Invoke("DestroyInSelf", 0.2f);
+
+    }
+
+    void DestroyInSelf()
+	{
+        Destroy(transform.parent.gameObject);
+	} 
+
+	void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {

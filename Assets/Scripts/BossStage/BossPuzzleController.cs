@@ -31,7 +31,9 @@ public class BossPuzzleController : MonoBehaviour
     [SerializeField] RunePillerObject TridentPiller;
     [SerializeField] RunePillerObject SunPiller;
     [SerializeField] RunePillerObject FishPiller;
-    [SerializeField] GameObject SuccessLight;
+
+    [SerializeField] BossGolemController bossGolem;
+
     int puzzleCount;
     bool clearPuzzleBoolen = false;
     List<RuneType> runeCorrectionList = new List<RuneType>();
@@ -80,7 +82,8 @@ public class BossPuzzleController : MonoBehaviour
     }
 
     void ClearPuzzle () {
-        SuccessLight.SetActive(true);
+        bossGolem.isPuzzleClear = true;
+        //SuccessLight.SetActive(true);
         clearPuzzleBoolen = true;
     }
 
