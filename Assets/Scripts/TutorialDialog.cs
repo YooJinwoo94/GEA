@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialDialog : MonoBehaviour
 {
@@ -22,7 +23,10 @@ public class TutorialDialog : MonoBehaviour
     {
         First,
         Ghost,
-        Training
+        Training,
+        TrainingSkill,
+        TrainingSkill2,
+        Ending
     }
 
     enum DialogType
@@ -46,12 +50,14 @@ public class TutorialDialog : MonoBehaviour
 
         lines = new string[][]
         {
+            // 게임 시작 직후
             new string[]
             {
                 "기본적인 조작법 설명입니다.",
                 "땅을 클릭하면 이동, NPC를 클릭하면 대화할 수 있습니다.",
                 "직접 해보세요!"
             },
+            // 고스트 클릭 시
             new string[]
             {
                 "안녕하십니까",
@@ -69,16 +75,39 @@ public class TutorialDialog : MonoBehaviour
                 "거기에 있는 모든 적을 물리치면 문이 열릴게야.",
                 "알겠습니다. 며칠만 기다리시면 될겁니다."
             },
+            // 여관 지날 때
             new string[]
             {
                 "전투 튜토리얼을 시작합니다.",
                 "마우스 클릭으로 몬스터를 공격 할 수 있습니다.",
+                "뒷마당에 있는 허수아비를 공격해보세요.",
+            },
+            // 허수아비 공격해서 쓰러뜨리면
+            new string[]
+            {
                 "스킬은 Q, W, E키를 눌러 사용합니다.",
-                "회복 스킬을 알려드릴테니 사용해 보십시오.",
+                "회복 스킬을 알려드리겠습니다.",
+                "회복 스킬은 Q를 눌러서 사용합니다.",
+                "사용 해 보세요."
+            },
+            // Q(힐)스킬 사용하면
+            new string[]
+            {
+                "잘하셨습니다.",
+                "공격스킬은 W와 E로 사용할 수 있습니다.",
+                "게임을 진행하면서 스킬을 얻어가시길 바랍니다.",
                 "이것으로 전투 튜토리얼을 마칩니다.",
                 "충분히 연습한 후 뒤편의 포탈을 타고 게임을 시작해 주세요."
+            },
+            // 엔딩
+            new string[]
+            {
+                "보물을 찾아왔습니다!",
+                "정말로 찾아올 줄이야...",
+                "정말.. 정말 고맙네",
+                "죽어서라도 보물을 찾은 것이 너무 기쁘군",
+                "이제 나도 성불 할 수 있겠어"
             }
-
         };
         currentLine = 0;
 
@@ -86,11 +115,15 @@ public class TutorialDialog : MonoBehaviour
         {
             { DialogChannel.First, 0 },
             { DialogChannel.Ghost, 1 },
-            { DialogChannel.Training, 2 }
+            { DialogChannel.Training, 2 },
+            { DialogChannel.TrainingSkill, 3 },
+            { DialogChannel.TrainingSkill2, 4 },
+            { DialogChannel.Ending, 5 }
         };
 
         Down();
-        Start("First");
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneAt(1))
+            Start("First");
     }
 
     // Update is called once per frame
@@ -177,6 +210,21 @@ public class TutorialDialog : MonoBehaviour
         {
             channel = DialogChannel.Training;
             type = DialogType.Notification;
+        }
+        else if(s == "TrainingSkill")
+        {
+            channel = DialogChannel.TrainingSkill;
+            type = DialogType.Notification;
+        }
+        else if(s == "TrainingSkill2")
+        {
+            channel = DialogChannel.TrainingSkill2;
+            type = DialogType.Notification;
+        }
+        else if(s == "Ending")
+        {
+            channel = DialogChannel.Ending;
+            type = DialogType.Talk;
         }
 
         channelDict.TryGetValue(channel, out currentStory);
