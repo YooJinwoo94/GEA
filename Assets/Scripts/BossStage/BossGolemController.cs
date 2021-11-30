@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class BossGolemController : MonoBehaviour
 {
+    static public int bossGolemDamage = 10;
+
     public enum BossPatternType
 	{
         Idle,
@@ -28,16 +31,18 @@ public class BossGolemController : MonoBehaviour
     public SphereCollider sphereCollider;
     public NavMeshAgent navMeshAgent;
     public Animator animator;
+    public Text textContainer;
 
     public BossPatternType currentPattern;
 
+    public GameObject meleeAtkHitArea;
     public GameObject meleeCircleAtkHitAreaPrefab;
 
     WaitForSeconds Delay500 = new WaitForSeconds(0.5f);
     WaitForSeconds Delay1500 = new WaitForSeconds(1.5f);
     WaitForSeconds Delay250 = new WaitForSeconds(0.25f);
 
-    float StumpAttackCoolTime = 8.0f;
+    float StumpAttackCoolTime = 15.0f;
     float currentStumpAttackCoolTime = 0.0f;
     float ChaseLimitTime = 8.0f;
     float currentChaseLimitTime = 0.0f;
@@ -53,7 +58,10 @@ public class BossGolemController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (bossCurrrentHP <= 0) {
+            textContainer.text = "보물을 획득해라";
+            Destroy(this.gameObject);
+            }
     }
 
 	void OnTriggerEnter(Collider other)
@@ -129,6 +137,7 @@ public class BossGolemController : MonoBehaviour
         navMeshAgent.isStopped = false;
 
         currentChaseLimitTime += Time.deltaTime;
+        currentStumpAttackCoolTime += Time.deltaTime;
 
         navMeshAgent.SetDestination(Player.transform.position);
 
@@ -155,7 +164,6 @@ public class BossGolemController : MonoBehaviour
         {
             animator.SetTrigger("lightAttack");
         }
-
         currentPattern = BossPatternType.Idle;
     }
 
@@ -204,6 +212,51 @@ public class BossGolemController : MonoBehaviour
     public void EndAttack()
 	{
         isAttacking = false;
+    }
+
+    public void LightAttackHit() {
+        meleeAtkHitArea.SetActive(true);
+        meleeAtkHitArea.GetComponent<BossLightAttack>().InvokeDisable();
+    }
+    
+    void Damage(AttackArea.AttackInfo attackInfo)
+    {
+    //    GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
+    //    effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+    //    Destroy(effect, 0.3f);
+
+        bossCurrrentHP -= attackInfo.attackPower;
+        if (bossCurrrentHP <= 0)
+        {
+            bossCurrrentHP = 0;
+        }
+    }
+
+    //W,E 데미지 처리 메서드 수정 이원표
+    public void WDamage(WSkillCtrl.WAttackInfo wattackinfo)
+    {
+        //   GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
+        //   effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+        //   Destroy(effect, 0.3f);
+        Debug.Log("WSkill Hit");
+        bossCurrrentHP -= wattackinfo.attackPower;
+        if (bossCurrrentHP <= 0)
+        {
+            bossCurrrentHP = 0;
+        }
+    }
+    public void EDamage(ESkillCtrl.EAttackInfo eattackinfo)
+    {
+        //   GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
+        //   effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+        //   Destroy(effect, 0.3f);
+
+        Debug.Log("ESkill Hit");
+        bossCurrrentHP -= eattackinfo.attackPower;
+        if (bossCurrrentHP <= 0)
+        {
+            bossCurrrentHP = 0;
+        }
     }
 
 }

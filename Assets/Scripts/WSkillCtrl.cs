@@ -49,6 +49,7 @@ public class WSkillCtrl : MonoBehaviour
     {
         if (transform.GetComponent<Collider>().enabled)
         {
+            if (other.GetComponent<BossGolemController>() != null) other.GetComponent<BossGolemController>().WDamage(GetAttackInfo());
             // 공격 당한 상대의 Damage 메시지를 보낸다.
             //other.SendMessage("WDamage", GetAttackInfo());
             other.GetComponent<HitArea>().transform.root.GetComponent<EnemyCtrl>().WDamage(GetAttackInfo());

@@ -14688,6 +14688,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 759667557526153262, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 759667557724847003, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -17806,6 +17810,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 463042, guid: 0e2d311aa2f76c2479ed7bbf11aa4ffb, type: 3}
   m_PrefabInstance: {fileID: 745897294}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &747630352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 747630354}
+  - component: {fileID: 747630353}
+  - component: {fileID: 747630355}
+  m_Layer: 0
+  m_Name: Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &747630353
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747630352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50, y: 10, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &747630354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747630352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
+  m_LocalScale: {x: 5, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &747630355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747630352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d31f95206ffde4187c0b2fec75d66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textContainer: {fileID: 1184505604}
 --- !u!1001 &747827115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27483,6 +27545,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 461420, guid: c4c867f83beeae549bdc784dca9b0798, type: 3}
   m_PrefabInstance: {fileID: 1184471627}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1184505604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 759667557526153262, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
+  m_PrefabInstance: {fileID: 613382145}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1186899188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36715,7 +36788,8 @@ MonoBehaviour:
   TridentPiller: {fileID: 2067146824}
   SunPiller: {fileID: 546136725}
   FishPiller: {fileID: 898591221}
-  bossGolem: {fileID: 0}
+  bossGolem: {fileID: 74472622154562626}
+  textContainer: {fileID: 1184505604}
 --- !u!4 &1539940411
 Transform:
   m_ObjectHideFlags: 0
@@ -46332,6 +46406,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 461420, guid: c4c867f83beeae549bdc784dca9b0798, type: 3}
   m_PrefabInstance: {fileID: 1881354976}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1882345809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882345810}
+  - component: {fileID: 1882345811}
+  - component: {fileID: 1882345812}
+  m_Layer: 0
+  m_Name: PlayerHitArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1882345810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882345809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.171, y: 0.213, z: 0.284}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4526462851344699}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1882345811
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882345809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1882345812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882345809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ad38596465b2a499011a29f2caf30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkArea: {fileID: 1882345809}
 --- !u!1001 &1886362128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52120,9 +52252,9 @@ GameObject:
   - component: {fileID: 74472622154562629}
   - component: {fileID: 74472622154562626}
   - component: {fileID: 1170732449594394}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BossGolem
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52135,7 +52267,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170732449594393}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.35
   m_Height: 1.95
@@ -53172,6 +53304,7 @@ Transform:
   - {fileID: 4616667232858469}
   - {fileID: 4810071922012999}
   - {fileID: 1660578801}
+  - {fileID: 1882345810}
   m_Father: {fileID: 1853097401}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -53629,8 +53762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef69f86fa25a4d41b75f0ef4b6d1730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossMaxHP: 0
-  bossCurrrentHP: 0
+  bossMaxHP: 1000
+  bossCurrrentHP: 1000
   isPlayerNear: 0
   isAttacking: 0
   isPuzzleClear: 0
@@ -53639,7 +53772,9 @@ MonoBehaviour:
   sphereCollider: {fileID: 1660578802}
   navMeshAgent: {fileID: 74472622154562629}
   animator: {fileID: 95902137237797001}
+  textContainer: {fileID: 1184505604}
   currentPattern: 0
+  meleeAtkHitArea: {fileID: 1882345809}
   meleeCircleAtkHitAreaPrefab: {fileID: 1194921207654511968, guid: 5439b88b25f735b4db7e6bac3c3084f4, type: 3}
 --- !u!54 &74472622154562628
 Rigidbody:

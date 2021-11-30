@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossPuzzleController : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class BossPuzzleController : MonoBehaviour
     [SerializeField] RunePillerObject FishPiller;
 
     [SerializeField] BossGolemController bossGolem;
+    [SerializeField] Text textContainer;
 
     int puzzleCount;
     bool clearPuzzleBoolen = false;
@@ -84,6 +86,7 @@ public class BossPuzzleController : MonoBehaviour
     void ClearPuzzle () {
         bossGolem.isPuzzleClear = true;
         //SuccessLight.SetActive(true);
+        textContainer.text = "사원을 지키는 거대골렘을 쓰러트려라";
         clearPuzzleBoolen = true;
     }
 

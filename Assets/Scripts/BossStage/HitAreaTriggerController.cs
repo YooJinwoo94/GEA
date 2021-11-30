@@ -21,8 +21,9 @@ public class HitAreaTriggerController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<CharacterStatus>().HP -= (BossGolemController.bossGolemDamage * 2);
             Destroy(atkArea);
         }
-        return;//데미지 함수
+        return;//Player Damage Code
     }
 }
