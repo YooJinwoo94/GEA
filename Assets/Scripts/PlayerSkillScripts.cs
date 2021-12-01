@@ -12,8 +12,8 @@ public class PlayerSkillScripts : MonoBehaviour
     Collider[] WskillAreaColliders;
     Collider[] EskillAreaColliders;
 
-    bool CooltimeQ,CooltimeW,CooltimeE;
-
+    public float CooltimeQ=5f,CooltimeW=5f,CooltimeE=5f;
+    bool isCooltimeQ = false, isCooltimeW=false, isCooltimeE=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,25 +59,36 @@ public class PlayerSkillScripts : MonoBehaviour
         //QSKILL 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (CooltimeQ) return;
-            status.HP = Mathf.Min(status.HP + status.MaxHP / 2, status.MaxHP);
+            if (!isCooltimeQ)
+            {
+                status.HP = Mathf.Min(status.HP + status.MaxHP / 2, status.MaxHP);
 
-            QSkillEffect.Play();
-            
+                QSkillEffect.Play();
+
+                isCooltimeQ = true;
+                StartCoroutine(Qdelay());
+            }
+
         }
         //WSKILL 
         if(Input.GetKeyDown(KeyCode.W))
         {
-            if (CooltimeW) return;
-            WSkill();
-
-
+            if (!isCooltimeW)
+            {
+                WSkill();
+                isCooltimeW = true;
+                StartCoroutine(Wdelay());
+            }
         }
         //ESKILL
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (CooltimeE) return;
-            ESkill();
+            if (!isCooltimeE)
+            {
+                ESkill();
+                isCooltimeE = true;
+                StartCoroutine(Edelay());
+            }
         }
 
     }
@@ -93,7 +104,7 @@ public class PlayerSkillScripts : MonoBehaviour
         }
         WSkillEffect.Play();
 
-        StartCoroutine(WWait());
+        StartCoroutine(WReset());
 
 
         //RaycastHit[] rayHits = Physics.RaycastAll(transform.position, transform.forward, 14f, LayerMask.GetMask("EnemyHit"));
@@ -115,7 +126,7 @@ public class PlayerSkillScripts : MonoBehaviour
         }
         ESkillEffect.Play();
 
-        StartCoroutine(EWait());
+        StartCoroutine(EReset());
 
         //RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 3, Vector3.up, 0f, LayerMask.GetMask("EnemyHit"));
         //foreach (RaycastHit hitObj in rayHits)
@@ -125,9 +136,23 @@ public class PlayerSkillScripts : MonoBehaviour
         //}
 
     }
+    IEnumerator Qdelay()
+    {
+        yield return new WaitForSeconds(CooltimeQ);
+        isCooltimeQ = false;
+    }
+    IEnumerator Wdelay()
+    {
+        yield return new WaitForSeconds(CooltimeW);
+        isCooltimeW = false;
+    }
+    IEnumerator Edelay()
+    {
+        yield return new WaitForSeconds(CooltimeE);
+        isCooltimeE = false;
+    }
 
-
-    IEnumerator WWait()
+    IEnumerator WReset()
     {
         yield return new WaitForSeconds(0.5f);
         foreach (Collider attackAreaCollider in WskillAreaColliders)
@@ -135,7 +160,7 @@ public class PlayerSkillScripts : MonoBehaviour
 
         
     }
-    IEnumerator EWait()
+    IEnumerator EReset()
     {
         yield return new WaitForSeconds(0.3f);
         foreach (Collider attackAreaCollider in EskillAreaColliders)
