@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b0aeba362a1484988949510b3ea819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1547369703441942, guid: aa4de824abd97724da42ffc9d2b3c275, type: 3}
-  maxEnemy: 1
+  enemyPrefab: {fileID: 119392050570051975, guid: 0e4995d0a827eca49bb8cf306bc7f420, type: 3}
+  maxEnemy: 2
 --- !u!1001 &4947110457574710055
 PrefabInstance:
   m_ObjectHideFlags: 0
