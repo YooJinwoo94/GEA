@@ -3678,6 +3678,9 @@ MonoBehaviour:
   characterName: Skeleton_Knight
   attacking: 0
   died: 0
+  isgetQ: 1
+  isgetW: 1
+  isgetE: 1
 --- !u!114 &-871294678291640930
 MonoBehaviour:
   m_ObjectHideFlags: 0

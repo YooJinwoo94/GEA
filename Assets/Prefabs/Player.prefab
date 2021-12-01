@@ -3692,6 +3692,9 @@ MonoBehaviour:
   characterName: Player
   attacking: 0
   died: 0
+  isgetQ: 1
+  isgetW: 1
+  isgetE: 1
 --- !u!114 &8304308368193746276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3705,7 +3708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 1.5
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 1407402442211574, guid: 5d31a5b9b348544439d8079453188ecc, type: 3}
   distance: 0
   deathSeClip: {fileID: 0}
 --- !u!114 &1889307614
