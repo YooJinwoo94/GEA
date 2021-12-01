@@ -29,6 +29,10 @@ public class CharacterStatus : MonoBehaviour
     public bool attacking = false;
     public bool died = false;
 
+    public bool isgetQ = true;
+    public bool isgetW = true;
+    public bool isgetE = true;
+
     // 공격력 강화.
     //public bool powerBoost = false;
     // 공격력 강화 시간.
@@ -50,6 +54,21 @@ public class CharacterStatus : MonoBehaviour
             //    // MaxHP의 절반 회복.
             //    HP = Mathf.Min(HP + MaxHP / 2, MaxHP);
             //    break;
+        }
+    }
+    public void GetSkill(SkillRune.SkillKind skillKind)
+    {
+        switch (skillKind)
+        {
+            case SkillRune.SkillKind.QSkill:
+                isgetQ = true;
+                break;
+            case SkillRune.SkillKind.WSkill:
+                isgetW = true;
+                break;
+            case SkillRune.SkillKind.ESkill:
+                isgetE = true;
+                break;
         }
     }
 
