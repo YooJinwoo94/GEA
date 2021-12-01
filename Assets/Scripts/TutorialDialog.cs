@@ -122,7 +122,8 @@ public class TutorialDialog : MonoBehaviour
         };
 
         Down();
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneAt(1))
+        
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(1))
             Start("First");
     }
 
