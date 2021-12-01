@@ -1,30 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.AI;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class BossGolemController : MonoBehaviour
+public class LittleGolemController : MonoBehaviour
 {
-    static public int bossGolemDamage = 10;
+    static public int littleGolemDamage = 10;
 
     public enum BossPatternType
 	{
         Idle,
         Chase,
         MeleeAtk,
-        MeleeCircleAtk,
-        RangeAtk,
-        UltimateAtk,
         Died
 	}
 
-    public int bossMaxHP;
-    public int bossCurrrentHP;
+    public int monsterMaxHP;
+    public int monsterCurrrentHP;
 
     public bool isPlayerNear = false;
     public bool isAttacking = false;
-    public bool isPuzzleClear = false;
 
     public Transform Player;
 
@@ -32,21 +27,17 @@ public class BossGolemController : MonoBehaviour
     public SphereCollider sphereCollider;
     public NavMeshAgent navMeshAgent;
     public Animator animator;
-    public Text textContainer;
 
     public BossPatternType currentPattern;
 
     public GameObject meleeAtkHitArea;
-    public GameObject meleeCircleAtkHitAreaPrefab;
 
     WaitForSeconds Delay500 = new WaitForSeconds(0.5f);
     WaitForSeconds Delay1500 = new WaitForSeconds(1.5f);
     WaitForSeconds Delay250 = new WaitForSeconds(0.25f);
 
-    float StumpAttackCoolTime = 15.0f;
-    float currentStumpAttackCoolTime = 0.0f;
-    float ChaseLimitTime = 8.0f;
-    float currentChaseLimitTime = 0.0f;
+    public float diedTime = 20.0f;
+    float diedTimer = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -59,10 +50,7 @@ public class BossGolemController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bossCurrrentHP <= 0) {
-            textContainer.text = "보물을 획득해라";
-            Destroy(this.gameObject);
-            }
+
     }
 
 	void OnTriggerEnter(Collider other)
@@ -79,11 +67,6 @@ public class BossGolemController : MonoBehaviour
     IEnumerator FSM()
 	{
         yield return null;
-        while (!isPuzzleClear)
-		{
-            yield return Delay500;
-        }
-
 
         while (true)
         {
@@ -100,31 +83,19 @@ public class BossGolemController : MonoBehaviour
         {
             animator.SetTrigger("idle");
         }
-
-        currentStumpAttackCoolTime += Time.deltaTime;
-
-
-
         if (isAttacking)
         {
             currentPattern = BossPatternType.Idle;
         }
         else if (isPlayerNear)
 		{
-            if (currentStumpAttackCoolTime > StumpAttackCoolTime)
-			{
-                currentStumpAttackCoolTime = 0.0f;
-                currentPattern = BossPatternType.MeleeCircleAtk;
-			}
-            else
-			{
-                currentPattern = BossPatternType.MeleeAtk;
-            }
+            currentPattern = BossPatternType.MeleeAtk;
 		}
         else
 		{
             currentPattern = BossPatternType.Chase;
 		}
+        if (monsterCurrrentHP <= 0) currentPattern = BossPatternType.Died;
 	}
 
     IEnumerator Chase()
@@ -137,21 +108,12 @@ public class BossGolemController : MonoBehaviour
 
         navMeshAgent.isStopped = false;
 
-        currentChaseLimitTime += Time.deltaTime;
-        currentStumpAttackCoolTime += Time.deltaTime;
-
         navMeshAgent.SetDestination(Player.transform.position);
 
         if (isPlayerNear)
 		{
             currentPattern = BossPatternType.Idle;
         }
-
-        if (currentChaseLimitTime > ChaseLimitTime)
-		{
-            currentChaseLimitTime = 0.0f;
-            currentPattern = BossPatternType.RangeAtk;
-		}
     }
 
     IEnumerator MeleeAtk()
@@ -168,47 +130,29 @@ public class BossGolemController : MonoBehaviour
         currentPattern = BossPatternType.Idle;
     }
 
-    IEnumerator MeleeCircleAtk()
-    {
+    IEnumerator Died() {
         yield return null;
         navMeshAgent.isStopped = true;
-        isAttacking = true;
-        yield return Delay1500;
-
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("StumpAttack"))
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Died"))
         {
-            animator.SetTrigger("stumpAttack");
+            animator.SetTrigger("died");
         }
-        InstantiateMeleeCircleHitArea(this.transform);
         
-        currentPattern = BossPatternType.Idle;
-
-    }
-
-    IEnumerator RangeAtk()
-    {
-        yield return null;
-        navMeshAgent.isStopped = true;
-        isAttacking = true;
-        yield return Delay1500;
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("ThrowAttack"))
-        {
-            animator.SetTrigger("throwAttack");
+        if (diedTimer > diedTime) {
+            diedTimer = 0.0f;
+            monsterCurrrentHP = monsterMaxHP;
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                animator.SetTrigger("idle");
+            }
+            currentPattern = BossPatternType.Idle;
+            yield return Delay1500;
         }
-        InstantiateMeleeCircleHitArea(Player.transform);
+        else {
+            diedTimer += Time.deltaTime;
+        }
 
-        currentPattern = BossPatternType.Idle;
     }
-
-    IEnumerator UltimateAtk()
-	{
-        yield return null;
-    }
-
-    public void InstantiateMeleeCircleHitArea(Transform TargetTransform)
-	{
-        Instantiate(meleeCircleAtkHitAreaPrefab, new Vector3(TargetTransform.position.x, 0, TargetTransform.position.z), TargetTransform.rotation, transform.parent);
-	}
 
     public void EndAttack()
 	{
@@ -217,7 +161,7 @@ public class BossGolemController : MonoBehaviour
 
     public void LightAttackHit() {
         meleeAtkHitArea.SetActive(true);
-        meleeAtkHitArea.GetComponent<BossLightAttack>().InvokeDisable();
+        meleeAtkHitArea.GetComponent<MonsterLightAttack>().InvokeDisable();
     }
     
     void Damage(AttackArea.AttackInfo attackInfo)
@@ -226,10 +170,10 @@ public class BossGolemController : MonoBehaviour
     //    effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
     //    Destroy(effect, 0.3f);
 
-        bossCurrrentHP -= attackInfo.attackPower;
-        if (bossCurrrentHP <= 0)
+        monsterCurrrentHP -= attackInfo.attackPower;
+        if (monsterCurrrentHP <= 0)
         {
-            bossCurrrentHP = 0;
+            monsterCurrrentHP = 0;
         }
     }
 
@@ -240,10 +184,10 @@ public class BossGolemController : MonoBehaviour
         //   effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
         //   Destroy(effect, 0.3f);
         Debug.Log("WSkill Hit");
-        bossCurrrentHP -= wattackinfo.attackPower;
-        if (bossCurrrentHP <= 0)
+        monsterCurrrentHP -= wattackinfo.attackPower;
+        if (monsterCurrrentHP <= 0)
         {
-            bossCurrrentHP = 0;
+            monsterCurrrentHP = 0;
         }
     }
     public void EDamage(ESkillCtrl.EAttackInfo eattackinfo)
@@ -253,10 +197,10 @@ public class BossGolemController : MonoBehaviour
         //   Destroy(effect, 0.3f);
 
         Debug.Log("ESkill Hit");
-        bossCurrrentHP -= eattackinfo.attackPower;
-        if (bossCurrrentHP <= 0)
+        monsterCurrrentHP -= eattackinfo.attackPower;
+        if (monsterCurrrentHP <= 0)
         {
-            bossCurrrentHP = 0;
+            monsterCurrrentHP = 0;
         }
     }
 
