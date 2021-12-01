@@ -144,6 +144,8 @@ public class PlayerCtrl : MonoBehaviour
                     }
                     else if (hitInfo.collider.gameObject.name == "Training")
                         tutorialDialog.Start("TrainingStory");
+                    else if (hitInfo.collider.gameObject.name == "GhostEnding")
+                        tutorialDialog.Start("Ending");
                 }
             }
         }
