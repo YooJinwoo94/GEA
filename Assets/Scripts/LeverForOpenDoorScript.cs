@@ -28,7 +28,7 @@ public class LeverForOpenDoorScript : MonoBehaviour
 
     public void FirstLeverCon()
     {
-        if (Vector3.Distance(PlayerTrans.position, FirstLever.position) <= 2f)
+        if (Vector3.Distance(PlayerTrans.position, FirstLever.position) <= 2.5f)
         {
             FirstOn = true;
         }
@@ -41,7 +41,7 @@ public class LeverForOpenDoorScript : MonoBehaviour
 
     public void SecondLeverCon()
     {
-        if (Vector3.Distance(PlayerTrans.position, SecondLever.position) <= 2f)
+        if (Vector3.Distance(PlayerTrans.position, SecondLever.position) <= 2.5f)
         {
             SecondOn = true;
         }
