@@ -36,6 +36,7 @@ public class BossGolemController : MonoBehaviour
 
     public BossPatternType currentPattern;
 
+    public GameObject portal;
     public GameObject meleeAtkHitArea;
     public GameObject meleeCircleAtkHitAreaPrefab;
 
@@ -61,8 +62,9 @@ public class BossGolemController : MonoBehaviour
     {
         if (bossCurrrentHP <= 0) {
             textContainer.text = "보물을 획득해라";
+            portal.SetActive(true);
             Destroy(this.gameObject);
-            }
+        }
     }
 
 	void OnTriggerEnter(Collider other)
@@ -225,8 +227,7 @@ public class BossGolemController : MonoBehaviour
     //    GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
     //    effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
     //    Destroy(effect, 0.3f);
-
-        bossCurrrentHP -= attackInfo.attackPower;
+        if (isPuzzleClear) bossCurrrentHP -= attackInfo.attackPower;
         if (bossCurrrentHP <= 0)
         {
             bossCurrrentHP = 0;
@@ -240,7 +241,7 @@ public class BossGolemController : MonoBehaviour
         //   effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
         //   Destroy(effect, 0.3f);
         Debug.Log("WSkill Hit");
-        bossCurrrentHP -= wattackinfo.attackPower;
+        if (isPuzzleClear) bossCurrrentHP -= wattackinfo.attackPower;
         if (bossCurrrentHP <= 0)
         {
             bossCurrrentHP = 0;
@@ -253,7 +254,7 @@ public class BossGolemController : MonoBehaviour
         //   Destroy(effect, 0.3f);
 
         Debug.Log("ESkill Hit");
-        bossCurrrentHP -= eattackinfo.attackPower;
+        if (isPuzzleClear) bossCurrrentHP -= eattackinfo.attackPower;
         if (bossCurrrentHP <= 0)
         {
             bossCurrrentHP = 0;

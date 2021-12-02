@@ -5,6 +5,7 @@ using UnityEngine;
 public class HitAreaTriggerController : MonoBehaviour
 {
     [SerializeField] GameObject atkArea;
+    [SerializeField] GameObject hitEffect;
 
 	private void Start()
 	{
@@ -22,6 +23,9 @@ public class HitAreaTriggerController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<CharacterStatus>().HP -= (BossGolemController.bossGolemDamage * 2);
+            GameObject effect = Instantiate(hitEffect, other.transform.position, Quaternion.identity) as GameObject;
+            effect.transform.localPosition = other.transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+            Destroy(effect, 0.3f);
             Destroy(atkArea);
         }
         return;//Player Damage Code

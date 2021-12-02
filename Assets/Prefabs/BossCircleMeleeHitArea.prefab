@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atkArea: {fileID: 1194921207654511968}
+  hitEffect: {fileID: 1407402442211574, guid: 5d31a5b9b348544439d8079453188ecc, type: 3}
 --- !u!1001 &5829050984655050490
 PrefabInstance:
   m_ObjectHideFlags: 0

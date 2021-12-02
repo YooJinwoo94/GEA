@@ -5,6 +5,7 @@ using UnityEngine;
 public class MonsterLightAttack : MonoBehaviour
 {
     [SerializeField] GameObject atkArea;
+    [SerializeField] GameObject hitEffect;
 
 	private void Start()
 	{
@@ -26,6 +27,9 @@ public class MonsterLightAttack : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<CharacterStatus>().HP -= LittleGolemController.littleGolemDamage;
+            GameObject effect = Instantiate(hitEffect, other.transform.position, Quaternion.identity) as GameObject;
+            effect.transform.localPosition = other.transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+            Destroy(effect, 0.3f);
             atkArea.SetActive(false);
         }
         return;//Player Damage Code
