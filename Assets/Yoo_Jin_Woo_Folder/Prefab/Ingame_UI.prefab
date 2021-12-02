@@ -986,7 +986,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &759667556006670931
 MonoBehaviour:
@@ -1063,7 +1063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 580.2998, y: 31.399994}
+  m_AnchoredPosition: {x: 580.2998, y: 31.399963}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &759667556011974625
@@ -6288,7 +6288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 493.5, y: 31.4}
+  m_AnchoredPosition: {x: 493.5, y: 31.400024}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &759667557449152892
@@ -7586,7 +7586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 667.6001, y: 31.399994}
+  m_AnchoredPosition: {x: 667.6001, y: 31.399963}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &759667557725212723
@@ -8358,9 +8358,10 @@ GameObject:
   - component: {fileID: 759667557941846328}
   - component: {fileID: 759667557941846334}
   - component: {fileID: 759667557941846333}
-  - component: {fileID: 759667557941846332}
-  - component: {fileID: 759667557941846323}
   - component: {fileID: 759667557941846329}
+  - component: {fileID: 5962581796071932226}
+  - component: {fileID: 6763869238797418755}
+  - component: {fileID: 1261554844}
   m_Layer: 0
   m_Name: UIMANAGER
   m_TagString: Untagged
@@ -8440,41 +8441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2b0b9bbe81a224882b697d446c12a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &759667557941846332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759667557941846331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c05aeafde713c4cb009788c89fd887, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tutorialStage: 
-  _stage01: 
-  _stage02: 
-  _stage03: 
-  _bossStage: 
-  _dialogManagerScript: {fileID: 759667557941846323}
---- !u!114 &759667557941846323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759667557941846331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ed6170d6917e145ba554b6a4fa8be2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _questManagerScript: {fileID: 759667557941846332}
-  _questText: {fileID: 759667557526153262}
-  _talkText: {fileID: 0}
-  _isQuestTexting: 0
-  _isTalkTexting: 0
 --- !u!114 &759667557941846329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8500,6 +8466,82 @@ MonoBehaviour:
   - {fileID: 759667556062025755}
   - {fileID: 759667557299774414}
   - {fileID: 759667557982946362}
+--- !u!114 &5962581796071932226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759667557941846331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24662b8a3bdbd6e478f3fabe49988eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialStage: 
+  _stage01: 
+  _stage02: 
+  _stage03: 
+  _bossStage: 
+  _dialogUIManagerScript: {fileID: 6763869238797418755}
+--- !u!114 &6763869238797418755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759667557941846331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba09f01377f51a44a120ddc131b5b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questUIManagerScript: {fileID: 5962581796071932226}
+  _questDialogDataBaseScript: {fileID: 1261554844}
+  _questText: {fileID: 759667557526153262}
+  _isQuestTexting: 0
+--- !u!114 &1261554844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759667557941846331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61e2c6eee28eff48b9c5d1faa49eb72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialStageQuestDialog:
+  - 
+  - 
+  - 
+  - 
+  - 
+  _stage01QuestDialog:
+  - 
+  - 
+  - 
+  - 
+  - 
+  _stage02QuestDialog:
+  - 
+  - 
+  - 
+  - 
+  - 
+  _stage03QuestDialog:
+  - 
+  - 
+  - 
+  - 
+  - 
+  _bossStageQuestDialog:
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &759667557946643381
 GameObject:
   m_ObjectHideFlags: 0
