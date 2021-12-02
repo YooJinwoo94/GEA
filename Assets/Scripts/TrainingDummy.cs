@@ -29,11 +29,6 @@ public class TrainingDummy : MonoBehaviour
         }
     }
 
-    void startQ()
-    {
-        dialog.Start("TrainingSkill2");
-    }
-
     // 피격시 실행
     void Damage(AttackArea.AttackInfo attackInfo)
     {
@@ -43,12 +38,10 @@ public class TrainingDummy : MonoBehaviour
         // 1차 죽음
         if (status.HP <= 0 && count == 0)
         {
-            //animator.SetTrigger("Died");
-            count++;
-            dialog.Start("TrainingSkill");
-            status.HP = status.MaxHP;
+            Invoke("startFirstDie", 1.0f);
+            
         }
-        else if (status.HP <= 0 && count > 0)
+        else if (status.HP <= 0 && count == 1)
         {
             animator.SetTrigger("Died");
             count++;
@@ -58,5 +51,17 @@ public class TrainingDummy : MonoBehaviour
     void EndHit()
     {
         animator.SetBool("Hit", false);
+    }
+
+    void startQ()
+    {
+        dialog.Start("TrainingSkill2");
+    }
+
+    void startFirstDie()
+    {
+        count++;
+        dialog.Start("TrainingSkill");
+        status.HP = status.MaxHP;
     }
 }

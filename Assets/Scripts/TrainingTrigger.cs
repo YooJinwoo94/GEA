@@ -5,11 +5,14 @@ using UnityEngine;
 public class TrainingTrigger : MonoBehaviour
 {
     TutorialDialog tutorialDialog;
+    int count;
 
     // Start is called before the first frame update
     void Start()
     {
         tutorialDialog = GameObject.Find("DialogManager").GetComponent<TutorialDialog>();
+
+        count = 0;
     }
 
     // Update is called once per frame
@@ -20,7 +23,10 @@ public class TrainingTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && count == 0)
+        {
             tutorialDialog.Start("TrainingStory");
+            count++;
+        }
     }
 }

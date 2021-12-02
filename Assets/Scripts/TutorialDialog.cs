@@ -170,6 +170,9 @@ public class TutorialDialog : MonoBehaviour
         if (type == DialogType.Talk)
             cameraManager.ChangeCamera();
 
+        if (channel == DialogChannel.Ending)
+            SceneManager.LoadScene(0);
+
         currentLine = 0;
     }
 
