@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class OptionUICon : MonoBehaviour
 {
     [SerializeField]
+    AudioSource _audioSource;
+
+    [SerializeField]
     GameObject thanksUIObj;
     [SerializeField]
     RectTransform rectTransform;
@@ -66,6 +69,9 @@ public class OptionUICon : MonoBehaviour
                 rectTransform.anchoredPosition = new Vector2(0, 0);
                 Time.timeScale = 0;
                 optionObj.SetActive(true);
+
+                audioSlider.value = _audioSource.volume; 
+
                     break;
             }
     }
