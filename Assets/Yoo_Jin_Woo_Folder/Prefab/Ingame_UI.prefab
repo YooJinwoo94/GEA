@@ -4969,6 +4969,18 @@ MonoBehaviour:
           m_StringArgument: Setting
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3430417958411604316}
+        m_TargetAssemblyTypeName: SaveLoad, Assembly-CSharp
+        m_MethodName: SaveUIData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &759667557186764116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8362,6 +8374,7 @@ GameObject:
   - component: {fileID: 5962581796071932226}
   - component: {fileID: 6763869238797418755}
   - component: {fileID: 1261554844}
+  - component: {fileID: 3430417958411604316}
   m_Layer: 0
   m_Name: UIMANAGER
   m_TagString: Untagged
@@ -8424,6 +8437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846cf4aa4bc058f4584c79c0b68c7e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioSource: {fileID: 759667556688149402}
   thanksUIObj: {fileID: 233386437}
   rectTransform: {fileID: 759667556894178025}
   optionObj: {fileID: 759667556436431155}
@@ -8542,6 +8556,20 @@ MonoBehaviour:
   - 
   - 
   - 
+--- !u!114 &3430417958411604316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759667557941846331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92195dbfe2d46bd459c74963454150c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _IngameSoundUISlider: {fileID: 759667556086196691}
+  _audiosource: {fileID: 759667556688149402}
 --- !u!1 &759667557946643381
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,6 @@ public class SaveLoad : MonoBehaviour
     public void loadUIData()
     {
         SaveUIData load = SaveLoadUIDataManager.load();
-
         _audiosource.volume = load._soundValue;
     }
 
@@ -35,10 +34,5 @@ public class SaveLoad : MonoBehaviour
     private void Start()
     {
         loadUIData();
-    }
-
-    private void Update()
-    {
-        Debug.Log(_IngameSoundUISlider.value);
     }
 }
