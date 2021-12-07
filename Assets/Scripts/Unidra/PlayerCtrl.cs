@@ -8,7 +8,7 @@ public class PlayerCtrl : MonoBehaviour
     CharaAnimation charaAnimation;
     Transform attackTarget;
     InputManager inputManager;
-    public float attackRange = 2.5f;
+    public float attackRange = 1.5f;
     GameRuleCtrl gameRuleCtrl;
     public GameObject hitEffect;
     //TargetCursor targetCursor;
@@ -140,12 +140,12 @@ public class PlayerCtrl : MonoBehaviour
                     {
                         Debug.Log("ghoststory start");
 
-                        tutorialDialog.StartDialog("GhostStory");
+                        tutorialDialog.Start("GhostStory");
                     }
                     else if (hitInfo.collider.gameObject.name == "Training")
-                        tutorialDialog.StartDialog("TrainingStory");
+                        tutorialDialog.Start("TrainingStory");
                     else if (hitInfo.collider.gameObject.name == "GhostEnding")
-                        tutorialDialog.StartDialog("Ending");
+                        tutorialDialog.Start("Ending");
                 }
             }
         }
@@ -188,6 +188,23 @@ public class PlayerCtrl : MonoBehaviour
         Destroy(effect, 0.3f);
 
         status.HP -= attackInfo.attackPower;
+        if (status.HP <= 0)
+        {
+            status.HP = 0;
+            // 체력 0이므로 사망 스테이트로 전환한다.
+            ChangeState(State.Died);
+        }
+    }
+
+    //최용준 트랩 데미지용 코드 추가
+    void TrapDamage(int damage)
+    {
+        Debug.Log("Trap Damage : " + damage);
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
+        effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
+        Destroy(effect, 0.3f);
+
+        status.HP -= damage;
         if (status.HP <= 0)
         {
             status.HP = 0;

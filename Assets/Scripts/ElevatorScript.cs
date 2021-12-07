@@ -31,7 +31,7 @@ public class ElevatorScript : MonoBehaviour
         float speed = 3.0f;
         if (Vector3.Distance(PlayerTrans.position, LeverTrans.position) >= 1.5f)
         {
-            if (!isMoving && Input.GetKeyDown(KeyCode.F) && !once)//활성화에 필요한 트리거 이후 변경
+            if (!isMoving && /*Input.GetKeyDown(KeyCode.F)*/ !once)//활성화에 필요한 트리거 이후 변경
             {
                 startPos = ElevatorTrans.position;
                 isMoving = true;

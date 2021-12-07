@@ -80,7 +80,9 @@ MonoBehaviour:
   SawTrans: {fileID: 4756709580479621579}
   Right: 0
   Left: 1
-  length: 0
+  Forward: 0
+  Back: 1
+  type: 0
   StartPos: {fileID: 4756709580611407962}
   EndPos: {fileID: 4756709579498583305}
   SawBody: {fileID: 4756709581001325760}
@@ -145,6 +147,19 @@ Transform:
   m_Father: {fileID: 4756709579732279620}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6639744290856203531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4756709581000992960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3503b8a2a1bb38249b2a3033ac68a60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5
 --- !u!1001 &4756709579627988828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -267,8 +282,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64185018052181580, guid: cb4d8b04723e11f4cb07532c7a1c46a7, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb4d8b04723e11f4cb07532c7a1c46a7, type: 3}
+--- !u!1 &4756709581000992960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 152086, guid: cb4d8b04723e11f4cb07532c7a1c46a7, type: 3}
+  m_PrefabInstance: {fileID: 4756709581000850134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4756709581001325760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 476694, guid: cb4d8b04723e11f4cb07532c7a1c46a7, type: 3}

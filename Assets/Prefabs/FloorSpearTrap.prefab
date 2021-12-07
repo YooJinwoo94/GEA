@@ -64,8 +64,10 @@ MonoBehaviour:
   Up: 1
   Down: 0
   Type: 0
+  MaxHeightValue: 3
   Upspeed: 16
   Downspeed: 1.5
+  Shoot: 0
 --- !u!65 &8041453002046690633
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79,6 +81,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.084338, y: 2.356044, z: 2.0010405}
   m_Center: {x: 0.009458423, y: 1.1780218, z: -0.028076738}
+--- !u!114 &8541726288527899175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041453002046829072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3503b8a2a1bb38249b2a3033ac68a60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 5
 --- !u!1001 &8041453001701145445
 PrefabInstance:
   m_ObjectHideFlags: 0
