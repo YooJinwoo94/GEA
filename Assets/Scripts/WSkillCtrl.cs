@@ -57,7 +57,7 @@ public class WSkillCtrl : MonoBehaviour
             // 떄린거 저장 임의수정 정승훈
             status.lastAttackTarget = other.transform.root.gameObject;
             // 오디오 재생.
-            WskillSeAudio.Play();
+            //WskillSeAudio.Play();
         }
         else return;
 

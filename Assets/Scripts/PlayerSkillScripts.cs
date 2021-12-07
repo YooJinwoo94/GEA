@@ -9,11 +9,17 @@ public class PlayerSkillScripts : MonoBehaviour
     ParticleSystem WSkillEffect;
     ParticleSystem ESkillEffect;
 
+    public AudioClip WSkillSeClip;
+    AudioSource WSkillSeAudio;
+    public AudioClip ESkillSeClip;
+    AudioSource ESkillSeAudio;
+
+
     Collider[] WskillAreaColliders;
     Collider[] EskillAreaColliders;
 
     public float CooltimeQ=5f,CooltimeW=5f,CooltimeE=5f;
-    bool isCooltimeQ = false, isCooltimeW=false, isCooltimeE=false;
+    public bool isCooltimeQ = false, isCooltimeW=false, isCooltimeE=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +51,13 @@ public class PlayerSkillScripts : MonoBehaviour
             WSkillEffect = transform.Find("WSkill").Find("Slash").GetComponent<ParticleSystem>();
             ESkillEffect = transform.Find("ESkill").Find("Toon expoision").GetComponent<ParticleSystem>();
         }
+        WSkillSeAudio = gameObject.AddComponent<AudioSource>();
+        WSkillSeAudio.clip = WSkillSeClip;
+        WSkillSeAudio.loop = false;
+
+        ESkillSeAudio = gameObject.AddComponent<AudioSource>();
+        ESkillSeAudio.clip = WSkillSeClip;
+        ESkillSeAudio.loop = false;
 
 
     }
@@ -57,7 +70,7 @@ public class PlayerSkillScripts : MonoBehaviour
             return;
         }
         //QSKILL 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && status.isgetQ)
         {
             if (!isCooltimeQ)
             {
@@ -71,7 +84,7 @@ public class PlayerSkillScripts : MonoBehaviour
 
         }
         //WSKILL 
-        if(Input.GetKeyDown(KeyCode.W))
+        if(Input.GetKeyDown(KeyCode.W) && status.isgetW)
         {
             if (!isCooltimeW)
             {
@@ -81,7 +94,7 @@ public class PlayerSkillScripts : MonoBehaviour
             }
         }
         //ESKILL
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && status.isgetE)
         {
             if (!isCooltimeE)
             {
@@ -103,7 +116,7 @@ public class PlayerSkillScripts : MonoBehaviour
             attackAreaCollider.enabled = true;
         }
         WSkillEffect.Play();
-
+        WSkillSeAudio.Play();
         StartCoroutine(WReset());
 
 
@@ -125,7 +138,8 @@ public class PlayerSkillScripts : MonoBehaviour
             attackAreaCollider.enabled = true;
         }
         ESkillEffect.Play();
-
+        
+       ESkillSeAudio.Play();
         StartCoroutine(EReset());
 
         //RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 3, Vector3.up, 0f, LayerMask.GetMask("EnemyHit"));

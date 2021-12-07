@@ -8,6 +8,7 @@ public class CharaAnimation : MonoBehaviour
 	bool isDown = false;
 	bool attacked = false;
     public CharacterMove CM;
+	PlayerSkillScripts SC;
 	
 	public bool IsAttacked()
 	{
@@ -34,6 +35,7 @@ public class CharaAnimation : MonoBehaviour
 		animator = GetComponent<Animator>();
 		status = GetComponent<CharacterStatus>();
 		CM = GetComponent<CharacterMove>();
+		SC = GetComponent<PlayerSkillScripts>();
 
 		prePosition = transform.position;
 	}
@@ -62,7 +64,21 @@ public class CharaAnimation : MonoBehaviour
 			isDown = true;
 			animator.SetTrigger("Down");
 		}
-		
+		if (gameObject.tag == "Player")
+		{
+			if (Input.GetKeyDown(KeyCode.W) && status.isgetW )
+			{
+				CM.StopMove();
+				animator.SetTrigger("SkillW");
+			}
+			if (Input.GetKeyDown(KeyCode.E) && status.isgetE )
+			{
+				CM.StopMove();
+				animator.SetTrigger("SkillE");
+			}
+		}
 		prePosition = transform.position;
 	}
+
+
 }

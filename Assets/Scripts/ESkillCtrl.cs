@@ -56,7 +56,7 @@ public class ESkillCtrl : MonoBehaviour
             // 떄린거 저장 임의수정 정승훈
             status.lastAttackTarget = other.transform.root.gameObject;
             // 오디오 재생.
-            EskillSeAudio.Play();
+            //EskillSeAudio.Play();
         }
         else return;
 

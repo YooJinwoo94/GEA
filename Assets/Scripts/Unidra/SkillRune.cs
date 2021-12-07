@@ -22,7 +22,12 @@ public class SkillRune : MonoBehaviour
             
             Destroy(gameObject);
 
-            //AudioSource.PlayClipAtPoint(itemSeClip, transform.position);
+            AudioSource.PlayClipAtPoint(itemSeClip, transform.position);
         }
+    }
+
+    private void Update()
+    {
+        transform.Rotate(Vector3.up * 60 * Time.deltaTime);
     }
 }
