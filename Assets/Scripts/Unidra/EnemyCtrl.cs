@@ -81,7 +81,7 @@ public class EnemyCtrl : MonoBehaviour
                     AttackStart();
                     break;
                 case State.Died:
-                    Died();
+                    Died();       
                     break;
             }
         }
@@ -190,7 +190,7 @@ public class EnemyCtrl : MonoBehaviour
         {
             gameRuleCtrl.GameClear();
         }
-
+        Destroy(GameObject.Find("Enemy_hp(Clone)"));
         // 오디오 재생.
         //AudioSource.PlayClipAtPoint(deathSeClip, transform.position);
     }
