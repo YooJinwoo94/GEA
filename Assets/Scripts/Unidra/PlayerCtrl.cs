@@ -140,12 +140,12 @@ public class PlayerCtrl : MonoBehaviour
                     {
                         Debug.Log("ghoststory start");
 
-                        tutorialDialog.Start("GhostStory");
+                        tutorialDialog.StartDialog("GhostStory");
                     }
                     else if (hitInfo.collider.gameObject.name == "Training")
-                        tutorialDialog.Start("TrainingStory");
+                        tutorialDialog.StartDialog("TrainingStory");
                     else if (hitInfo.collider.gameObject.name == "GhostEnding")
-                        tutorialDialog.Start("Ending");
+                        tutorialDialog.StartDialog("Ending");
                 }
             }
         }
