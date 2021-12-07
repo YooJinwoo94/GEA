@@ -99,7 +99,7 @@ public class DialogUIManager : MonoBehaviour
             if (_isQuestTexting == false) break;
 
             _questText.text += letter;
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSeconds(0.1f);
         }
 
         _isQuestTexting = false;

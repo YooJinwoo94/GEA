@@ -25,7 +25,7 @@ public class TrainingTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && count == 0)
         {
-            tutorialDialog.StartDialog("TrainingStory");
+            tutorialDialog.Start("TrainingStory");
             count++;
         }
     }

@@ -7363,9 +7363,6 @@ MonoBehaviour:
   characterName: Dummy
   attacking: 0
   died: 0
-  isgetQ: 1
-  isgetW: 1
-  isgetE: 1
 --- !u!65 &293243000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63296,10 +63293,6 @@ PrefabInstance:
     - target: {fileID: 8304308368193520680, guid: 35553b54d202a6a4691093ed6e4503cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8304308368193746276, guid: 35553b54d202a6a4691093ed6e4503cd, type: 3}
-      propertyPath: attackRange
-      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304308368193849674, guid: 35553b54d202a6a4691093ed6e4503cd, type: 3}
       propertyPath: m_Name

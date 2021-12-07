@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TrainingDummy : MonoBehaviour
 {
@@ -39,8 +38,8 @@ public class TrainingDummy : MonoBehaviour
         // 1Â÷ Á×À½
         if (status.HP <= 0 && count == 0)
         {
-            count++;
             Invoke("startFirstDie", 1.0f);
+            
         }
         else if (status.HP <= 0 && count == 1)
         {
@@ -56,12 +55,13 @@ public class TrainingDummy : MonoBehaviour
 
     void startQ()
     {
-        dialog.StartDialog("TrainingSkill2");
+        dialog.Start("TrainingSkill2");
     }
 
     void startFirstDie()
     {
-        dialog.StartDialog("TrainingSkill");
+        count++;
+        dialog.Start("TrainingSkill");
         status.HP = status.MaxHP;
     }
 }
