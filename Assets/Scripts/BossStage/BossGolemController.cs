@@ -63,7 +63,6 @@ public class BossGolemController : MonoBehaviour
         if (bossCurrrentHP <= 0) {
             textContainer.text = "보물을 획득해라";
             portal.SetActive(true);
-            Destroy(this.gameObject);
         }
     }
 
@@ -106,8 +105,10 @@ public class BossGolemController : MonoBehaviour
         currentStumpAttackCoolTime += Time.deltaTime;
 
 
-
-        if (isAttacking)
+        if (bossCurrrentHP <= 0) {
+             currentPattern = BossPatternType.Died;
+        }
+        else if (isAttacking)
         {
             currentPattern = BossPatternType.Idle;
         }
@@ -143,8 +144,10 @@ public class BossGolemController : MonoBehaviour
         currentStumpAttackCoolTime += Time.deltaTime;
 
         navMeshAgent.SetDestination(Player.transform.position);
-
-        if (isPlayerNear)
+        if (bossCurrrentHP <= 0) {
+             currentPattern = BossPatternType.Died;
+        }
+        else if (isPlayerNear)
 		{
             currentPattern = BossPatternType.Idle;
         }
@@ -202,9 +205,17 @@ public class BossGolemController : MonoBehaviour
         currentPattern = BossPatternType.Idle;
     }
 
-    IEnumerator UltimateAtk()
+    IEnumerator Died()
 	{
         yield return null;
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Died"))
+        {
+            animator.SetTrigger("died");
+        }
+        navMeshAgent.isStopped = true;
+        isAttacking = false;
+
+        Destroy(this.gameObject, 1.0f);
     }
 
     public void InstantiateMeleeCircleHitArea(Transform TargetTransform)
