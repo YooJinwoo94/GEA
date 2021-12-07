@@ -181,7 +181,8 @@ public class TutorialDialog : MonoBehaviour
 
         currentLine = 0;
         Time.timeScale = 1.0f;
-        questUIManager.isQuestEnd();
+        //if (channel != DialogChannel.First)
+            questUIManager.isQuestEnd();
     }
 
     // 대화창 열기

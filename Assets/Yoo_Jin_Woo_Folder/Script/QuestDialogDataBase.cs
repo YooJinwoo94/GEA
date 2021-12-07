@@ -15,7 +15,7 @@ public class QuestDialogDataBase : MonoBehaviour
     const string _bossStage = "BossScene";
 
     [HideInInspector]
-    public string[] _tutorialStageQuestDialog = new string[5];
+    public string[] _tutorialStageQuestDialog = new string[6];
     [HideInInspector]
     public string[] _stage01QuestDialog = new string[5];
     [HideInInspector]
@@ -32,11 +32,12 @@ public class QuestDialogDataBase : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case _tutorialStage:
-                _tutorialStageQuestDialog[0] = "아래에 있는 유령에게 말을 걸어보자";
-                _tutorialStageQuestDialog[1] = "여관으로 이동하자";
-                _tutorialStageQuestDialog[2] = "훈련용 인형을 공격하자";
-                _tutorialStageQuestDialog[3] = "회복 스킬을 사용하자";
-                _tutorialStageQuestDialog[4] = "다음 지역으로 이동하자";
+                _tutorialStageQuestDialog[0] = "튜토리얼 시작";
+                _tutorialStageQuestDialog[1] = "아래에 있는 유령에게 말을 걸어보자";
+                _tutorialStageQuestDialog[2] = "여관으로 이동하자";
+                _tutorialStageQuestDialog[3] = "훈련용 인형을 공격하자";
+                _tutorialStageQuestDialog[4] = "회복 스킬을 사용하자";
+                _tutorialStageQuestDialog[5] = "다음 지역으로 이동하자";
                 break;
             case _stage01:
                 _stage01QuestDialog[0] = "안녕 스테이지1이야0";

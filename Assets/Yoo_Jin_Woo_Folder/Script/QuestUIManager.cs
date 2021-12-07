@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class QuestUIManager : MonoBehaviour
 {
     [HideInInspector]
-    public const int _tutorialStageNum = 5;
+    public const int _tutorialStageNum = 6;
     [HideInInspector]
     public const int _stage01Num = 5;
     [HideInInspector]
