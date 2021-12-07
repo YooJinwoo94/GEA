@@ -9,6 +9,8 @@ public class PlayerSkillUIManager : MonoBehaviour
     const int playerSkill = 3;
 
     [SerializeField]
+    CharacterStatus playerCharacterStatus;   
+    [SerializeField]
     UIAniCon _uiAniConScript;
     [SerializeField]
     Image[] colorImg;
@@ -42,42 +44,43 @@ public class PlayerSkillUIManager : MonoBehaviour
     // Test
     private void Update()
     {
-        // 쿨타임 시작
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (isSkillOn[0] == true) return;
-            if (Time.timeScale == 0) return;
+        checkPlayerSkillOpen();
 
-            isSkillOn[0] = true;
-            currentCooldown[0] = maxCooldown[0];
-            fill[0].fillAmount = 1;
-            colorImg[0].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
+        playerSkillCoolTimeOn();
+    }
+
+
+
+    public void playerSkillUse(int skillNum)
+    { 
+        //아니 이게 무슨 소리야 내가 스킬이 안나온다고? 흐어어어어엉
+        switch(skillNum)
+        {
+            case 0:
+                if (playerCharacterStatus.isgetQ == false) return;
+                break;
+
+            case 1:
+                if (playerCharacterStatus.isgetW == false) return;
+                break;
+
+            case 2:
+                if (playerCharacterStatus.isgetE == false) return;
+                break;
         }
 
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            if (isSkillOn[1] == true) return;
-            if (Time.timeScale == 0) return;
+        if (isSkillOn[skillNum] == true) return;
+        if (Time.timeScale == 0) return;
 
-            isSkillOn[1] = true;
-            currentCooldown[1] = maxCooldown[1];
-            fill[1].fillAmount = 1;
-            colorImg[1].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (isSkillOn[2] == true) return;
-            if (Time.timeScale == 0) return;
+        isSkillOn[skillNum] = true;
+        currentCooldown[skillNum] = maxCooldown[skillNum];
 
-            isSkillOn[2] = true;
-            currentCooldown[2] = maxCooldown[2];
-            fill[2].fillAmount = 1;
-            colorImg[2].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
-        }
+        fill[skillNum].fillAmount = 1;
+    }
 
 
-
-
+    void playerSkillCoolTimeOn()
+    {
         for (int i = 0; i < playerSkill; i++)
         {
             if (isSkillOn[i] == false) continue;
@@ -106,18 +109,22 @@ public class PlayerSkillUIManager : MonoBehaviour
             }
         }
     }
-
-
-
-    public void playerSkillUse(int skillNum)
+    void checkPlayerSkillOpen()
     {
-        if (isSkillOn[skillNum] == true) return;
-        if (Time.timeScale == 0) return;
+        if(playerCharacterStatus.isgetQ == false)
+        {
+            colorImg[0].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
+        }
 
-        isSkillOn[skillNum] = true;
-        currentCooldown[skillNum] = maxCooldown[skillNum];
+        if (playerCharacterStatus.isgetW == false)
+        {
+            colorImg[1].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
+        }
 
-        fill[skillNum].fillAmount = 1;
+        if (playerCharacterStatus.isgetE == false)
+        {
+            colorImg[2].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
+        }
     }
 }
 
