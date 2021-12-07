@@ -9,7 +9,7 @@ public class QuestUIManager : MonoBehaviour
     [HideInInspector]
     public const int _tutorialStageNum = 5;
     [HideInInspector]
-    public const int _stage01Num = 5;
+    public const int _stage01Num = 7;
     [HideInInspector]
     public const int _stage02Num = 5;
     [HideInInspector]
