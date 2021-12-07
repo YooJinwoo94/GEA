@@ -101,6 +101,10 @@ public class EnemyCtrl : MonoBehaviour
 
     void Walking()
     {
+        if (attackTarget)
+        {
+            ChangeState(State.Chasing);
+        }
         // 대기 시간이 아직 남았다면.
         if (waitTime > 0.0f)
         {

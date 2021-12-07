@@ -29,7 +29,7 @@ public class PlayerSkillUIManager : MonoBehaviour
         for (int i = 0; i < playerSkill; i++)
         {
             isSkillOn.Add(false);
-            maxCooldown.Add(5);
+            maxCooldown.Add(10);
             currentCooldown.Add(5);
 
             fill[i].fillAmount = 0;

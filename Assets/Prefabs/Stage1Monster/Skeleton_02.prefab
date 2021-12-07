@@ -40,10 +40,10 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6835036831180881312}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &135358578861777017
 MonoBehaviour:
@@ -2334,7 +2334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrived: 0
   destination: {x: 0, y: 0, z: 0}
-  walkSpeed: 3
+  walkSpeed: 6
   rotationSpeed: 360
 --- !u!114 &-4974141451290311780
 MonoBehaviour:
@@ -2348,9 +2348,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a768f66f6974c2e4788207fb08bf7859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
-  MaxHP: 100
-  Power: 10
+  HP: 30
+  MaxHP: 30
+  Power: 8
   WPower: 100
   EPower: 100
   lastAttackTarget: {fileID: 0}

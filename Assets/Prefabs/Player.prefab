@@ -3643,7 +3643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrived: 0
   destination: {x: 0, y: 0, z: 0}
-  walkSpeed: 6
+  walkSpeed: 5
   rotationSpeed: 360
 --- !u!114 &8304308368193746586
 MonoBehaviour:
@@ -3673,8 +3673,8 @@ MonoBehaviour:
   HP: 100
   MaxHP: 100
   Power: 10
-  WPower: 100
-  EPower: 100
+  WPower: 30
+  EPower: 60
   lastAttackTarget: {fileID: 0}
   characterName: Player
   attacking: 0
@@ -3713,9 +3713,9 @@ MonoBehaviour:
   QSkillSeClip: {fileID: 8300000, guid: 1afc6d7583aeff943a17ae9c37195287, type: 3}
   WSkillSeClip: {fileID: 8300000, guid: 788be0189742a3c48a8f201f31bfa73f, type: 3}
   ESkillSeClip: {fileID: 8300000, guid: c7e839cb216494640b92e782eaf76702, type: 3}
-  CooltimeQ: 5
-  CooltimeW: 5
-  CooltimeE: 5
+  CooltimeQ: 10
+  CooltimeW: 10
+  CooltimeE: 10
   isCooltimeQ: 0
   isCooltimeW: 0
   isCooltimeE: 0
