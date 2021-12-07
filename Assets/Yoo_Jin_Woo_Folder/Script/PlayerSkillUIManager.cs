@@ -50,19 +50,64 @@ public class PlayerSkillUIManager : MonoBehaviour
     // Test
     private void Update()
     {
-       // if (GameObject.Find("Player") == false) return;
+         if (GameObject.Find("Player") == false) return;
 
+        playerSkillUse();
         checkPlayerSkillOpen();
-
         playerSkillCoolTimeOn();
     }
 
 
 
+    //현재 참조만 되어있음 == 사용안하고 있음
     public void playerSkillUse(int skillNum)
     { 
         //아니 이게 무슨 소리야 내가 스킬이 안나온다고? 흐어어어어엉
-        switch(skillNum)
+      //  switch(skillNum)
+      //  {
+      //      case 0:
+       //         if (playerCharacterStatus.isgetQ == false) return;
+       //         break;
+
+       //     case 1:
+       //         if (playerCharacterStatus.isgetW == false) return;
+         //       break;
+
+       //     case 2:
+       //         if (playerCharacterStatus.isgetE == false) return;
+       //         break;
+     //   }
+
+        if (isSkillOn[skillNum] == true) return;
+        if (Time.timeScale == 0) return;
+
+        isSkillOn[skillNum] = true;
+        currentCooldown[skillNum] = maxCooldown[skillNum];
+
+        fill[skillNum].fillAmount = 1;
+    }
+
+
+
+    void playerSkillUse()
+    {
+        int skillNum = -1;
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            skillNum = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            skillNum = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            skillNum = 2;
+        }
+
+        if (skillNum == -1) return;
+        //아니 이게 무슨 소리야 내가 스킬이 안나온다고? 흐어어어어엉
+        switch (skillNum)
         {
             case 0:
                 if (playerCharacterStatus.isgetQ == false) return;
@@ -76,7 +121,6 @@ public class PlayerSkillUIManager : MonoBehaviour
                 if (playerCharacterStatus.isgetE == false) return;
                 break;
         }
-
         if (isSkillOn[skillNum] == true) return;
         if (Time.timeScale == 0) return;
 
@@ -85,8 +129,6 @@ public class PlayerSkillUIManager : MonoBehaviour
 
         fill[skillNum].fillAmount = 1;
     }
-
-
     void playerSkillCoolTimeOn()
     {
         for (int i = 0; i < playerSkill; i++)
