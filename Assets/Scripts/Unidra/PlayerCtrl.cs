@@ -8,7 +8,7 @@ public class PlayerCtrl : MonoBehaviour
     CharaAnimation charaAnimation;
     Transform attackTarget;
     InputManager inputManager;
-    public float attackRange = 1.5f;
+    public float attackRange = 2.5f;
     GameRuleCtrl gameRuleCtrl;
     public GameObject hitEffect;
     //TargetCursor targetCursor;
@@ -140,12 +140,12 @@ public class PlayerCtrl : MonoBehaviour
                     {
                         Debug.Log("ghoststory start");
 
-                        tutorialDialog.Start("GhostStory");
+                        tutorialDialog.StartDialog("GhostStory");
                     }
                     else if (hitInfo.collider.gameObject.name == "Training")
-                        tutorialDialog.Start("TrainingStory");
+                        tutorialDialog.StartDialog("TrainingStory");
                     else if (hitInfo.collider.gameObject.name == "GhostEnding")
-                        tutorialDialog.Start("Ending");
+                        tutorialDialog.StartDialog("Ending");
                 }
             }
         }
