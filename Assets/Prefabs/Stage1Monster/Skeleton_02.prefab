@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6835036831180881312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6297712661826114904}
+  - component: {fileID: 4829591755423182443}
+  - component: {fileID: 135358578861777017}
+  m_Layer: 0
+  m_Name: SearchArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6297712661826114904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835036831180881312}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7189753774340452440}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &4829591755423182443
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835036831180881312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &135358578861777017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835036831180881312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa9366d7939d0448b4c7f5cc48321b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7190996163063267704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,6 +2279,7 @@ Transform:
   - {fileID: 7194858675931415424}
   - {fileID: 7189831679000845962}
   - {fileID: 7189476219141119684}
+  - {fileID: 6297712661826114904}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 181.753, z: 0}
@@ -2327,7 +2385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043376a646bede54c91286247b50cb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSeClip: {fileID: 0}
+  attackSeClip: {fileID: 8300000, guid: 9b2fb227e4e6a8249b3d60eecc7ab9b8, type: 3}
 --- !u!114 &4495144646818608581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2345,7 +2403,7 @@ MonoBehaviour:
   walkRange: 5
   basePosition: {x: 0, y: 0, z: 0}
   dropItemPrefab: []
-  deathSeClip: {fileID: 0}
+  deathSeClip: {fileID: 8300000, guid: 9720ea8901ad7134e8efd948dc4d5332, type: 3}
 --- !u!1 &7191501123058376860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,7 +4031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9b3482c3dfc0944bc10adb5bd06e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSeClip: {fileID: 0}
+  hitSeClip: {fileID: 8300000, guid: 4ba2a329bbe9d174cb8df98a2d00bcbd, type: 3}
 --- !u!1 &7191787776328696972
 GameObject:
   m_ObjectHideFlags: 0
