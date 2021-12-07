@@ -3662,7 +3662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043376a646bede54c91286247b50cb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSeClip: {fileID: 0}
+  attackSeClip: {fileID: 8300000, guid: 334bb9ef1eafd104a9e95042d233b6e5, type: 3}
 --- !u!114 &2887040284340360121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3680,7 +3680,7 @@ MonoBehaviour:
   walkRange: 5
   basePosition: {x: 0, y: 0, z: 0}
   dropItemPrefab: []
-  deathSeClip: {fileID: 0}
+  deathSeClip: {fileID: 8300000, guid: 47ca8800955926f4984264bc25475938, type: 3}
 --- !u!1 &2460865070239120674
 GameObject:
   m_ObjectHideFlags: 0
@@ -4873,7 +4873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9b3482c3dfc0944bc10adb5bd06e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSeClip: {fileID: 0}
+  hitSeClip: {fileID: 8300000, guid: b06517c526a3b044f95ce4a22b65d9c3, type: 3}
 --- !u!1 &3505306105321688591
 GameObject:
   m_ObjectHideFlags: 0

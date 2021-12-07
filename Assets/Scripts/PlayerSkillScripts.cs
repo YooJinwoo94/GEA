@@ -9,6 +9,9 @@ public class PlayerSkillScripts : MonoBehaviour
     ParticleSystem WSkillEffect;
     ParticleSystem ESkillEffect;
 
+
+    public AudioClip QSkillSeClip;
+    AudioSource QSkillSeAudio;
     public AudioClip WSkillSeClip;
     AudioSource WSkillSeAudio;
     public AudioClip ESkillSeClip;
@@ -51,6 +54,11 @@ public class PlayerSkillScripts : MonoBehaviour
             WSkillEffect = transform.Find("WSkill").Find("Slash").GetComponent<ParticleSystem>();
             ESkillEffect = transform.Find("ESkill").Find("Toon expoision").GetComponent<ParticleSystem>();
         }
+         
+        QSkillSeAudio = gameObject.AddComponent<AudioSource>();        
+        QSkillSeAudio.clip = WSkillSeClip;
+        QSkillSeAudio.loop = false;
+
         WSkillSeAudio = gameObject.AddComponent<AudioSource>();
         WSkillSeAudio.clip = WSkillSeClip;
         WSkillSeAudio.loop = false;
@@ -77,7 +85,7 @@ public class PlayerSkillScripts : MonoBehaviour
                 status.HP = Mathf.Min(status.HP + status.MaxHP / 2, status.MaxHP);
 
                 QSkillEffect.Play();
-
+                QSkillSeAudio.Play();
                 isCooltimeQ = true;
                 StartCoroutine(Qdelay());
             }
