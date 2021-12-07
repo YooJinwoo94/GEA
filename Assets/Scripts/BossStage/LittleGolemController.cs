@@ -41,6 +41,9 @@ public class LittleGolemController : MonoBehaviour
     public Slider EnemyHpUIBar = null;
     public Text EnemyHpUIText = null;
 
+    public AudioSource GolemWalkSound;
+    public AudioSource GolemPunchSound;
+
     public float diedTime = 20.0f;
     float diedTimer = 0.0f;
 
@@ -83,6 +86,7 @@ public class LittleGolemController : MonoBehaviour
 	{
         yield return null;
         navMeshAgent.isStopped = true;
+        GolemWalkSound.Stop();
 
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
@@ -111,6 +115,9 @@ public class LittleGolemController : MonoBehaviour
         {
             animator.SetTrigger("walk");
         }
+        if (!GolemWalkSound.isPlaying) {
+            GolemWalkSound.Play();
+        }
 
         navMeshAgent.isStopped = false;
 
@@ -125,9 +132,11 @@ public class LittleGolemController : MonoBehaviour
     IEnumerator MeleeAtk()
     {
         yield return null;
+        GolemWalkSound.Stop();
         navMeshAgent.isStopped = true;
         isAttacking = true;
         yield return Delay1500;
+        if (!GolemPunchSound.isPlaying) Invoke("SoundInvoke", 0.7f);
 
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("LightAttack"))
         {
@@ -135,9 +144,15 @@ public class LittleGolemController : MonoBehaviour
         }
         currentPattern = BossPatternType.Idle;
     }
+    
+    void SoundInvoke() {
+        GolemPunchSound.Play();
+    }
 
     IEnumerator Died() {
         yield return null;
+        GolemWalkSound.Stop();
+
         navMeshAgent.isStopped = true;
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Died"))
         {

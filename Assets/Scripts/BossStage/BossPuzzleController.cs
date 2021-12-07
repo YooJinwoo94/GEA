@@ -32,6 +32,7 @@ public class BossPuzzleController : MonoBehaviour
     [SerializeField] RunePillerObject TridentPiller;
     [SerializeField] RunePillerObject SunPiller;
     [SerializeField] RunePillerObject FishPiller;
+    [SerializeField] QuestUIManager questUIManager;
 
     [SerializeField] BossGolemController bossGolem;
     [SerializeField] Text textContainer;
@@ -85,8 +86,9 @@ public class BossPuzzleController : MonoBehaviour
 
     void ClearPuzzle () {
         bossGolem.isPuzzleClear = true;
+        questUIManager.isQuestEnd();
         //SuccessLight.SetActive(true);
-        textContainer.text = "사원을 지키는 거대골렘을 쓰러트려라";
+        //textContainer.text = "사원을 지키는 거대골렘을 쓰러트려라";
         clearPuzzleBoolen = true;
     }
 

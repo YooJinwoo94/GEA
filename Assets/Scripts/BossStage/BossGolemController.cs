@@ -40,15 +40,19 @@ public class BossGolemController : MonoBehaviour
     public GameObject meleeAtkHitArea;
     public GameObject meleeCircleAtkHitAreaPrefab;
 
+    public AudioSource GolemWalkSound;
+    public AudioSource GolemPunchSound;
+
     public GameObject EnemyHpUI = null;
     public Slider EnemyHpUIBar = null;
     public Text EnemyHpUIText = null;
 
+    [SerializeField] QuestUIManager questUIManager;
 
     WaitForSeconds Delay500 = new WaitForSeconds(0.5f);
     WaitForSeconds Delay1500 = new WaitForSeconds(1.5f);
     WaitForSeconds Delay250 = new WaitForSeconds(0.25f);
-
+    bool isClearGame = false;
     float StumpAttackCoolTime = 15.0f;
     float currentStumpAttackCoolTime = 0.0f;
     float ChaseLimitTime = 8.0f;
@@ -65,8 +69,10 @@ public class BossGolemController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bossCurrrentHP <= 0) {
-            textContainer.text = "보물을 획득해라";
+        if (!isClearGame && bossCurrrentHP <= 0) {
+            isClearGame = true;
+            questUIManager.isQuestEnd();
+            //textContainer.text = "보물을 획득해라";
             portal.SetActive(true);
         }
     }
@@ -101,6 +107,7 @@ public class BossGolemController : MonoBehaviour
 	{
         yield return null;
         navMeshAgent.isStopped = true;
+        GolemWalkSound.Stop();
 
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
@@ -142,6 +149,7 @@ public class BossGolemController : MonoBehaviour
         {
             animator.SetTrigger("walk");
         }
+        GolemWalkSound.Play();
 
         navMeshAgent.isStopped = false;
 
@@ -167,9 +175,11 @@ public class BossGolemController : MonoBehaviour
     IEnumerator MeleeAtk()
     {
         yield return null;
+        GolemWalkSound.Stop();
         navMeshAgent.isStopped = true;
         isAttacking = true;
         yield return Delay1500;
+        GolemPunchSound.Play();
 
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("LightAttack"))
         {
@@ -181,6 +191,7 @@ public class BossGolemController : MonoBehaviour
     IEnumerator MeleeCircleAtk()
     {
         yield return null;
+        GolemWalkSound.Stop();
         navMeshAgent.isStopped = true;
         isAttacking = true;
         yield return Delay1500;
@@ -198,6 +209,8 @@ public class BossGolemController : MonoBehaviour
     IEnumerator RangeAtk()
     {
         yield return null;
+        GolemWalkSound.Stop();
+
         navMeshAgent.isStopped = true;
         isAttacking = true;
         yield return Delay1500;
@@ -213,6 +226,8 @@ public class BossGolemController : MonoBehaviour
     IEnumerator Died()
 	{
         yield return null;
+        GolemWalkSound.Stop();
+
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Died"))
         {
             animator.SetTrigger("died");

@@ -62,11 +62,11 @@ public class QuestDialogDataBase : MonoBehaviour
                 _stage03QuestDialog[4] = "안녕 스테이지3이야4";
                 break;
             case _bossStage:
-                _bossStageQuestDialog[0] = "안녕 보스스테이지이야0";
-                _bossStageQuestDialog[1] = "안녕 보스스테이지이야1";
-                _bossStageQuestDialog[2] = "안녕 보스스테이지이야2";
-                _bossStageQuestDialog[3] = "안녕 보스스테이지이야3";
-                _bossStageQuestDialog[4] = "안녕 보스스테이지이야4";
+                _bossStageQuestDialog[0] = "사원의 안쪽을 조사하자";
+                _bossStageQuestDialog[1] = "사원의 장치를 작동시키자";
+                _bossStageQuestDialog[2] = "사원을 지키는 거대골렘을 쓰러트리자";
+                _bossStageQuestDialog[3] = "보물을 획득하자";
+                _bossStageQuestDialog[4] = "보물을 획득해라";
 
                 break;
         }
