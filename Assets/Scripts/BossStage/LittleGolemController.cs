@@ -25,6 +25,7 @@ public class LittleGolemController : MonoBehaviour
     public Transform Player;
 
     public Rigidbody rigidBody;
+    public CapsuleCollider capsuleCollider;
     public SphereCollider sphereCollider;
     public NavMeshAgent navMeshAgent;
     public Animator animator;
@@ -43,6 +44,7 @@ public class LittleGolemController : MonoBehaviour
 
     public AudioSource GolemWalkSound;
     public AudioSource GolemPunchSound;
+    public AudioSource GolemDeathSound;
 
     public float diedTime = 20.0f;
     float diedTimer = 0.0f;
@@ -152,14 +154,17 @@ public class LittleGolemController : MonoBehaviour
     IEnumerator Died() {
         yield return null;
         GolemWalkSound.Stop();
-
+        capsuleCollider.enabled = false;
         navMeshAgent.isStopped = true;
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Died"))
         {
             animator.SetTrigger("died");
+            DeathSoundInvoke();
         }
         
         if (diedTimer > diedTime) {
+            EndAttack();
+            capsuleCollider.enabled = true;
             diedTimer = 0.0f;
             monsterCurrrentHP = monsterMaxHP;
             if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
@@ -173,6 +178,11 @@ public class LittleGolemController : MonoBehaviour
             diedTimer += Time.deltaTime;
         }
 
+    }
+
+    public void DeathSoundInvoke() {
+        if (GolemDeathSound.isPlaying) return;
+        GolemDeathSound.Play();
     }
 
     public void EndAttack()
@@ -195,6 +205,9 @@ public class LittleGolemController : MonoBehaviour
         if (monsterCurrrentHP <= 0)
         {
             monsterCurrrentHP = 0;
+            HpUIUpdate();
+            EnemyHpUI.SetActive(false);
+            return;
         }
         HpUIUpdate();
     }
@@ -210,6 +223,9 @@ public class LittleGolemController : MonoBehaviour
         if (monsterCurrrentHP <= 0)
         {
             monsterCurrrentHP = 0;
+            HpUIUpdate();
+            EnemyHpUI.SetActive(false);
+            return;
         }
         HpUIUpdate();
     }
@@ -224,6 +240,9 @@ public class LittleGolemController : MonoBehaviour
         if (monsterCurrrentHP <= 0)
         {
             monsterCurrrentHP = 0;
+            HpUIUpdate();
+            EnemyHpUI.SetActive(false);
+            return;
         }
         HpUIUpdate();
     }

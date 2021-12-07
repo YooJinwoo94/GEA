@@ -111,6 +111,11 @@
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\SaveUI\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\Unidra\GameTimerGui.cs" />
      <Compile Include="Assets\Scripts\BossStage\AreaAttackSound.cs" />
+     <Compile Include="Assets\Scripts\Stage2_3QManagerScript.cs" />
+     <Compile Include="Assets\Scripts\TrapAttack.cs" />
+     <Compile Include="Assets\Scripts\QuestTriggerObjScript.cs" />
+     <Compile Include="Assets\Yoo_Jin_Woo_Folder\Prefab\EnemyHpCon.cs" />
+     <Compile Include="Assets\Scripts\GameRestart.cs" />
      <None Include="Assets\Hovl Studio\Epic toon VFX\Demo scene\Readme.txt" />
      <None Include="Assets\Yoo_Jin_Woo_Folder\F1\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Yoo_Jin_Woo_Folder\F1\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

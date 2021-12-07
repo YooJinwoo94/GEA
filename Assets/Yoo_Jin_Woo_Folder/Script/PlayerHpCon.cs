@@ -8,8 +8,18 @@ public class PlayerHpCon : MonoBehaviour
 {
     [SerializeField]
     Slider hp;
+    [SerializeField]
+    CharacterStatus characterStatus;
 
-     public void hpCon(int hpGage, string upDown)
+    void Start() {
+        characterStatus = GameObject.Find("Player").GetComponent<CharacterStatus>();
+    }
+
+    void Update () {
+        hp.value = ((float)characterStatus.HP / (float)characterStatus.MaxHP) * hp.maxValue;
+    }
+
+    public void hpCon(int hpGage, string upDown)
     {
         switch (upDown)
         {

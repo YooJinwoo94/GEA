@@ -86,6 +86,10 @@ public class CharacterStatus : MonoBehaviour
         {
             return;
         }
+        if (HP <= 0) {
+            Time.timeScale = 0;
+            GameObject.Find("GameOverUI").SetActive(true);
+        }
         //powerBoost = false;
         //if (powerBoostTime > 0.0f)
         //{

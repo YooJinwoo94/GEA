@@ -42,6 +42,7 @@ public class BossGolemController : MonoBehaviour
 
     public AudioSource GolemWalkSound;
     public AudioSource GolemPunchSound;
+    public AudioSource GolemDeathSound;
 
     public GameObject EnemyHpUI = null;
     public Slider EnemyHpUIBar = null;
@@ -228,14 +229,20 @@ public class BossGolemController : MonoBehaviour
         yield return null;
         GolemWalkSound.Stop();
 
+
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Died"))
         {
             animator.SetTrigger("died");
+            Invoke("DeathSoundInvoke", 2.5f);
         }
         navMeshAgent.isStopped = true;
         isAttacking = false;
 
         Destroy(this.gameObject, 1.0f);
+    }
+
+    public void DeathSoundInvoke() {
+        GolemDeathSound.Play();
     }
 
     public void InstantiateMeleeCircleHitArea(Transform TargetTransform)
@@ -259,6 +266,9 @@ public class BossGolemController : MonoBehaviour
         if (bossCurrrentHP <= 0)
         {
             bossCurrrentHP = 0;
+            HpUIUpdate();
+            EnemyHpUI.SetActive(false);
+            return;
         }
         HpUIUpdate();
     }
@@ -270,6 +280,9 @@ public class BossGolemController : MonoBehaviour
         if (bossCurrrentHP <= 0)
         {
             bossCurrrentHP = 0;
+            HpUIUpdate();
+            EnemyHpUI.SetActive(false);
+            return;
         }
         HpUIUpdate();
     }
@@ -280,6 +293,9 @@ public class BossGolemController : MonoBehaviour
         if (bossCurrrentHP <= 0)
         {
             bossCurrrentHP = 0;
+            HpUIUpdate();
+            EnemyHpUI.SetActive(false);
+            return;
         }
         HpUIUpdate();
     }
