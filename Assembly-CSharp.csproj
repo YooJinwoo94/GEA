@@ -65,11 +65,13 @@
     <Compile Include="Assets\Scripts\Unidra\HitArea.cs" />
     <Compile Include="Assets\Scripts\CircleElevatorScript.cs" />
     <Compile Include="Assets\Scripts\Unidra\TitleSceneCtrl.cs" />
+    <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\SaveUI\SaveLoadUIDataManager.cs" />
     <Compile Include="Assets\KriptoFX\BloodFX\Others\BFX_MouseOrbit.cs" />
     <Compile Include="Assets\Scripts\Unidra\TargetCursor.cs" />
     <Compile Include="Assets\KriptoFX\BloodFX\Others\DemoReactivator.cs" />
     <Compile Include="Assets\Scripts\RollingStoneTrapScript.cs" />
     <Compile Include="Assets\Scripts\PlayerSkillScripts.cs" />
+    <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\SaveUI\SaveUIData.cs" />
     <Compile Include="Assets\Scripts\DoorOpenScript.cs" />
     <Compile Include="Assets\Scripts\BossStage\HitAreaTriggerController.cs" />
     <Compile Include="Assets\KriptoFX\BloodFX\Others\DemoGUI.cs" />
@@ -98,10 +100,9 @@
     <Compile Include="Assets\Hovl Studio\Epic toon VFX\Demo scene\DemoToonVFX.cs" />
     <Compile Include="Assets\Scripts\BossStage\RuneTileObject.cs" />
     <Compile Include="Assets\Scripts\CameraManager.cs" />
-    <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\DialogManager.cs" />
     <Compile Include="Assets\Scripts\BossStage\MonsterLightAttack.cs" />
-    <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\QuestManager.cs" />
     <Compile Include="Assets\Hovl Studio\Sword slash VFX\Demo scene\CameraHolder.cs" />
+    <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\QuestUIManager.cs" />
     <Compile Include="Assets\Scripts\TrainingDummy.cs" />
     <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\SoundConManager.cs" />
     <Compile Include="Assets\Scripts\BossStage\BossMeleeHitAreaController.cs" />
@@ -110,6 +111,8 @@
     <Compile Include="Assets\Scripts\Unidra\SkillRune.cs" />
     <Compile Include="Assets\Scripts\LightControlScript.cs" />
     <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\UIAniCon.cs" />
+    <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\DialogUIManager.cs" />
+    <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\QuestDialogDataBase.cs" />
     <Compile Include="Assets\Scripts\BossStage\LittleGolemController.cs" />
     <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\PlayerHpCon.cs" />
     <Compile Include="Assets\Scripts\SawTrapScript.cs" />
@@ -122,6 +125,7 @@
     <Compile Include="Assets\Scripts\WallSpearTrapSwitchScript.cs" />
     <Compile Include="Assets\Scripts\Unidra\SearchArea.cs" />
     <Compile Include="Assets\Scripts\Unidra\DropItem.cs" />
+    <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\SaveUI\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\Unidra\GameTimerGui.cs" />
   </ItemGroup>
   <ItemGroup>
