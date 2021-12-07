@@ -45,7 +45,7 @@ public class EnemyHpCon : MonoBehaviour
         Slider enemyHpSlider = GameObject.Find("Enemy_hp(Clone)").GetComponentInChildren<Slider>();
         Text enemyName = GameObject.Find("Enemy_hp(Clone)").GetComponentInChildren<Text>();
 
-        enemyName.text = status.name;
+        enemyName.text = status.characterName;
         enemyHpSlider.maxValue = status.MaxHP;
         enemyHpSlider.value = status.HP;
     }
