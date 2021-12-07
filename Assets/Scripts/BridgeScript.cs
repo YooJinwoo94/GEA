@@ -10,10 +10,13 @@ public class BridgeScript : MonoBehaviour
     public bool FirstOn = false, SecondOn = false;
     bool DownFinished = false;
     public Transform playerTrans;
+    public Light[] lights;
 
     void Start()
     {
         playerTrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        lights[0].color = Color.red;
+        lights[1].color = Color.red;
     }
 
     void Update()
@@ -43,6 +46,7 @@ public class BridgeScript : MonoBehaviour
         if(Vector3.Distance(playerTrans.position, LeverTrans.position) <= 3.0f)
         {
             FirstOn = true;
+            lights[0].color = Color.green;
         }
 
         if (FirstOn && LeverTrans.eulerAngles.z <= 50.0f)
@@ -59,6 +63,7 @@ public class BridgeScript : MonoBehaviour
         if (Vector3.Distance(playerTrans.position, LeverTrans.position) <= 3.0f)
         {
             SecondOn = true;
+            lights[1].color = Color.green;
         }
 
         if (SecondOn && LeverTrans.eulerAngles.z <= 50.0f)

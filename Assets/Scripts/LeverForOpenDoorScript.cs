@@ -14,9 +14,12 @@ public class LeverForOpenDoorScript : MonoBehaviour
     public GameObject CenterDoor;
     float speed = 30.0f;
 
+    public Light[] lights;
+
     void Start()
     {
-        
+        lights[0].color = Color.red;
+        lights[1].color = Color.red;
     }
 
     void Update()
@@ -28,9 +31,10 @@ public class LeverForOpenDoorScript : MonoBehaviour
 
     public void FirstLeverCon()
     {
-        if (Vector3.Distance(PlayerTrans.position, FirstLever.position) <= 2.5f)
+        if (Vector3.Distance(PlayerTrans.position, FirstLever.position) <= 3f)
         {
             FirstOn = true;
+            lights[0].color = Color.green;
         }
 
         if (FirstOn && FirstLever.eulerAngles.z <= 300.0f)
@@ -41,9 +45,10 @@ public class LeverForOpenDoorScript : MonoBehaviour
 
     public void SecondLeverCon()
     {
-        if (Vector3.Distance(PlayerTrans.position, SecondLever.position) <= 2.5f)
+        if (Vector3.Distance(PlayerTrans.position, SecondLever.position) <= 3f)
         {
             SecondOn = true;
+            lights[1].color = Color.green;
         }
 
         if (SecondOn && SecondLever.eulerAngles.z <= 300.0f)
