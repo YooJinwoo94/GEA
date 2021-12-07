@@ -37,6 +37,12 @@ public class PlayerSkillUIManager : MonoBehaviour
             fill[i].fillAmount = 0;
             _skillCoolTimeText[i].text = "";
         }
+
+        if (GameObject.Find("Player") == true)
+        {
+            playerCharacterStatus = GameObject.Find("Player").GetComponent<CharacterStatus>();
+        }
+       
     }
 
 
@@ -44,6 +50,8 @@ public class PlayerSkillUIManager : MonoBehaviour
     // Test
     private void Update()
     {
+       // if (GameObject.Find("Player") == false) return;
+
         checkPlayerSkillOpen();
 
         playerSkillCoolTimeOn();

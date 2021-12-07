@@ -12,10 +12,12 @@ public class PlayerHpCon : MonoBehaviour
     CharacterStatus characterStatus;
 
     void Start() {
+       if (GameObject.Find("Player") == false) return;
         characterStatus = GameObject.Find("Player").GetComponent<CharacterStatus>();
     }
 
     void Update () {
+        if (GameObject.Find("Player") == false) return;
         hp.value = ((float)characterStatus.HP / (float)characterStatus.MaxHP) * hp.maxValue;
     }
 
