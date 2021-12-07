@@ -15,12 +15,15 @@ public class EnemyHpCon : MonoBehaviour
 
     private void Start()
     {
+        if(SceneManager.GetActiveScene().name == "BossScene") return;
+
         if (GameObject.Find("Player") == false) return;
         playerStatus = GameObject.Find("Player").GetComponent<CharacterStatus>();
     }
 
     private void FixedUpdate()
     {
+        if (SceneManager.GetActiveScene().name == "BossScene") return;
         if (GameObject.Find("Player") == false) return;
         ifEnemyDamagedUiCon();
     }
