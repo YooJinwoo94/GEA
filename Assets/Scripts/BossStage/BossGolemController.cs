@@ -40,6 +40,11 @@ public class BossGolemController : MonoBehaviour
     public GameObject meleeAtkHitArea;
     public GameObject meleeCircleAtkHitAreaPrefab;
 
+    public GameObject EnemyHpUI = null;
+    public Slider EnemyHpUIBar = null;
+    public Text EnemyHpUIText = null;
+
+
     WaitForSeconds Delay500 = new WaitForSeconds(0.5f);
     WaitForSeconds Delay1500 = new WaitForSeconds(1.5f);
     WaitForSeconds Delay250 = new WaitForSeconds(0.25f);
@@ -235,41 +240,39 @@ public class BossGolemController : MonoBehaviour
     
     void Damage(AttackArea.AttackInfo attackInfo)
     {
-    //    GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
-    //    effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
-    //    Destroy(effect, 0.3f);
         if (isPuzzleClear) bossCurrrentHP -= attackInfo.attackPower;
         if (bossCurrrentHP <= 0)
         {
             bossCurrrentHP = 0;
         }
+        HpUIUpdate();
     }
 
-    //W,E 데미지 처리 메서드 수정 이원표
     public void WDamage(WSkillCtrl.WAttackInfo wattackinfo)
     {
-        //   GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
-        //   effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
-        //   Destroy(effect, 0.3f);
         Debug.Log("WSkill Hit");
         if (isPuzzleClear) bossCurrrentHP -= wattackinfo.attackPower;
         if (bossCurrrentHP <= 0)
         {
             bossCurrrentHP = 0;
         }
+        HpUIUpdate();
     }
     public void EDamage(ESkillCtrl.EAttackInfo eattackinfo)
     {
-        //   GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity) as GameObject;
-        //   effect.transform.localPosition = transform.position + new Vector3(0.0f, 0.5f, 0.0f);
-        //   Destroy(effect, 0.3f);
-
         Debug.Log("ESkill Hit");
         if (isPuzzleClear) bossCurrrentHP -= eattackinfo.attackPower;
         if (bossCurrrentHP <= 0)
         {
             bossCurrrentHP = 0;
         }
+        HpUIUpdate();
+    }
+
+    void HpUIUpdate() {
+        EnemyHpUI.SetActive(true);
+        EnemyHpUIText.text = "신성한 사원의 가디언";
+        EnemyHpUIBar.value = ((float)bossCurrrentHP / (float)bossMaxHP) * 100.0f;
     }
 
 }

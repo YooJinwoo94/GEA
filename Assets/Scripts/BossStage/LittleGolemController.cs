@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class LittleGolemController : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class LittleGolemController : MonoBehaviour
         Died
 	}
 
-    public int monsterMaxHP;
-    public int monsterCurrrentHP;
+    public int monsterMaxHP = 10;
+    public int monsterCurrrentHP = 10;
 
     public bool isPlayerNear = false;
     public bool isAttacking = false;
@@ -35,6 +36,10 @@ public class LittleGolemController : MonoBehaviour
     WaitForSeconds Delay500 = new WaitForSeconds(0.5f);
     WaitForSeconds Delay1500 = new WaitForSeconds(1.5f);
     WaitForSeconds Delay250 = new WaitForSeconds(0.25f);
+
+    public GameObject EnemyHpUI = null;
+    public Slider EnemyHpUIBar = null;
+    public Text EnemyHpUIText = null;
 
     public float diedTime = 20.0f;
     float diedTimer = 0.0f;
@@ -83,7 +88,9 @@ public class LittleGolemController : MonoBehaviour
         {
             animator.SetTrigger("idle");
         }
-        if (isAttacking)
+
+        if (monsterCurrrentHP <= 0) currentPattern = BossPatternType.Died;
+        else if (isAttacking)
         {
             currentPattern = BossPatternType.Idle;
         }
@@ -95,7 +102,6 @@ public class LittleGolemController : MonoBehaviour
 		{
             currentPattern = BossPatternType.Chase;
 		}
-        if (monsterCurrrentHP <= 0) currentPattern = BossPatternType.Died;
 	}
 
     IEnumerator Chase()
@@ -175,6 +181,7 @@ public class LittleGolemController : MonoBehaviour
         {
             monsterCurrrentHP = 0;
         }
+        HpUIUpdate();
     }
 
     //W,E 데미지 처리 메서드 수정 이원표
@@ -189,6 +196,7 @@ public class LittleGolemController : MonoBehaviour
         {
             monsterCurrrentHP = 0;
         }
+        HpUIUpdate();
     }
     public void EDamage(ESkillCtrl.EAttackInfo eattackinfo)
     {
@@ -202,6 +210,13 @@ public class LittleGolemController : MonoBehaviour
         {
             monsterCurrrentHP = 0;
         }
+        HpUIUpdate();
+    }
+
+    void HpUIUpdate() {
+        EnemyHpUI.SetActive(true);
+        EnemyHpUIText.text = "소형 가디언";
+        EnemyHpUIBar.value = ((float)monsterCurrrentHP / (float)monsterMaxHP) * 100.0f;
     }
 
 }
