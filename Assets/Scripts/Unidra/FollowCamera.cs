@@ -18,14 +18,14 @@ public class FollowCamera : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 		// 드래그 입력으로 카메라 회전각을 갱신한다.
-		if (inputManager.Moved()) {
-			float anglePerPixel = rotAngle / (float)Screen.width;
-			Vector2 delta = inputManager.GetDeltaPosition();
-			horizontalAngle += delta.x * anglePerPixel;
-			horizontalAngle = Mathf.Repeat(horizontalAngle,360.0f);
-			verticalAngle -= delta.y * anglePerPixel;
-			verticalAngle = Mathf.Clamp(verticalAngle,-60.0f,60.0f);
-		}
+		//if (inputManager.Moved()) {
+		//	float anglePerPixel = rotAngle / (float)Screen.width;
+		//	Vector2 delta = inputManager.GetDeltaPosition();
+		//	horizontalAngle += delta.x * anglePerPixel;
+		//	horizontalAngle = Mathf.Repeat(horizontalAngle,360.0f);
+		//	verticalAngle -= delta.y * anglePerPixel;
+		//	verticalAngle = Mathf.Clamp(verticalAngle,-60.0f,60.0f);
+		//}
 		
 		// 카메라의 위치와 회전각을 갱신한다.
 		if (lookTarget != null) {

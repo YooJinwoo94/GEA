@@ -32,11 +32,11 @@ public class QuestDialogDataBase : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case _tutorialStage:
-                _tutorialStageQuestDialog[0] = "안녕 튜토리얼이야0";
-                _tutorialStageQuestDialog[1] = "안녕 튜토리얼이야1";
-                _tutorialStageQuestDialog[2] = "안녕 튜토리얼이야2";
-                _tutorialStageQuestDialog[3] = "안녕 튜토리얼이야3";
-                _tutorialStageQuestDialog[4] = "안녕 튜토리얼이야4";
+                _tutorialStageQuestDialog[0] = "아래에 있는 유령에게 말을 걸어보자";
+                _tutorialStageQuestDialog[1] = "여관으로 이동하자";
+                _tutorialStageQuestDialog[2] = "훈련용 인형을 공격하자";
+                _tutorialStageQuestDialog[3] = "회복 스킬을 사용하자";
+                _tutorialStageQuestDialog[4] = "다음 지역으로 이동하자";
                 break;
             case _stage01:
                 _stage01QuestDialog[0] = "안녕 스테이지1이야0";

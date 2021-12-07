@@ -35,6 +35,9 @@ public class TutorialDialog : MonoBehaviour
         Talk
     }
     GameObject player;
+
+    QuestUIManager questUIManager;
+    DialogUIManager dialoguUIManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +50,9 @@ public class TutorialDialog : MonoBehaviour
         talkText = talkPanel.transform.GetChild(0).GetChild(0).GetComponent<Text>();
 
         cameraManager = FindObjectOfType<CameraManager>();
+
+        questUIManager = FindObjectOfType<QuestUIManager>();
+        dialoguUIManager = FindObjectOfType<DialogUIManager>();
 
         lines = new string[][]
         {
@@ -124,7 +130,7 @@ public class TutorialDialog : MonoBehaviour
         Down();
         
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(1))
-            Start("First");
+            StartDialog("First");
     }
 
     // Update is called once per frame
@@ -174,6 +180,8 @@ public class TutorialDialog : MonoBehaviour
             SceneManager.LoadScene(0);
 
         currentLine = 0;
+        Time.timeScale = 1.0f;
+        questUIManager.isQuestEnd();
     }
 
     // 대화창 열기
@@ -183,6 +191,9 @@ public class TutorialDialog : MonoBehaviour
 
         if (type == DialogType.Notification)
         {
+            // 안내창만 시간정지 대화는 정지X
+            Time.timeScale = 0;
+
             notificationPanel.SetActive(true);
 
             printNotification();
@@ -197,30 +208,30 @@ public class TutorialDialog : MonoBehaviour
     }
 
     // 원하는 대화를 시작하는 함수
-    public void Start(string s)
+    public void StartDialog(string s)
     {
-        if (s == "First")
+        if (s == "First" && questUIManager._tutorialStage[0])
         {
             channel = DialogChannel.First;
             type = DialogType.Notification;
         }
-        else if (s == "GhostStory")
+        else if (s == "GhostStory" && questUIManager._tutorialStage[1])
         {
             channel = DialogChannel.Ghost;
             type = DialogType.Talk;
-            GameObject.FindGameObjectWithTag("Player").SendMessage("SetDestination", GameObject.Find("Ghost/Pos").transform.position);
+            //GameObject.FindGameObjectWithTag("Player").SendMessage("SetDestination", GameObject.Find("Ghost/Pos").transform.position);
         }
-        else if (s == "TrainingStory")
+        else if (s == "TrainingStory" && questUIManager._tutorialStage[2])
         {
             channel = DialogChannel.Training;
             type = DialogType.Notification;
         }
-        else if(s == "TrainingSkill")
+        else if(s == "TrainingSkill" && questUIManager._tutorialStage[3])
         {
             channel = DialogChannel.TrainingSkill;
             type = DialogType.Notification;
         }
-        else if(s == "TrainingSkill2")
+        else if(s == "TrainingSkill2" && questUIManager._tutorialStage[4])
         {
             channel = DialogChannel.TrainingSkill2;
             type = DialogType.Notification;
@@ -229,6 +240,10 @@ public class TutorialDialog : MonoBehaviour
         {
             channel = DialogChannel.Ending;
             type = DialogType.Talk;
+        }
+        else if(dialoguUIManager._isQuestTexting)
+        {
+            return;
         }
 
         channelDict.TryGetValue(channel, out currentStory);
