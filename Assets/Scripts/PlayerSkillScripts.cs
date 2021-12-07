@@ -56,7 +56,7 @@ public class PlayerSkillScripts : MonoBehaviour
         }
          
         QSkillSeAudio = gameObject.AddComponent<AudioSource>();        
-        QSkillSeAudio.clip = WSkillSeClip;
+        QSkillSeAudio.clip = QSkillSeClip;
         QSkillSeAudio.loop = false;
 
         WSkillSeAudio = gameObject.AddComponent<AudioSource>();
@@ -64,7 +64,7 @@ public class PlayerSkillScripts : MonoBehaviour
         WSkillSeAudio.loop = false;
 
         ESkillSeAudio = gameObject.AddComponent<AudioSource>();
-        ESkillSeAudio.clip = WSkillSeClip;
+        ESkillSeAudio.clip = ESkillSeClip;
         ESkillSeAudio.loop = false;
 
 
