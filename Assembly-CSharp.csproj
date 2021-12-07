@@ -42,12 +42,14 @@
      <Compile Include="Assets\Scripts\Unidra\CharaAnimation.cs" />
      <Compile Include="Assets\Scripts\BossStage\BossGolemController.cs" />
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\F1\GUI Kit The Stone\Scripts\PanelControl.cs" />
+     <Compile Include="Assets\Scripts\QuestTriggerObjScript.cs" />
      <Compile Include="Assets\Scripts\BossStage\DebugButton.cs" />
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\IngameUICon.cs" />
      <Compile Include="Assets\Scripts\FloorSpearTrapScript.cs" />
      <Compile Include="Assets\Scripts\Unidra\HitArea.cs" />
      <Compile Include="Assets\Scripts\CircleElevatorScript.cs" />
      <Compile Include="Assets\Scripts\Unidra\TitleSceneCtrl.cs" />
+     <Compile Include="Assets\Scripts\TrapAttack.cs" />
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\SaveUI\SaveLoadUIDataManager.cs" />
      <Compile Include="Assets\KriptoFX\BloodFX\Others\BFX_MouseOrbit.cs" />
      <Compile Include="Assets\Scripts\Unidra\TargetCursor.cs" />
@@ -87,6 +89,7 @@
      <Compile Include="Assets\Hovl Studio\Sword slash VFX\Demo scene\CameraHolder.cs" />
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\QuestUIManager.cs" />
      <Compile Include="Assets\Scripts\TrainingDummy.cs" />
+     <Compile Include="Assets\Scripts\GameRestart.cs" />
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\SoundConManager.cs" />
      <Compile Include="Assets\Scripts\BossStage\BossMeleeHitAreaController.cs" />
      <Compile Include="Assets\Scripts\Unidra\InputManager.cs" />
@@ -95,8 +98,10 @@
      <Compile Include="Assets\Scripts\LightControlScript.cs" />
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\UIAniCon.cs" />
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\DialogUIManager.cs" />
+     <Compile Include="Assets\Scripts\BossStage\AreaAttackSound.cs" />
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\QuestDialogDataBase.cs" />
      <Compile Include="Assets\Scripts\BossStage\LittleGolemController.cs" />
+     <Compile Include="Assets\Scripts\Stage2_3QManagerScript.cs" />
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\PlayerHpCon.cs" />
      <Compile Include="Assets\Scripts\SawTrapScript.cs" />
      <Compile Include="Assets\Scripts\TrainingTrigger.cs" />
@@ -110,12 +115,7 @@
      <Compile Include="Assets\Scripts\Unidra\DropItem.cs" />
      <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\SaveUI\SaveLoad.cs" />
      <Compile Include="Assets\Scripts\Unidra\GameTimerGui.cs" />
-     <Compile Include="Assets\Scripts\BossStage\AreaAttackSound.cs" />
-     <Compile Include="Assets\Scripts\Stage2_3QManagerScript.cs" />
-     <Compile Include="Assets\Scripts\TrapAttack.cs" />
-     <Compile Include="Assets\Scripts\QuestTriggerObjScript.cs" />
-     <Compile Include="Assets\Yoo_Jin_Woo_Folder\Prefab\EnemyHpCon.cs" />
-     <Compile Include="Assets\Scripts\GameRestart.cs" />
+     <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\EnemyHpCon.cs" />
      <None Include="Assets\Hovl Studio\Epic toon VFX\Demo scene\Readme.txt" />
      <None Include="Assets\Yoo_Jin_Woo_Folder\F1\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Yoo_Jin_Woo_Folder\F1\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
