@@ -8375,7 +8375,7 @@ GameObject:
   - component: {fileID: 6763869238797418755}
   - component: {fileID: 1261554844}
   - component: {fileID: 3430417958411604316}
-  - component: {fileID: 7942022033564516603}
+  - component: {fileID: 1493111899721476077}
   m_Layer: 0
   m_Name: UIMANAGER
   m_TagString: Untagged
@@ -8426,6 +8426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: {fileID: 759667557090192281}
+  characterStatus: {fileID: 0}
 --- !u!114 &759667557941846334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8571,7 +8572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _IngameSoundUISlider: {fileID: 759667556086196691}
   _audiosource: {fileID: 759667556688149402}
---- !u!114 &7942022033564516603
+--- !u!114 &1493111899721476077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8580,7 +8581,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 759667557941846331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae9dbc0ae4a4490418de9ad736c0274d, type: 3}
+  m_Script: {fileID: 11500000, guid: 288e563132bafa6438079c17183070d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHp: {fileID: 4021567340301559571, guid: f4342f1934563c841a2bc260bcfdc3d6, type: 3}
