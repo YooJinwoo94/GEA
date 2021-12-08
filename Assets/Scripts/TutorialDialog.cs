@@ -233,6 +233,7 @@ public class TutorialDialog : MonoBehaviour
     // 원하는 대화를 시작하는 함수
     public void StartDialog(string s)
     {
+        bool isNULL = false;
         if (s == "First" && questUIManager._tutorialStage[0])
         {
             Debug.Log("first");
@@ -253,36 +254,39 @@ public class TutorialDialog : MonoBehaviour
             channel = DialogChannel.Training;
             type = DialogType.Notification;
         }
-        else if(s == "TrainingSkill" && questUIManager._tutorialStage[3])
+        else if (s == "TrainingSkill" && questUIManager._tutorialStage[3])
         {
             channel = DialogChannel.TrainingSkill;
             type = DialogType.Notification;
         }
-        else if(s == "TrainingSkill2" && questUIManager._tutorialStage[4])
+        else if (s == "TrainingSkill2" && questUIManager._tutorialStage[4])
         {
             channel = DialogChannel.TrainingSkill2;
             type = DialogType.Notification;
 
             subQuestWarnings[1].SetActive(false);
         }
-        else if(s == "Ending")
+        else if (s == "Ending")
         {
             channel = DialogChannel.Ending;
             type = DialogType.Talk;
         }
-        else if(s == "Warning")
+        else if (s == "Warning")
         {
             channel = DialogChannel.Warning;
             type = DialogType.Notification;
         }
-        else if(dialoguUIManager._isQuestTexting)
+        else if (dialoguUIManager._isQuestTexting)
         {
             return;
         }
+        else
+            isNULL = true;
 
         channelDict.TryGetValue(channel, out currentStory);
 
-        Up();
+        if (!isNULL)
+            Up();
     }
 
     // 잘 작동하는지 확인하는 함수
