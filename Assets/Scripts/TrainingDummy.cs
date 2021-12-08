@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class TrainingDummy : MonoBehaviour
 {
     CharacterStatus status;
-    Animator animator;
+    Animator animator;  
     TutorialDialog dialog;
 
     int count;
@@ -25,8 +25,7 @@ public class TrainingDummy : MonoBehaviour
     {
         if (count > 0 && Input.GetKeyDown(KeyCode.Q))
         {
-            Invoke("startQ", 3f);
-            
+            Invoke("startQ", 3f);      
         }
     }
 
@@ -37,15 +36,10 @@ public class TrainingDummy : MonoBehaviour
         status.HP -= 10;
         animator.SetBool("Hit", true);
         // 1Â÷ Á×À½
-        if (status.HP <= 0 && count == 0)
+        if (status.MaxHP - 30 > status.HP && count == 0)
         {
             count++;
             Invoke("startFirstDie", 1.0f);
-        }
-        else if (status.HP <= 0 && count == 1)
-        {
-            animator.SetTrigger("Died");
-            count++;
         }
     }
 
