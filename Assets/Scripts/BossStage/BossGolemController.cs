@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class BossGolemController : MonoBehaviour
 {
-    static public int bossGolemDamage = 10;
+    static public int bossGolemDamage = 20;
 
     public enum BossPatternType
 	{
