@@ -113,7 +113,7 @@ CapsuleCollider:
   m_Radius: 0.36509183
   m_Height: 1.90917
   m_Direction: 1
-  m_Center: {x: 0.000000101085895, y: 0.52160513, z: 0.08712523}
+  m_Center: {x: 0.55, y: 0.52160513, z: 0.08712523}
 --- !u!114 &36103883556450945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2114,7 +2114,7 @@ MonoBehaviour:
   WPower: 100
   EPower: 100
   lastAttackTarget: {fileID: 0}
-  characterName: Player
+  characterName: Elite Goblin
   attacking: 0
   died: 0
   isgetQ: 1
@@ -2133,7 +2133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043376a646bede54c91286247b50cb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSeClip: {fileID: 8300000, guid: cc088667c8647ff44afb4fbb421f2a12, type: 3}
+  attackSeClip: {fileID: 8300000, guid: 20b017f42cc47584bb26ef07e036ac89, type: 3}
 --- !u!114 &4732120835553922775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2151,7 +2151,7 @@ MonoBehaviour:
   walkRange: 3
   basePosition: {x: 0, y: 0, z: 0}
   dropItemPrefab: []
-  deathSeClip: {fileID: 8300000, guid: 3cad26e313c1fdd4e97162e9857251de, type: 3}
+  deathSeClip: {fileID: 8300000, guid: 0eb816f092c46ae41bc4ec98ca37ed93, type: 3}
 --- !u!1 &4732139956383652436
 GameObject:
   m_ObjectHideFlags: 0

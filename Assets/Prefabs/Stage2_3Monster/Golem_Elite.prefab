@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043376a646bede54c91286247b50cb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSeClip: {fileID: 8300000, guid: 5a29f44acfaf38b4bb1d3d20db2052ca, type: 3}
+  attackSeClip: {fileID: 8300000, guid: d9d2314e887064147abb10b908e2ef6e, type: 3}
 --- !u!114 &8623440334117141131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +691,7 @@ MonoBehaviour:
   WPower: 100
   EPower: 100
   lastAttackTarget: {fileID: 0}
-  characterName: Player
+  characterName: Elite Golem
   attacking: 0
   died: 0
   isgetQ: 1
@@ -715,7 +715,7 @@ MonoBehaviour:
   walkRange: 3
   basePosition: {x: 0, y: 0, z: 0}
   dropItemPrefab: []
-  deathSeClip: {fileID: 8300000, guid: d3f5cf6cc12491042a5b51ef251311c8, type: 3}
+  deathSeClip: {fileID: 8300000, guid: 509851dc827373642ac86b3e58a6f647, type: 3}
 --- !u!1 &8623452444173211817
 GameObject:
   m_ObjectHideFlags: 0

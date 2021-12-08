@@ -1554,9 +1554,13 @@ MonoBehaviour:
   WPower: 100
   EPower: 100
   lastAttackTarget: {fileID: 0}
-  characterName: Player
+  characterName: Rock Golem
   attacking: 0
   died: 0
+  isgetQ: 1
+  isgetW: 1
+  isgetE: 1
+  isKey: 0
 --- !u!114 &1939750847966422159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1569,7 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043376a646bede54c91286247b50cb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSeClip: {fileID: 8300000, guid: 7ee491db8ba641d4384e75c491b6c336, type: 3}
+  attackSeClip: {fileID: 8300000, guid: f2ef76584f44e3746bd8a45cc4250dab, type: 3}
 --- !u!114 &1939750847966422158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,7 +1591,7 @@ MonoBehaviour:
   walkRange: 5
   basePosition: {x: 0, y: 0, z: 0}
   dropItemPrefab: []
-  deathSeClip: {fileID: 8300000, guid: c60dcf0f3a6b5144caa600889344f8c0, type: 3}
+  deathSeClip: {fileID: 8300000, guid: 2906099ab62725946a1547730cf78a1b, type: 3}
 --- !u!1 &1939752275868878459
 GameObject:
   m_ObjectHideFlags: 0
