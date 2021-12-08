@@ -18482,7 +18482,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -18524,7 +18524,7 @@ MonoBehaviour:
   GolemWalkSound: {fileID: 337786860}
   GolemPunchSound: {fileID: 1691652961}
   GolemDeathSound: {fileID: 2047698707}
-  diedTime: 20
+  diedTime: 30
 --- !u!95 &663132663
 Animator:
   serializedVersion: 3
@@ -23547,7 +23547,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -23589,7 +23589,7 @@ MonoBehaviour:
   GolemWalkSound: {fileID: 397320509}
   GolemPunchSound: {fileID: 132297660}
   GolemDeathSound: {fileID: 170049980}
-  diedTime: 20
+  diedTime: 30
 --- !u!95 &848995333
 Animator:
   serializedVersion: 3
@@ -56732,7 +56732,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -56774,7 +56774,7 @@ MonoBehaviour:
   GolemWalkSound: {fileID: 1964091189}
   GolemPunchSound: {fileID: 1635125830}
   GolemDeathSound: {fileID: 770081708}
-  diedTime: 20
+  diedTime: 30
 --- !u!95 &1992838889
 Animator:
   serializedVersion: 3
@@ -63140,7 +63140,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -63182,7 +63182,7 @@ MonoBehaviour:
   GolemWalkSound: {fileID: 1915450480}
   GolemPunchSound: {fileID: 719182976}
   GolemDeathSound: {fileID: 758095439}
-  diedTime: 20
+  diedTime: 30
 --- !u!1 &75667266866319535
 GameObject:
   m_ObjectHideFlags: 0
