@@ -7,6 +7,7 @@ public class DropItem : MonoBehaviour
     {
         Attack,
         Heal,
+        KEY,
     };
     public ItemKind kind;
 
@@ -24,7 +25,7 @@ public class DropItem : MonoBehaviour
             Destroy(gameObject);
 
             // 오디오 재생. 
-            AudioSource.PlayClipAtPoint(itemSeClip, transform.position);
+            //AudioSource.PlayClipAtPoint(itemSeClip, transform.position);
         }
     }
 
