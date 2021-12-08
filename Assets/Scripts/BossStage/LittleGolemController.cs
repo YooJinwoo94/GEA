@@ -145,8 +145,9 @@ public class LittleGolemController : MonoBehaviour
         {
             animator.SetTrigger("lightAttack");
         }
-        currentPattern = BossPatternType.Idle;
         yield return Delay1500;
+
+        currentPattern = BossPatternType.Idle;
 
     }
     
