@@ -36,6 +36,7 @@ public class LittleGolemController : MonoBehaviour
 
     WaitForSeconds Delay500 = new WaitForSeconds(0.5f);
     WaitForSeconds Delay1500 = new WaitForSeconds(1.5f);
+    WaitForSeconds Delay100 = new WaitForSeconds(0.1f);
     WaitForSeconds Delay250 = new WaitForSeconds(0.25f);
 
     public GameObject EnemyHpUI = null;
@@ -137,7 +138,7 @@ public class LittleGolemController : MonoBehaviour
         GolemWalkSound.Stop();
         navMeshAgent.isStopped = true;
         isAttacking = true;
-        yield return Delay1500;
+        yield return Delay100;
         if (!GolemPunchSound.isPlaying) Invoke("SoundInvoke", 0.7f);
 
         if (!animator.GetCurrentAnimatorStateInfo(0).IsName("LightAttack"))
@@ -145,6 +146,8 @@ public class LittleGolemController : MonoBehaviour
             animator.SetTrigger("lightAttack");
         }
         currentPattern = BossPatternType.Idle;
+        yield return Delay1500;
+
     }
     
     void SoundInvoke() {
