@@ -603,8 +603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a768f66f6974c2e4788207fb08bf7859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 40
-  MaxHP: 40
+  HP: 100
+  MaxHP: 100
   Power: 10
   WPower: 100
   EPower: 100
@@ -612,9 +612,6 @@ MonoBehaviour:
   characterName: Player
   attacking: 0
   died: 0
-  isgetQ: 1
-  isgetW: 1
-  isgetE: 1
 --- !u!114 &3369897483388782398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043376a646bede54c91286247b50cb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSeClip: {fileID: 0}
+  attackSeClip: {fileID: 8300000, guid: 15f85c6a91b002b4fb6e85af6f1f6d4b, type: 3}
 --- !u!114 &3369897483388782393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,7 +642,7 @@ MonoBehaviour:
   walkRange: 5
   basePosition: {x: 0, y: 0, z: 0}
   dropItemPrefab: []
-  deathSeClip: {fileID: 0}
+  deathSeClip: {fileID: 8300000, guid: 0971d13ddb864724491c4b3a8215784e, type: 3}
 --- !u!1 &3369934110986948136
 GameObject:
   m_ObjectHideFlags: 0
