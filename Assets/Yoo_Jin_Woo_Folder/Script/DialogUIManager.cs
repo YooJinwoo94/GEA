@@ -24,11 +24,16 @@ public class DialogUIManager : MonoBehaviour
     Text _questText;
 
     [HideInInspector]
-    public bool _isQuestTexting;
+    public bool _isQuestTexting = false;
+
+    private void Awake()
+    {
+        _isQuestTexting = false;
+    }
 
     private void Start()
     {
-        _isQuestTexting = false;
+
     }
 
 
@@ -103,6 +108,7 @@ public class DialogUIManager : MonoBehaviour
                 break;
         }
     }
+    
     IEnumerator TypeSenetence(string sentence = "")
     {
         foreach (char letter in sentence.ToCharArray())
