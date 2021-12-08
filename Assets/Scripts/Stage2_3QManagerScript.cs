@@ -7,6 +7,7 @@ public class Stage2_3QManagerScript : MonoBehaviour
     public QuestUIManager QUI;
     public int QuestOrder = 0;
     public GameObject EliteMob;
+    public GameObject EliteMob2;
     public GameObject Potal;
     public DoorOpenScript Door;
 
@@ -18,7 +19,7 @@ public class Stage2_3QManagerScript : MonoBehaviour
 
     void Update()
     {
-        if(EliteMob == null && QuestOrder > 2)
+        if(EliteMob == null && EliteMob2 == null && QuestOrder > 2)
         {
             Potal.SetActive(true);
             Door.DoorOpen();

@@ -589,7 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrived: 0
   destination: {x: 0, y: 0, z: 0}
-  walkSpeed: 3
+  walkSpeed: 5
   rotationSpeed: 360
 --- !u!114 &3369897483388782399
 MonoBehaviour:
