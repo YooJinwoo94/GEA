@@ -11,6 +11,7 @@ public class GameRestart : MonoBehaviour
     void Start()
     {
         RestartButton.onClick.AddListener(()=>{
+            Time.timeScale = 1.0f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         });
         
