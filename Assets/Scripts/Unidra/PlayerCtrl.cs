@@ -16,7 +16,7 @@ public class PlayerCtrl : MonoBehaviour
 
     // 정승훈 추가 TutorialDialog
     TutorialDialog tutorialDialog;
-
+    Camera mainCamera;
     // 스테이트 종류.
     enum State
     {
@@ -49,6 +49,9 @@ public class PlayerCtrl : MonoBehaviour
         deathSeAudio = gameObject.AddComponent<AudioSource>();
         deathSeAudio.loop = false;
         deathSeAudio.clip = deathSeClip;
+
+        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+
     }
 
     // Update is called once per frame
@@ -96,7 +99,7 @@ public class PlayerCtrl : MonoBehaviour
 
     void Walking()
     {
-        if (inputManager.Clicked())
+        if (inputManager.Clicked() && mainCamera.enabled)
         {
             // RayCast로 대상물을 조사한다.
             Ray ray = Camera.main.ScreenPointToRay(inputManager.GetCursorPosition());
