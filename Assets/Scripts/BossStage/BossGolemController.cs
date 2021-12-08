@@ -54,9 +54,9 @@ public class BossGolemController : MonoBehaviour
     WaitForSeconds Delay1500 = new WaitForSeconds(1.5f);
     WaitForSeconds Delay250 = new WaitForSeconds(0.25f);
     bool isClearGame = false;
-    float StumpAttackCoolTime = 15.0f;
+    public float StumpAttackCoolTime = 10.0f;
     float currentStumpAttackCoolTime = 0.0f;
-    float ChaseLimitTime = 8.0f;
+    public float ChaseLimitTime = 5.0f;
     float currentChaseLimitTime = 0.0f;
 
     // Start is called before the first frame update

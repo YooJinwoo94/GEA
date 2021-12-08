@@ -16,8 +16,8 @@ public class LittleGolemController : MonoBehaviour
         Died
 	}
 
-    public int monsterMaxHP = 10;
-    public int monsterCurrrentHP = 10;
+    public int monsterMaxHP;
+    public int monsterCurrrentHP;
 
     public bool isPlayerNear = false;
     public bool isAttacking = false;
