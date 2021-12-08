@@ -51,6 +51,7 @@ public class WSkillCtrl : MonoBehaviour
         {
             //보스씬 오류때문에 양지훈 임의수정
             if (other.GetComponent<BossGolemController>() != null) { other.GetComponent<BossGolemController>().WDamage(GetAttackInfo()); return; }
+            else if (other.GetComponent<LittleGolemController>() != null) { other.GetComponent<LittleGolemController>().WDamage(GetAttackInfo()); return; }
             // 공격 당한 상대의 Damage 메시지를 보낸다.
             //other.SendMessage("WDamage", GetAttackInfo());
             other.GetComponent<HitArea>().transform.root.GetComponent<EnemyCtrl>().WDamage(GetAttackInfo());
