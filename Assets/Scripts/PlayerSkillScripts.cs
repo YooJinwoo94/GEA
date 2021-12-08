@@ -82,7 +82,7 @@ public class PlayerSkillScripts : MonoBehaviour
         {
             if (!isCooltimeQ)
             {
-                status.HP = Mathf.Min(status.HP + status.MaxHP / 2, status.MaxHP);
+                status.HP = Mathf.Min(status.HP + status.QPower, status.MaxHP);
 
                 QSkillEffect.Play();
                 QSkillSeAudio.Play();

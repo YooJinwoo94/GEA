@@ -13,6 +13,7 @@ public class CharacterStatus : MonoBehaviour
     public int Power = 10;
 
     //수정자 이원표 스킬데미지
+    public int QPower = 50;
     public int WPower = 100;
     public int EPower = 100;
     
