@@ -33,6 +33,7 @@ public class CharacterStatus : MonoBehaviour
     public bool isgetW = true;
     public bool isgetE = true;
     public bool isKey = false;
+    [SerializeField] GameObject gameOverUI = null;
     // 공격력 강화.
     //public bool powerBoost = false;
     // 공격력 강화 시간.
@@ -92,7 +93,7 @@ public class CharacterStatus : MonoBehaviour
         }
         if (HP <= 0) {
             Time.timeScale = 0;
-            GameObject.Find("GameOverUI").SetActive(true);
+            gameOverUI.SetActive(true);
         }
         //powerBoost = false;
         //if (powerBoostTime > 0.0f)
