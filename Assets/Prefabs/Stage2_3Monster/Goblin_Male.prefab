@@ -1884,16 +1884,18 @@ MonoBehaviour:
   HP: 40
   MaxHP: 40
   Power: 10
+  QPower: 50
   WPower: 100
   EPower: 100
   lastAttackTarget: {fileID: 0}
-  characterName: Male Goblin
+  characterName: "\uC804\uC0AC \uACE0\uBE14\uB9B0"
   attacking: 0
   died: 0
   isgetQ: 1
   isgetW: 1
   isgetE: 1
   isKey: 0
+  gameOverUI: {fileID: 0}
 --- !u!114 &6461967699536778104
 MonoBehaviour:
   m_ObjectHideFlags: 0
