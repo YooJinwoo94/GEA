@@ -5659,6 +5659,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4616565123954709830, guid: dbc46ef51c68c7744a1c549b7cc16187, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7373958444618511165, guid: dbc46ef51c68c7744a1c549b7cc16187, type: 3}
       propertyPath: m_Name
       value: SkillRune
@@ -5669,7 +5673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7373958444618716857, guid: dbc46ef51c68c7744a1c549b7cc16187, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.77
+      value: 18.88
       objectReference: {fileID: 0}
     - target: {fileID: 7373958444618716857, guid: dbc46ef51c68c7744a1c549b7cc16187, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5677,7 +5681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7373958444618716857, guid: dbc46ef51c68c7744a1c549b7cc16187, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.58
+      value: -4.34
       objectReference: {fileID: 0}
     - target: {fileID: 7373958444618716857, guid: dbc46ef51c68c7744a1c549b7cc16187, type: 3}
       propertyPath: m_LocalRotation.w
