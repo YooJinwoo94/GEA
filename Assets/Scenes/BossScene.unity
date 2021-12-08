@@ -2377,7 +2377,7 @@ Transform:
   - {fileID: 546136724}
   - {fileID: 898591220}
   m_Father: {fileID: 1853097401}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &100375578
 PrefabInstance:
@@ -15709,6 +15709,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -54.61963
       objectReference: {fileID: 0}
+    - target: {fileID: 759667556688149402, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c04625ab9229387489c3f395f0f8d122, type: 3}
     - target: {fileID: 759667556752943862, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -21462,7 +21466,7 @@ Transform:
   - {fileID: 397320508}
   - {fileID: 170049979}
   m_Father: {fileID: 1853097401}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!136 &848995329
 CapsuleCollider:
@@ -21528,8 +21532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5442a0e96ace6b64da4a3549c6dd67c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterMaxHP: 50
-  monsterCurrrentHP: 50
+  monsterMaxHP: 200
+  monsterCurrrentHP: 200
   isPlayerNear: 0
   isAttacking: 0
   Player: {fileID: 1776069041}
@@ -32765,7 +32769,7 @@ Transform:
   - {fileID: 859812301}
   - {fileID: 1820740736}
   m_Father: {fileID: 1853097401}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1258889553
 PrefabInstance:
@@ -42612,7 +42616,7 @@ Transform:
   - {fileID: 1805573322}
   - {fileID: 699200213}
   m_Father: {fileID: 1853097401}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1632886246
 PrefabInstance:
@@ -49082,10 +49086,10 @@ Transform:
   m_Children:
   - {fileID: 4526462851344699}
   - {fileID: 78954555220681803}
+  - {fileID: 848995328}
   - {fileID: 1628016523}
   - {fileID: 94136503}
   - {fileID: 1255556062}
-  - {fileID: 848995328}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53552,6 +53556,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 456960, guid: 28b56993a0977004882db8754d3904ee, type: 3}
   m_PrefabInstance: {fileID: 2037817382}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2043083029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2043083032}
+  - component: {fileID: 2043083031}
+  - component: {fileID: 2043083030}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2043083030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043083029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b6d501d62648a4daac780c35dff952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayerInside: 0
+--- !u!65 &2043083031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043083029}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2043083032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043083029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.6883173, y: -4.900913, z: 18.927979}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2045753264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58120,6 +58182,7 @@ MonoBehaviour:
   animator: {fileID: 95902137237797001}
   textContainer: {fileID: 1184505604}
   currentPattern: 0
+  portalDelay: {fileID: 2043083030}
   portal: {fileID: 366705093}
   meleeAtkHitArea: {fileID: 1882345809}
   meleeCircleAtkHitAreaPrefab: {fileID: 1194921207654511968, guid: 5439b88b25f735b4db7e6bac3c3084f4, type: 3}
@@ -58130,6 +58193,8 @@ MonoBehaviour:
   EnemyHpUIBar: {fileID: 916528625}
   EnemyHpUIText: {fileID: 917693465}
   questUIManager: {fileID: 710544674}
+  StumpAttackCoolTime: 10
+  ChaseLimitTime: 5
 --- !u!54 &74472622154562628
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -58541,8 +58606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5442a0e96ace6b64da4a3549c6dd67c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterMaxHP: 50
-  monsterCurrrentHP: 50
+  monsterMaxHP: 200
+  monsterCurrrentHP: 200
   isPlayerNear: 0
   isAttacking: 0
   Player: {fileID: 1776069041}

@@ -36,6 +36,7 @@ public class BossGolemController : MonoBehaviour
 
     public BossPatternType currentPattern;
 
+    public PortalDelay portalDelay;
     public GameObject portal;
     public GameObject meleeAtkHitArea;
     public GameObject meleeCircleAtkHitAreaPrefab;
@@ -71,10 +72,12 @@ public class BossGolemController : MonoBehaviour
     void Update()
     {
         if (!isClearGame && bossCurrrentHP <= 0) {
+            if (portalDelay.isPlayerInside) return;
             isClearGame = true;
             questUIManager.isQuestEnd();
             //textContainer.text = "보물을 획득해라";
             portal.SetActive(true);
+            portalDelay.gameObject.SetActive(false);
         }
     }
 
