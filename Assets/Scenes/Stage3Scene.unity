@@ -3484,6 +3484,10 @@ PrefabInstance:
       propertyPath: hitEffect
       value: 
       objectReference: {fileID: 1407402442211574, guid: 5d31a5b9b348544439d8079453188ecc, type: 3}
+    - target: {fileID: 8304308368193746587, guid: 35553b54d202a6a4691093ed6e4503cd, type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 2072802117}
     - target: {fileID: 8304308368193849674, guid: 35553b54d202a6a4691093ed6e4503cd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -59158,6 +59162,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e526935ec1e3343428a75399ac9f100b, type: 3}
+--- !u!1 &2072802117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 975331422754984531, guid: e526935ec1e3343428a75399ac9f100b, type: 3}
+  m_PrefabInstance: {fileID: 2072802116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073059700 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8623440334117141135, guid: 7d450f22b17f98346abc4c77ada5dbc8, type: 3}
