@@ -241,7 +241,7 @@ public class BossGolemController : MonoBehaviour
         navMeshAgent.isStopped = true;
         isAttacking = false;
 
-        Destroy(this.gameObject, 1.0f);
+        Destroy(this.gameObject, 5.0f);
     }
 
     public void DeathSoundInvoke() {

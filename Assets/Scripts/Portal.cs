@@ -26,7 +26,7 @@ public class Portal : MonoBehaviour
     }
 
     public void ActiveInvoke() {
-        Invoke ("ActiveGO", 2.0f);
+        Invoke ("ActiveGO", 6.0f);
     }
     void ActiveGO() {
         gameObject.SetActive(true);
