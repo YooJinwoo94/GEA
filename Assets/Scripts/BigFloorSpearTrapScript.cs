@@ -16,9 +16,14 @@ public class BigFloorSpearTrapScript : MonoBehaviour
 
     float timecheck;
     public float delay = 0.7f;
+    public AudioClip Clip;
+    AudioSource Audio;
 
     void Start()
     {
+        Audio = gameObject.GetComponent<AudioSource>();
+        Audio.clip = Clip;
+
         StartPos = new Vector3[4];
         StartPos[0] = Spear[0].position;
         StartPos[1] = Spear[1].position;
@@ -48,6 +53,8 @@ public class BigFloorSpearTrapScript : MonoBehaviour
     {
         if (Up)
         {
+            Audio.Play();
+
             Spear[type].Translate(Upspeed * Time.deltaTime * Vector3.up);
             Spear[type + 2].Translate(Upspeed * Time.deltaTime * Vector3.up);
             if(Spear[type].position.y > (StartPos[type].y + MaxHeightValue) &&
@@ -60,6 +67,8 @@ public class BigFloorSpearTrapScript : MonoBehaviour
 
         else if (Down)
         {
+            //Audio.Pause();
+
             Spear[type].Translate(Downspeed * Time.deltaTime * Vector3.down);
             Spear[type + 2].Translate(Downspeed * Time.deltaTime * Vector3.down);
             if (Spear[type].position.y <= StartPos[type].y &&

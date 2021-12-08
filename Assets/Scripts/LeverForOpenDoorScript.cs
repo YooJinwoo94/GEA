@@ -15,9 +15,14 @@ public class LeverForOpenDoorScript : MonoBehaviour
     float speed = 30.0f;
 
     public Light[] lights;
+    public AudioClip Clip;
+    AudioSource Audio;
 
     void Start()
     {
+        Audio = gameObject.GetComponent<AudioSource>();
+        Audio.clip = Clip;
+
         lights[0].color = Color.red;
         lights[1].color = Color.red;
     }
@@ -35,6 +40,7 @@ public class LeverForOpenDoorScript : MonoBehaviour
         {
             FirstOn = true;
             lights[0].color = Color.green;
+            Audio.Play();
         }
 
         if (FirstOn && FirstLever.eulerAngles.z <= 300.0f)
@@ -49,6 +55,7 @@ public class LeverForOpenDoorScript : MonoBehaviour
         {
             SecondOn = true;
             lights[1].color = Color.green;
+            Audio.Play();
         }
 
         if (SecondOn && SecondLever.eulerAngles.z <= 300.0f)

@@ -17,11 +17,16 @@ public class FloorSpearTrapScript : MonoBehaviour
     public float Downspeed = 1.5f;
     public bool Shoot = false;
     float timecheck = 0f;
+    public AudioClip Clip;
+    AudioSource Audio;
 
     void Start()
     {
         StartPos = SpearTrans.position;
         isMoving = false;
+
+        Audio = gameObject.GetComponent<AudioSource>();
+        Audio.clip = Clip;
     }
 
     void Update()
@@ -50,8 +55,8 @@ public class FloorSpearTrapScript : MonoBehaviour
         if (Shoot)
         {
             AutoTrap();
-
-            if(timecheck >= 3.0f)
+            Audio.Play();
+            if (timecheck >= 3.0f)
             {
                 SpearTrans.position = StartPos;
                 timecheck = 0;
@@ -60,6 +65,7 @@ public class FloorSpearTrapScript : MonoBehaviour
 
         if (!Shoot)
         {
+            //Audio.Pause();
             SpearTrans.position = StartPos;
             timecheck = 0;
         }
@@ -71,7 +77,8 @@ public class FloorSpearTrapScript : MonoBehaviour
             timecheck += Time.deltaTime;
             isMoving = true;
             SpearTrans.Translate(Upspeed * Time.deltaTime * Vector3.up);
-            if(SpearTrans.position.y > (StartPos.y+MaxHeightValue))
+            Audio.Play();
+            if (SpearTrans.position.y > (StartPos.y+MaxHeightValue))
             {
                 Up = false;
                 Down = true;
@@ -80,6 +87,7 @@ public class FloorSpearTrapScript : MonoBehaviour
 
         if (Down)
         {
+            //Audio.Pause();
             SpearTrans.Translate(Downspeed * Time.deltaTime * Vector3.down);
             if(SpearTrans.position.y <= StartPos.y)
             {

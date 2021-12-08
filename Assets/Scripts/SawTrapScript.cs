@@ -10,10 +10,14 @@ public class SawTrapScript : MonoBehaviour
     public int type;
     public Transform StartPos, EndPos;
     public Transform SawBody;
+    public AudioClip Clip;
+    AudioSource Audio;
 
     void Start()
     {
-        
+        Audio = gameObject.GetComponent<AudioSource>();
+        Audio.clip = Clip;
+        Audio.Play();
     }
 
 

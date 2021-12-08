@@ -12,12 +12,18 @@ public class ElevatorScript : MonoBehaviour
     Vector3 startPos;
     bool once = false;
     float timecheck = 0;
+    public AudioClip Clip;
+    AudioSource Audio;
+
     void Start()
     {
         ElevatorTrans = gameObject.GetComponent<Transform>();
         Up = false;
         isMoving = false;
         startPos = new Vector3();
+
+        Audio = gameObject.GetComponent<AudioSource>();
+        Audio.clip = Clip;
     }
 
     void Update()
@@ -36,6 +42,7 @@ public class ElevatorScript : MonoBehaviour
                 startPos = ElevatorTrans.position;
                 isMoving = true;
                 Up = true;
+                Audio.Play();
             }
             if (isMoving)
             {

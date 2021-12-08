@@ -5,7 +5,6 @@ using UnityEngine;
 public class TrapAttack : MonoBehaviour
 {
     public int Damage = 5;
-
     PlayerCtrl Playerctrl;
 
     private void Start()
