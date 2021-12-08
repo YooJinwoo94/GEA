@@ -83,6 +83,8 @@ public class CharacterStatus : MonoBehaviour
         {
             //powerUpEffect = transform.Find("PowerUpEffect").GetComponent<ParticleSystem>();
         }
+        Time.timeScale = 1;
+
     }
 
     void Update()
@@ -92,6 +94,7 @@ public class CharacterStatus : MonoBehaviour
             return;
         }
         if (HP <= 0) {
+            Debug.Log("Death");
             Time.timeScale = 0;
             gameOverUI.SetActive(true);
         }
