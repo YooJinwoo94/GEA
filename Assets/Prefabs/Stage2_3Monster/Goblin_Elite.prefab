@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 36103883554457200}
   - component: {fileID: 36103883556450947}
   - component: {fileID: 36103883556450944}
-  - component: {fileID: 36103883556450945}
+  - component: {fileID: 7883470780044419283}
   m_Layer: 10
   m_Name: SM_Wep_Hammer_Large_Stone_01
   m_TagString: Untagged
@@ -114,7 +114,7 @@ CapsuleCollider:
   m_Height: 1.90917
   m_Direction: 1
   m_Center: {x: 0.55, y: 0.52160513, z: 0.08712523}
---- !u!114 &36103883556450945
+--- !u!114 &7883470780044419283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,9 +123,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 36103883556450950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16704874744bd894b8e9c7278173b284, type: 3}
+  m_Script: {fileID: 11500000, guid: ef9b3482c3dfc0944bc10adb5bd06e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSeClip: {fileID: 0}
 --- !u!1 &2517730523396052850
 GameObject:
   m_ObjectHideFlags: 0
