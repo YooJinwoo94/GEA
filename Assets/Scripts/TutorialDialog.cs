@@ -26,7 +26,9 @@ public class TutorialDialog : MonoBehaviour
         Training,
         TrainingSkill,
         TrainingSkill2,
-        Ending
+        Ending,
+        Warning,
+        GhostNotification
     }
 
     enum DialogType
@@ -38,6 +40,8 @@ public class TutorialDialog : MonoBehaviour
 
     QuestUIManager questUIManager;
     DialogUIManager dialoguUIManager;
+
+    GameObject[] subQuestWarnings;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +57,11 @@ public class TutorialDialog : MonoBehaviour
 
         questUIManager = FindObjectOfType<QuestUIManager>();
         dialoguUIManager = FindObjectOfType<DialogUIManager>();
+
+        SubQuestWarning[] temp = FindObjectsOfType<SubQuestWarning>();
+        subQuestWarnings = new GameObject[temp.Length];
+        for(int i = 0;i<temp.Length;i++)
+            subQuestWarnings[i] = temp[i].gameObject;
 
         lines = new string[][]
         {
@@ -113,6 +122,11 @@ public class TutorialDialog : MonoBehaviour
                 "정말.. 정말 고맙네",
                 "죽어서라도 보물을 찾은 것이 너무 기쁘군",
                 "이제 나도 성불 할 수 있겠어"
+            },
+            // 경고문
+            new string[]
+            {
+                "서브 퀘스트를 완료해 주세요."
             }
         };
         currentLine = 0;
@@ -124,7 +138,8 @@ public class TutorialDialog : MonoBehaviour
             { DialogChannel.Training, 2 },
             { DialogChannel.TrainingSkill, 3 },
             { DialogChannel.TrainingSkill2, 4 },
-            { DialogChannel.Ending, 5 }
+            { DialogChannel.Ending, 5 },
+            { DialogChannel.Warning, 6 }
         };
 
         Down();
@@ -181,7 +196,8 @@ public class TutorialDialog : MonoBehaviour
 
         currentLine = 0;
         Time.timeScale = 1.0f;
-        //if (channel != DialogChannel.First)
+
+        if (channel != DialogChannel.Warning)
             questUIManager.isQuestEnd();
     }
 
@@ -220,6 +236,9 @@ public class TutorialDialog : MonoBehaviour
         {
             channel = DialogChannel.Ghost;
             type = DialogType.Talk;
+
+            subQuestWarnings[0].SetActive(false);
+
             //GameObject.FindGameObjectWithTag("Player").SendMessage("SetDestination", GameObject.Find("Ghost/Pos").transform.position);
         }
         else if (s == "TrainingStory" && questUIManager._tutorialStage[2])
@@ -236,11 +255,18 @@ public class TutorialDialog : MonoBehaviour
         {
             channel = DialogChannel.TrainingSkill2;
             type = DialogType.Notification;
+
+            subQuestWarnings[1].SetActive(false);
         }
         else if(s == "Ending")
         {
             channel = DialogChannel.Ending;
             type = DialogType.Talk;
+        }
+        else if(s == "Warning")
+        {
+            channel = DialogChannel.Warning;
+            type = DialogType.Notification;
         }
         else if(dialoguUIManager._isQuestTexting)
         {
