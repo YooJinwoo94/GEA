@@ -8,6 +8,7 @@ public class KeyDoor : MonoBehaviour
     // Start is called before the first frame update
     public GameObject kDoor;
     Transform doortrans;
+    bool dooropen=false;
     void Start()
     {
         doortrans=kDoor.GetComponent<Transform>();
@@ -21,11 +22,17 @@ public class KeyDoor : MonoBehaviour
             aStatus = other.GetComponent<CharacterStatus>();
             if (aStatus.isKey)
             {
-                openKeyDoor();
+                dooropen=true;
             }
         }
     }
-
+    private void Update()
+    {
+        if (dooropen)
+        {
+            openKeyDoor();
+        }
+    }
     void openKeyDoor()
     {
 
