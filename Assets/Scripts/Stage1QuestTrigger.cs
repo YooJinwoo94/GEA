@@ -14,10 +14,14 @@ public class Stage1QuestTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!triggerOn)
+        if (Quest.QuestNum == 0 ||Quest.QuestNum ==3)
         {
-            Quest.NextLog();
-            triggerOn = true;
+            if (!triggerOn)
+            {
+                Quest.NextLog();
+                Quest.QuestNum++;
+                triggerOn = true;
+            }
         }
     }
 }
