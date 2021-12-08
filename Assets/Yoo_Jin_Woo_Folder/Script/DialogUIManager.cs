@@ -11,6 +11,7 @@ public class DialogUIManager : MonoBehaviour
     const string _stage01 = "Stage1Scene";
     const string _stage02 = "Stage2Scene";
     const string _stage03 = "Stage3Scene";
+    const string _endingStage = "Ending";
     const string _bossStage = "BossScene";
 
     [SerializeField]
@@ -76,6 +77,16 @@ public class DialogUIManager : MonoBehaviour
                     if (_questUIManagerScript._stage03[i] == true)
                     {
                         StartCoroutine(TypeSenetence(_questDialogDataBaseScript._stage03QuestDialog[i]));
+                        return;
+                    }
+                }
+                break;
+            case _endingStage:
+                for (int i = 0; i < _questUIManagerScript._endingStage.Count; i++)
+                {
+                    if (_questUIManagerScript._endingStage[i] == true)
+                    {
+                        StartCoroutine(TypeSenetence(_questDialogDataBaseScript._endingStageQuestDialog[i]));
                         return;
                     }
                 }

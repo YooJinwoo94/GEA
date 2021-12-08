@@ -15,6 +15,8 @@ public class QuestUIManager : MonoBehaviour
     [HideInInspector]
     public const int _stage03Num = 5;
     [HideInInspector]
+    public const int _endingStageNum = 5;
+    [HideInInspector]
     public const int _bossStageNum = 5;
 
     [HideInInspector]
@@ -25,6 +27,8 @@ public class QuestUIManager : MonoBehaviour
     public List<bool> _stage02 = new List<bool>();
     [HideInInspector]
     public List<bool> _stage03 = new List<bool>();
+    [HideInInspector]
+    public List<bool> _endingStage = new List<bool>();
     [HideInInspector]
     public List<bool> _bossStage = new List<bool>();
 
@@ -63,6 +67,13 @@ public class QuestUIManager : MonoBehaviour
                     _stage03.Add(false);
                 }
                 _stage03[0] = true;
+                break;
+            case "Ending":
+                for (int i = 0; i < _endingStageNum; i++)
+                {
+                    _endingStage.Add(false);
+                }
+                _endingStage[0] = true;
                 break;
             case "BossScene":
                 for (int i = 0; i < _bossStageNum; i++)
@@ -132,6 +143,19 @@ public class QuestUIManager : MonoBehaviour
                         _stage03[i] = false;
                         if (i == _stage03Num - 1) return;
                         _stage03[i + 1] = true;
+                        _dialogUIManagerScript.checkQuest();
+                        break;
+                    }
+                }
+                break;
+            case "Ending":
+                for (int i = 0; i < _endingStageNum; i++)
+                {
+                    if (_endingStage[i] == true)
+                    {
+                        _endingStage[i] = false;
+                        if (i == _endingStageNum - 1) return;
+                        _endingStage[i + 1] = true;
                         _dialogUIManagerScript.checkQuest();
                         break;
                     }

@@ -12,6 +12,7 @@ public class QuestDialogDataBase : MonoBehaviour
     const string _stage01 = "Stage1Scene";
     const string _stage02 = "Stage2Scene";
     const string _stage03 = "Stage3Scene";
+    const string _endingStage = "Ending";
     const string _bossStage = "BossScene";
 
     [HideInInspector]
@@ -23,6 +24,8 @@ public class QuestDialogDataBase : MonoBehaviour
     [HideInInspector]
     public string[] _stage03QuestDialog;
     [HideInInspector]
+    public string[] _endingStageQuestDialog;
+    [HideInInspector]
     public string[] _bossStageQuestDialog;
 
 
@@ -33,6 +36,7 @@ public class QuestDialogDataBase : MonoBehaviour
         _stage01QuestDialog = new string[6];
         _stage02QuestDialog = new string[5];
         _stage03QuestDialog = new string[5];
+        _endingStageQuestDialog = new string[5];
         _bossStageQuestDialog = new string[5];
 
         switch (SceneManager.GetActiveScene().name)
@@ -67,6 +71,13 @@ public class QuestDialogDataBase : MonoBehaviour
                 _stage03QuestDialog[2] = "두 번째 관문을 개방하시오.";
                 _stage03QuestDialog[3] = "정예 몬스털르 처치하시오.";
                 _stage03QuestDialog[4] = "다음 지역으로 이동하시오.";
+                break;
+            case _endingStage:
+                _endingStageQuestDialog[0] = "유령을 만나러 가시오.";
+                _endingStageQuestDialog[1] = "유령을 만나러 가시오.";
+                _endingStageQuestDialog[2] = "유령을 만나러 가시오.";
+                _endingStageQuestDialog[3] = "유령을 만나러 가시오.";
+                _endingStageQuestDialog[4] = "유령을 만나러 가시오.";
                 break;
             case _bossStage:
                 _bossStageQuestDialog[0] = "사원의 안쪽을 조사하시오.";
