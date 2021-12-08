@@ -32,7 +32,7 @@ public class CharacterStatus : MonoBehaviour
     public bool isgetQ = true;
     public bool isgetW = true;
     public bool isgetE = true;
-
+    public bool isKey = false;
     // 공격력 강화.
     //public bool powerBoost = false;
     // 공격력 강화 시간.
@@ -54,6 +54,10 @@ public class CharacterStatus : MonoBehaviour
             //    // MaxHP의 절반 회복.
             //    HP = Mathf.Min(HP + MaxHP / 2, MaxHP);
             //    break;
+
+            case DropItem.ItemKind.KEY:
+                isKey = true;
+                break;
         }
     }
     public void GetSkill(SkillRune.SkillKind skillKind)

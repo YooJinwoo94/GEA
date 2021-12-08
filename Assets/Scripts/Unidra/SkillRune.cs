@@ -16,15 +16,17 @@ public class SkillRune : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             CharacterStatus aStatus = other.GetComponent<CharacterStatus>();
-            
+            aStatus.GetSkill(skill);
+
             Destroy(gameObject);
 
             AudioSource.PlayClipAtPoint(itemSeClip, transform.position);
         }
     }
+
 
     private void Update()
     {

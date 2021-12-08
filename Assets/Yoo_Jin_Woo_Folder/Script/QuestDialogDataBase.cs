@@ -30,7 +30,7 @@ public class QuestDialogDataBase : MonoBehaviour
     private void Start()
     {
         _tutorialStageQuestDialog = new string[6];
-        _stage01QuestDialog = new string[5];
+        _stage01QuestDialog = new string[6];
         _stage02QuestDialog = new string[5];
         _stage03QuestDialog = new string[5];
         _bossStageQuestDialog = new string[5];
@@ -46,11 +46,12 @@ public class QuestDialogDataBase : MonoBehaviour
                 _tutorialStageQuestDialog[5] = "다음 지역으로 이동하시오.";
                 break;
             case _stage01:
-                _stage01QuestDialog[0] = "안녕 스테이지1이야0";
-                _stage01QuestDialog[1] = "안녕 스테이지1이야1";
-                _stage01QuestDialog[2] = "안녕 스테이지1이야2";
-                _stage01QuestDialog[3] = "안녕 스테이지1이야3";
-                _stage01QuestDialog[4] = "안녕 스테이지1이야4";
+                _stage01QuestDialog[0] = "신전을 찾아 묘지 안쪽으로 이동";
+                _stage01QuestDialog[1] = "묘지 안쪽에 빛나는 아이템을 조사";
+                _stage01QuestDialog[2] = "W스킬을 사용";
+                _stage01QuestDialog[3] = "신전 입구를 찾아 안쪽으로 이동";
+                _stage01QuestDialog[4] = "정예 몬스터를 처치";
+                _stage01QuestDialog[5] = "열쇠로 신전 입구를 열고 안쪽으로 이동";
                 break;
             case _stage02:
                 _stage02QuestDialog[0] = "몬스터를 처치하시오.";
