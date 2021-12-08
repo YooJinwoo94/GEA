@@ -178,10 +178,10 @@ public class PlayerCtrl : MonoBehaviour
     void Died()
     {
         status.died = true;
-        gameRuleCtrl.GameOver();
+        //gameRuleCtrl.GameOver();
 
         // 오디오 재생.
-        deathSeAudio.Play();
+        //deathSeAudio.Play();
     }
 
     void Damage(AttackArea.AttackInfo attackInfo)
