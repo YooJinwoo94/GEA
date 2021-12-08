@@ -47,6 +47,9 @@ public class LittleGolemController : MonoBehaviour
     public AudioSource GolemPunchSound;
     public AudioSource GolemDeathSound;
 
+    public float IdleLimitTime = 5.0f;
+    public float IdleLimitTimer = 0.0f;
+
     public float diedTime = 20.0f;
     float diedTimer = 0.0f;
 
@@ -95,6 +98,14 @@ public class LittleGolemController : MonoBehaviour
         {
             animator.SetTrigger("idle");
         }
+        
+        if(IdleLimitTimer > IdleLimitTime) {
+            IdleLimitTimer = 0.0f;
+            isAttacking = false;
+        }
+        else {
+            IdleLimitTimer++;
+        }
 
         if (monsterCurrrentHP <= 0) currentPattern = BossPatternType.Died;
         else if (isAttacking)
@@ -104,10 +115,12 @@ public class LittleGolemController : MonoBehaviour
         else if (isPlayerNear)
 		{
             currentPattern = BossPatternType.MeleeAtk;
+            IdleLimitTimer = 0.0f;
 		}
         else
 		{
             currentPattern = BossPatternType.Chase;
+            IdleLimitTimer = 0.0f;
 		}
 	}
 
@@ -145,9 +158,9 @@ public class LittleGolemController : MonoBehaviour
         {
             animator.SetTrigger("lightAttack");
         }
-        yield return Delay1500;
 
         currentPattern = BossPatternType.Idle;
+        yield return Delay1500;
 
     }
     
