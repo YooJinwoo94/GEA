@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4139881724776236}
   - component: {fileID: 33704264412334388}
   - component: {fileID: 23302588284547388}
+  - component: {fileID: 3848491523144049439}
   m_Layer: 0
   m_Name: TB_Prop_LumberPile_Med_C
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3848491523144049439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452655861287898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6533661, y: 1.6956147, z: 2.8229103}
+  m_Center: {x: 0.00000017881393, y: 0.84786224, z: 0.07453638}
