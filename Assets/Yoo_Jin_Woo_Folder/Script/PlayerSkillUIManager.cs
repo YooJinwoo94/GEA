@@ -9,9 +9,9 @@ public class PlayerSkillUIManager : MonoBehaviour
     const int playerSkill = 3;
 
     [SerializeField]
-    CharacterStatus playerCharacterStatus;   
+    GameObject[] skillBlockIcon;
     [SerializeField]
-    UIAniCon _uiAniConScript;
+    CharacterStatus playerCharacterStatus;   
     [SerializeField]
     Image[] colorImg;
     [SerializeField]
@@ -30,6 +30,8 @@ public class PlayerSkillUIManager : MonoBehaviour
     {
         for (int i = 0; i < playerSkill; i++)
         {
+            if(skillBlockIcon[i].activeInHierarchy == true) skillBlockIcon[i].SetActive(false);
+
             isSkillOn.Add(false);
             maxCooldown.Add(10);
             currentCooldown.Add(5);
@@ -42,7 +44,6 @@ public class PlayerSkillUIManager : MonoBehaviour
         {
             playerCharacterStatus = GameObject.Find("Player").GetComponent<CharacterStatus>();
         }
-       
     }
 
 
@@ -92,6 +93,7 @@ public class PlayerSkillUIManager : MonoBehaviour
     void playerSkillUse()
     {
         int skillNum = -1;
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             skillNum = 0;
@@ -104,7 +106,6 @@ public class PlayerSkillUIManager : MonoBehaviour
         {
             skillNum = 2;
         }
-
         if (skillNum == -1) return;
         //아니 이게 무슨 소리야 내가 스킬이 안나온다고? 흐어어어어엉
         switch (skillNum)
@@ -129,6 +130,7 @@ public class PlayerSkillUIManager : MonoBehaviour
 
         fill[skillNum].fillAmount = 1;
     }
+
     void playerSkillCoolTimeOn()
     {
         for (int i = 0; i < playerSkill; i++)
@@ -164,16 +166,34 @@ public class PlayerSkillUIManager : MonoBehaviour
         if(playerCharacterStatus.isgetQ == false)
         {
             colorImg[0].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
+            skillBlockIcon[0].SetActive(true);
+        }
+        else
+        {
+            colorImg[0].color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255);
+            skillBlockIcon[0].SetActive(false);
         }
 
         if (playerCharacterStatus.isgetW == false)
         {
             colorImg[1].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
+            skillBlockIcon[1].SetActive(true);
+        }
+        else
+        {
+            colorImg[1].color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255);
+            skillBlockIcon[1].SetActive(false);
         }
 
         if (playerCharacterStatus.isgetE == false)
         {
             colorImg[2].color = new Color(87 / 255f, 87 / 255f, 87 / 255f, 255);
+            skillBlockIcon[2].SetActive(true);
+        }
+        else
+        {
+            colorImg[2].color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255);
+            skillBlockIcon[2].SetActive(false);
         }
     }
 }
