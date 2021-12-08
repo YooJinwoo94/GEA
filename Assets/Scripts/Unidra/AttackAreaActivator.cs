@@ -23,6 +23,7 @@ public class AttackAreaActivator : MonoBehaviour
 
         // 오디오 초기화.
         attackSeAudio = gameObject.AddComponent<AudioSource>();
+        attackSeAudio.volume = 0.3f;
         attackSeAudio.clip = attackSeClip;
         attackSeAudio.loop = false;
     }
