@@ -72,12 +72,12 @@ public class BossGolemController : MonoBehaviour
     void Update()
     {
         if (!isClearGame && bossCurrrentHP <= 0) {
-            if (portalDelay.isPlayerInside) return;
+            //if (portalDelay.isPlayerInside) return;
             isClearGame = true;
             questUIManager.isQuestEnd();
             //textContainer.text = "보물을 획득해라";
-            portal.SetActive(true);
             portalDelay.gameObject.SetActive(false);
+            portal.GetComponent<Portal>().ActiveInvoke();
         }
     }
 

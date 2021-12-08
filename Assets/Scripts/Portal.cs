@@ -21,4 +21,11 @@ public class Portal : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void ActiveInvoke() {
+        Invoke ("ActiveGO", 2.0f);
+    }
+    void ActiveGO() {
+        gameObject.SetActive(true);
+    }
 }
