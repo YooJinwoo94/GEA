@@ -238,16 +238,18 @@ MonoBehaviour:
   HP: 20
   MaxHP: 20
   Power: 5
+  QPower: 50
   WPower: 100
   EPower: 100
   lastAttackTarget: {fileID: 0}
-  characterName: Skeleton_01
+  characterName: "\uBB34\uB364\uC5D0\uC11C \uB098\uC628 \uD574\uACE8"
   attacking: 0
   died: 0
   isgetQ: 1
   isgetW: 1
   isgetE: 1
   isKey: 0
+  gameOverUI: {fileID: 0}
 --- !u!114 &2279871540509622871
 MonoBehaviour:
   m_ObjectHideFlags: 0
