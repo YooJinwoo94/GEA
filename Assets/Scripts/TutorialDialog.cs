@@ -42,6 +42,8 @@ public class TutorialDialog : MonoBehaviour
     DialogUIManager dialoguUIManager;
 
     GameObject[] subQuestWarnings;
+
+    bool isFirst;
     // Start is called before the first frame update
     void Start()
     {
@@ -141,11 +143,12 @@ public class TutorialDialog : MonoBehaviour
             { DialogChannel.Ending, 5 },
             { DialogChannel.Warning, 6 }
         };
-
+        isFirst = true;
         Down();
-        
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(1))
+        {
             StartDialog("First");
+        }
     }
 
     // Update is called once per frame
@@ -197,8 +200,11 @@ public class TutorialDialog : MonoBehaviour
         currentLine = 0;
         Time.timeScale = 1.0f;
 
-        if (channel != DialogChannel.Warning)
+        if (channel != DialogChannel.Warning && !isFirst)
             questUIManager.isQuestEnd();
+
+        if (isFirst)
+            isFirst = false;
     }
 
     // 대화창 열기
@@ -229,6 +235,7 @@ public class TutorialDialog : MonoBehaviour
     {
         if (s == "First" && questUIManager._tutorialStage[0])
         {
+            Debug.Log("first");
             channel = DialogChannel.First;
             type = DialogType.Notification;
         }
