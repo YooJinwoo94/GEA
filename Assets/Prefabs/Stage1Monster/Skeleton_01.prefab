@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 20
   MaxHP: 20
-  Power: 5
+  Power: 4
   QPower: 50
   WPower: 100
   EPower: 100

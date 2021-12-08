@@ -2350,12 +2350,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 30
   MaxHP: 30
-  Power: 8
+  Power: 6
   QPower: 50
   WPower: 100
   EPower: 100
   lastAttackTarget: {fileID: 0}
-  characterName: "\uBB34\uB364\uC5D0\uC11C \uB098\uC628 \uD574\uACE8\uBCD1\uC0AC"
+  characterName: "\uBB34\uAE30\uC5C6\uB294 \uD574\uACE8\uBCD1\uC0AC"
   attacking: 0
   died: 0
   isgetQ: 1
