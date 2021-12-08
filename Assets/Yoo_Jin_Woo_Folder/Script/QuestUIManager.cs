@@ -19,7 +19,7 @@ public class QuestUIManager : MonoBehaviour
     [HideInInspector]
     public const int _bossStageNum = 5;
 
-    [HideInInspector]
+    //[HideInInspector]
     public List<bool> _tutorialStage = new List<bool>();
     [HideInInspector]
     public List<bool> _stage01 = new List<bool>();
