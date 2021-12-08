@@ -5775,7 +5775,7 @@ GameObject:
   - component: {fileID: 217087888}
   - component: {fileID: 217087887}
   m_Layer: 0
-  m_Name: SubQuestWarning
+  m_Name: SubQuestWarning_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5819,7 +5819,7 @@ Transform:
   m_Children:
   - {fileID: 1906422325}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &219087694 stripped
 Transform:
@@ -7424,6 +7424,7 @@ MonoBehaviour:
   isgetQ: 1
   isgetW: 1
   isgetE: 1
+  isKey: 0
 --- !u!65 &293243000
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8016,6 +8017,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1261554844, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
+      propertyPath: _tutorialStageQuestDialog.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 759667556006670930, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -53112,7 +53117,7 @@ GameObject:
   - component: {fileID: 1986153160}
   - component: {fileID: 1986153159}
   m_Layer: 0
-  m_Name: SubQuestWarning (1)
+  m_Name: SubQuestWarning_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53156,7 +53161,7 @@ Transform:
   m_Children:
   - {fileID: 1705364699}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1988007170
 GameObject:

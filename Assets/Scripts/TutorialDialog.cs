@@ -60,8 +60,8 @@ public class TutorialDialog : MonoBehaviour
 
         SubQuestWarning[] temp = FindObjectsOfType<SubQuestWarning>();
         subQuestWarnings = new GameObject[temp.Length];
-        for(int i = 0;i<temp.Length;i++)
-            subQuestWarnings[i] = temp[i].gameObject;
+        for (int i = 0; i < temp.Length; i++)
+            subQuestWarnings[i] = GameObject.Find("SubQuestWarning_" + i);
 
         lines = new string[][]
         {
