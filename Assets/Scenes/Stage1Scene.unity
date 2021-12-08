@@ -29138,7 +29138,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1810786175, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5
+      value: -5.0000305
       objectReference: {fileID: 0}
     - target: {fileID: 759667556011974636, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -29146,7 +29146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 759667556303915697, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -29.086792
+      value: -29.086823
       objectReference: {fileID: 0}
     - target: {fileID: 759667556688149402, guid: 80780a92d1541cf49a3becdcf29c574d, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
@@ -30582,6 +30582,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4232425146812281718, guid: a4d3a387b03f85842a7d03246eab129b, type: 3}
+      propertyPath: characterName
+      value: "\uC218\uBB38\uC7A5 \uD574\uACE8\uAE30\uC0AC"
+      objectReference: {fileID: 0}
     - target: {fileID: 2460846441320385958, guid: a4d3a387b03f85842a7d03246eab129b, type: 3}
       propertyPath: m_Name
       value: Skeleton_Knight
