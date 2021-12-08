@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\BossStage\RunePillerObject.cs" />
     <Compile Include="Assets\Yoo_Jin_Woo_Folder\F1\GUI Kit The Stone\Scripts\Panel.cs" />
     <Compile Include="Assets\Scripts\BridgeScript.cs" />
+    <Compile Include="Assets\Scripts\BossStage\PortalDelay.cs" />
     <Compile Include="Assets\Scripts\Stage2SpawnerScript.cs" />
     <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\OptionUICon.cs" />
     <Compile Include="Assets\Scripts\BossStage\BossPuzzleController.cs" />
