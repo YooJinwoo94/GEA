@@ -2108,15 +2108,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a768f66f6974c2e4788207fb08bf7859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 300
-  MaxHP: 300
-  Power: 10
+  HP: 500
+  MaxHP: 500
+  Power: 15
   WPower: 100
   EPower: 100
   lastAttackTarget: {fileID: 0}
   characterName: Player
   attacking: 0
   died: 0
+  isgetQ: 1
+  isgetW: 1
+  isgetE: 1
+  isKey: 0
 --- !u!114 &4732120835553922774
 MonoBehaviour:
   m_ObjectHideFlags: 0

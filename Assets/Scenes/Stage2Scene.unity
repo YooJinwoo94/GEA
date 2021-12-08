@@ -4457,6 +4457,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin_Female (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -4933,6 +4941,14 @@ PrefabInstance:
     - target: {fileID: 3369897483388782392, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_Name
       value: Goblin_Female
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
@@ -7919,6 +7935,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6461967699536778106, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
       propertyPath: m_Name
       value: Goblin_Male (7)
@@ -8411,6 +8435,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin_Female (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -8602,6 +8634,14 @@ PrefabInstance:
     - target: {fileID: 3369897483388782392, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_Name
       value: Goblin_Female (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
@@ -9319,6 +9359,14 @@ PrefabInstance:
     - target: {fileID: 3369897483388782392, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_Name
       value: Goblin_Female (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
@@ -10276,6 +10324,14 @@ PrefabInstance:
     - target: {fileID: 3369897483388782392, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_Name
       value: Goblin_Female (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
@@ -18739,6 +18795,10 @@ PrefabInstance:
       propertyPath: hitEffect
       value: 
       objectReference: {fileID: 1407402442211574, guid: 5d31a5b9b348544439d8079453188ecc, type: 3}
+    - target: {fileID: 8304308368193746587, guid: 35553b54d202a6a4691093ed6e4503cd, type: 3}
+      propertyPath: isgetE
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304308368193849674, guid: 35553b54d202a6a4691093ed6e4503cd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -19325,6 +19385,14 @@ PrefabInstance:
     - target: {fileID: 3369897483388782392, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_Name
       value: Goblin_Female (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
@@ -22553,6 +22621,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin_Female (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -22919,6 +22995,14 @@ PrefabInstance:
     - target: {fileID: 3369897483388782392, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_Name
       value: Goblin_Female (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
@@ -23753,6 +23837,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6461967699536778106, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
       propertyPath: m_Name
       value: Goblin_Male (5)
@@ -26498,6 +26590,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6461967699536778106, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
       propertyPath: m_Name
       value: Goblin_Male (1)
@@ -29038,6 +29138,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin_Female (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -30436,6 +30544,14 @@ PrefabInstance:
     - target: {fileID: 3369897483388782392, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_Name
       value: Goblin_Female (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
@@ -32179,6 +32295,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6461967699536778106, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
       propertyPath: m_Name
       value: Goblin_Male (3)
@@ -32784,6 +32908,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6461967699536778106, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
       propertyPath: m_Name
       value: Goblin_Male
@@ -32841,6 +32973,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6461967699536778106, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
       propertyPath: m_Name
       value: Goblin_Male (6)
@@ -37186,6 +37326,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin_Female (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369897483388782399, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3373583395505893920, guid: 2b47247dec806ec42a1d2535d6c4f882, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -37429,6 +37577,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6461967699536778106, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
       propertyPath: m_Name
       value: Goblin_Male (2)
@@ -37486,6 +37642,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6461967699536778106, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
       propertyPath: m_Name
       value: Goblin_Male (8)
@@ -38194,6 +38358,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: HP
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461967699536778105, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
+      propertyPath: MaxHP
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6461967699536778106, guid: be8c45364d9138945a3d9bceac261b94, type: 3}
       propertyPath: m_Name
       value: Goblin_Male (4)
