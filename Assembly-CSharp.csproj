@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\BossStage\BossPuzzleController.cs" />
     <Compile Include="Assets\Scripts\SwingBladeScript.cs" />
     <Compile Include="Assets\Scripts\SubQuestWarning.cs" />
+    <Compile Include="Assets\Scripts\Stage1QuestTrigger.cs" />
     <Compile Include="Assets\Scripts\Unidra\EnemyGeneratorCtrl.cs" />
     <Compile Include="Assets\Scripts\Unidra\AttackArea.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
@@ -136,7 +137,6 @@
     <Compile Include="Assets\Scripts\Unidra\DropItem.cs" />
     <Compile Include="Assets\Yoo_Jin_Woo_Folder\Script\SaveUI\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\Unidra\GameTimerGui.cs" />
-    <Compile Include="Assets\Scripts\Stage1QuestTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Hovl Studio\Epic toon VFX\Demo scene\Readme.txt" />
