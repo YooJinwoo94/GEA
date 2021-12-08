@@ -14,6 +14,7 @@ public class Stage1Dialog : MonoBehaviour
     public bool Subon = false;
     public bool Wskillon = false;
 
+    public int QuestNum = 0;
     void Start()
     {
 
@@ -23,21 +24,24 @@ public class Stage1Dialog : MonoBehaviour
 
     private void Update()
     {
-        if (rune == null && !Runeon)
+        if (rune == null && !Runeon && QuestNum==1)
         {
+            QuestNum++;
             Runeon = true;
             NextLog();
         }
-        if (Runeon && !Wskillon)
+        if (Runeon && !Wskillon && QuestNum == 2)
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
+                QuestNum++;
                 Wskillon = true;
                 NextLog();
             }
         }
-        if(subboss==null && !subboss)
+        if(subboss==null && !subboss && QuestNum == 4)
         {
+            QuestNum++;
             Subon = true;
             NextLog();
         }
